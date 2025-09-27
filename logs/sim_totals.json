@@ -727,5 +727,18 @@
     "name": "default",
     "epochs": 200,
     "max_entities": 32776
+  },
+  {
+    "total_entities": 84847,
+    "total_alive_at_conclusion": 904,
+    "total_struggling": 32,
+    "total_thriving": 591,
+    "total_deaths": 83943,
+    "total_births": 83386,
+    "total_disasters": 165,
+    "total_mutations": 122425,
+    "name": "default",
+    "epochs": 200,
+    "max_entities": 19899
   }
 ]

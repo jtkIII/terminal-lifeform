@@ -101,7 +101,7 @@ class Simulation:
                 "disaster",
                 event="Natural Disaster!",
                 time=self.current_time,
-                name=f"{', '.join(removed_entities)}",
+                name=len(removed_entities),
             )
 
     def predator_event(self, severity: float):
@@ -419,11 +419,11 @@ class Simulation:
         self.environment_factors["interaction_strength"] *= (
             1.1  # more competition when over capacity
         )
-        self.environment_factors["resource_availability"] *= 0.7
+        self.environment_factors["resource_availability"] *= 0.8
         self.environment_factors["pollution"] = min(
-            1.0, self.environment_factors["pollution"] + 0.2
+            1.0, self.environment_factors["pollution"] + 0.1
         )
-        self.environment_factors["temperature"] += 2.0
+        self.environment_factors["temperature"] += 1.0
 
     def _handle_reproduction(self):
         """
@@ -436,12 +436,8 @@ class Simulation:
                 and entity.age >= entity.parameters["min_reproduction_age"]
                 and random.random() < entity.parameters["reproduction_chance"]
             ):
-                # Create a new entity with parameters from parent
                 offspring_params = entity.parameters.copy()
-
-                # Apply mutations to offspring parameters
                 offspring_params = self._apply_mutation(offspring_params)
-
                 offspring_params["initial_health"] = random.uniform(80, 100)
                 offspring_params["initial_energy"] = random.uniform(80, 100)
 

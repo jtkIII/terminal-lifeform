@@ -127,4 +127,4 @@ MIT – open-ended digital life is for everyone.
 
 #### 🤝 Contributing
 
-Contributions are welcome — especially new behaviors, parameters, or visualization modes. Open an issue or PR and let's evolve some chaos together.
+Contributions are welcome — especially new behaviors, parameters, or visualization modes. Open an issue or PR and let's evolve some chaos together. You can [see where my thinking is](docs/NEXTSTEPS.md) concering next steps.

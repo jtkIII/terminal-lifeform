@@ -1,0 +1,33 @@
+[project]
+name = "terminallifeform"
+version = "0.1.0"
+dependencies = [
+    "colored>=2.3.0",
+    "faker>=37.4.0",
+    "rich>=14.0.0",
+    "snakeviz>=2.2.2",
+    "tqdm>=4.67.1",
+]
+
+[dependency-groups]
+dev = ["mypy>=1.16.1", "pytest>=8.4.1", "ruff>=0.12.3"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+exclude = ["build", "dist", ".venv"]
+fix = true
+show-fixes = true
+select = ["E", "W", "F", "I", "B", "UP", "C90"]
+
+[tool.ruff.lint]
+preview = true
+extend-select = ["Q"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+# quote-style = "single"
+line-ending = "lf"
+docstring-code-format = true
+skip-magic-trailing-comma = false
+indent-style = "space"

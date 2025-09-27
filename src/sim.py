@@ -25,6 +25,7 @@ class Simulation:
         self.total_entities = 0
         self.epochs = time_steps
         self.max_entities = 0
+        self.count = 0
 
         if isinstance(world, dict):
             self.environment_factors = world.copy()
@@ -32,8 +33,6 @@ class Simulation:
             self.world_description = world.get("description", "")
         else:
             raise ValueError("Simulation 'world' parameter must be a dict")
-
-        self.count = 0
 
         for _ in range(initial_entities):
             self.add_entity(Entity())
@@ -46,7 +45,7 @@ class Simulation:
         self.total_entities += 1
         logger.info(f"Added new entity: {entity.id}: {entity.name}")
 
-    def _update_environment(self):
+    def update_environment(self):
         """
         Updates environmental factors over time or based on random events.
         """
@@ -221,7 +220,7 @@ class Simulation:
             name=f"{num_new_babies} new entities born.",
         )
 
-    def _random_events(self):
+    def random_events(self):
         event_type = random.choice(
             [
                 "resource_spike",
@@ -278,7 +277,7 @@ class Simulation:
                     - Radiation Burst! {Style.reset}"
             )
 
-    def _process_entity(self, entity):
+    def process_entity(self, entity):
         """
         Applies all updates to a single entity for the current Epoch.
         """
@@ -305,7 +304,7 @@ class Simulation:
         )
         self.environment_factors["growth_rate"] *= efficiency
 
-    def _handle_interactions(self):
+    def handle_interactions(self):
         """
         Handles interactions between entities, e.g., resource competition.
         """
@@ -369,7 +368,7 @@ class Simulation:
                     )
                     # Note: Using debug level for frequent interaction logs to avoid overwhelming INFO level output
 
-    def _apply_mutation(self, params: dict) -> dict:
+    def apply_mutation(self, params: dict) -> dict:
         """
         Applies slight random mutations to entity parameters.
         """
@@ -425,7 +424,7 @@ class Simulation:
         )
         self.environment_factors["temperature"] += 1.0
 
-    def _handle_reproduction(self):
+    def handle_reproduction(self):
         """
         Checks for thriving entities and potentially adds new offspring.
         """
@@ -437,7 +436,7 @@ class Simulation:
                 and random.random() < entity.parameters["reproduction_chance"]
             ):
                 offspring_params = entity.parameters.copy()
-                offspring_params = self._apply_mutation(offspring_params)
+                offspring_params = self.apply_mutation(offspring_params)
                 offspring_params["initial_health"] = random.uniform(80, 100)
                 offspring_params["initial_energy"] = random.uniform(80, 100)
 
@@ -535,7 +534,7 @@ class Simulation:
             time.sleep(0.33)  # Simulate time passing
 
             if random.random() < self.environment_factors["event_chance"]:
-                self._random_events()  # Check for random events
+                self.random_events()  # Check for random events
 
             self.predator_event(severity=0.3)  # Check for predator events
             self.natural_disaster(severity=0.25)  # Check for natural disasters
@@ -550,9 +549,9 @@ class Simulation:
             time_passes(0.75)  # Simulate time passing
 
             for entity in self.entities:
-                self._process_entity(entity)  # Process each entity individually
+                self.process_entity(entity)  # Process each entity individually
 
-            self._handle_interactions()  # interactions between entities
+            self.handle_interactions()  # interactions between entities
 
             for entity in self.entities:
                 entity.update_status()  # Re-update status after interactions
@@ -566,7 +565,7 @@ class Simulation:
                     )
 
             self.entities = [entity for entity in self.entities if entity.is_alive()]
-            self._handle_reproduction()
+            self.handle_reproduction()
             alive_count = len(self.entities)
             thriving_count = sum(1 for e in self.entities if e.status == "thriving")
             struggling_count = sum(1 for e in self.entities if e.status == "struggling")
@@ -593,7 +592,7 @@ class Simulation:
                 ):
                     self.baby_boom()  # Check for baby boom events
 
-                self._update_environment()  # Update environment for next Epoch
+                self.update_environment()  # Update environment for next Epoch
                 self.apply_feedback_loops(alive_count)  # Dynamic environmental feedback
 
                 logger.info(

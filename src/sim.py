@@ -455,6 +455,68 @@ class Simulation:
 
         self.entities.extend(new_entities)
 
+    def apply_feedback_loops(self, population: int) -> None:
+        """
+        Mutate the world state in-place based on current population and environmental feedback loops.
+        This creates emergent behavior where the simulation environment evolves dynamically over time.
+        """
+
+        # --- Resource feedback ---
+        # As population grows, resources become scarcer unless regeneration is very high.
+        pressure = population / (self.environment_factors["carrying_capacity"] + 1)
+        self.environment_factors["resource_availability"] *= 1 - 0.1 * pressure
+        self.environment_factors["resource_availability"] = max(
+            self.environment_factors["resource_availability"], 0.05
+        )
+
+        # --- Pollution feedback ---
+        # More population = more waste and pollution. But if population crashes, environment heals.
+        pollution_change = 0.05 * pressure - 0.02 * (1 - pressure)
+        self.environment_factors["pollution"] = max(
+            0.0, min(self.environment_factors["pollution"] + pollution_change, 1.0)
+        )
+
+        # --- Mutation pressure feedback ---
+        # Higher radiation or pollution boosts mutation rate slightly over time.
+        self.environment_factors["mutation_rate"] *= (
+            1 + 0.1 * self.environment_factors["radiation_background"]
+        )
+        self.environment_factors["mutation_rate"] = min(
+            self.environment_factors["mutation_rate"], 1.0
+        )
+
+        # --- Carrying capacity evolution ---
+        # If the population consistently approaches carrying capacity, the environment may adapt
+        # (e.g., niche expansion or ecosystem collapse if overshoot persists).
+        if pressure > 0.8:
+            # Stressful overshoot: risk ecosystem degradation
+            self.environment_factors["carrying_capacity"] *= 0.995
+        elif 0.3 < pressure < 0.6:
+            # Sustainable level: slight growth over time
+            self.environment_factors["carrying_capacity"] *= 1.002
+
+        # Keep carrying capacity reasonable
+        self.environment_factors["carrying_capacity"] = max(
+            50, min(self.environment_factors["carrying_capacity"], 10000)
+        )
+
+        # --- Disaster & event feedback ---
+        # Pollution and radiation slightly increase disaster frequency and impact.
+        self.environment_factors["disaster_chance"] += (
+            0.01 * self.environment_factors["pollution"]
+        )
+        self.environment_factors["disaster_impact"] += (
+            0.01 * self.environment_factors["radiation_background"]
+        )
+
+        # Keep them capped
+        self.environment_factors["disaster_chance"] = min(
+            self.environment_factors["disaster_chance"], 1.0
+        )
+        self.environment_factors["disaster_impact"] = min(
+            self.environment_factors["disaster_impact"], 1.0
+        )
+
     def run_simulation(self):
         """
         Runs the simulation for the specified number of Epochs.
@@ -532,6 +594,7 @@ class Simulation:
                     self.baby_boom()  # Check for baby boom events
 
                 self._update_environment()  # Update environment for next Epoch
+                self.apply_feedback_loops(alive_count)  # Dynamic environmental feedback
 
                 logger.info(
                     f" {Back.magenta} Population: Alive={alive_count}, Thriving={thriving_count}, Struggling={struggling_count}{Style.reset}"

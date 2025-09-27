@@ -53,13 +53,13 @@ uv run src/main.py
 
 ### 📎 Latest List
 
-- ✅ `docs/screenshot.png`
+- ✅ `docs/NEXTSTEPS.md`
 - ✅ `added requirements.txt` for users who don't use `uv`
 - ✅ Mentioned `uv` in `pyproject.toml`'s `[tool]` section
 
 ## 🛠 Roadmap Ideas
 
-- [ ] Entity evolution
+- [x] Entity evolution
 - [ ] Save/load state
 - [ ] Visualization or external UI (web? curses? pygame?)
 - [x] Entity logging or journaling

@@ -1,5 +1,6 @@
 [project]
 name = "terminallifeform"
+requires-python = ">=3.11"
 version = "0.1.0"
 dependencies = [
     "colored>=2.3.0",

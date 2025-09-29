@@ -10,7 +10,7 @@ from utils.world_loader import (
 )
 
 
-def choose_world_interactively() -> str:
+def choose_world() -> str:
     """Prompt the user to choose a world preset interactively with descriptions and a random option."""
     worlds = list_worlds()
 
@@ -51,20 +51,16 @@ if __name__ == "__main__":
     add_mutant_worlds()  # Ensure mutant worlds are added
 
     while True:
-        # If a world name was provided as an argument, use it.
-        # Otherwise, show the interactive selector.
-        if len(sys.argv) > 1:
+        if len(sys.argv) > 1:  # If a world name was provided as an argument, use it.
             world_name = sys.argv[1]
         else:
-            world_name = choose_world_interactively()
+            world_name = choose_world()  # Otherwise, show the interactive selector.
 
         run_simulation(world_name)
 
-        # Ask the user if they want to run again
         again = input("\n🔁 Run another simulation? (y/n): ").strip().lower()
         if again not in ("y", "yes"):
             print("\n👋 Goodbye — until next evolution!\n")
             break
 
-        # If they used a CLI arg, clear it after first run to return to interactive mode
-        sys.argv = [sys.argv[0]]
+        sys.argv = [sys.argv[0]]  # clear CLI arg if used previously

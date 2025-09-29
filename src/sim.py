@@ -7,6 +7,7 @@ from tqdm import tqdm
 
 from entity import Entity
 from entity_utils import calc_energy_change, calc_health_change, validate_entity_params
+from events import trigger_random_events
 from logging_config import setup_logger
 from stats import event_tracker, update_totals
 from utils.utils import pause_simulation, time_passes
@@ -26,6 +27,8 @@ class Simulation:
         self.epochs = time_steps
         self.max_entities = 0
         self.count = 0
+        self.boom_count = 0
+        self.last_boom_epoch = -20  # Ensure first boom can happen after 20 epochs
 
         if isinstance(world, dict):
             self.environment_factors = world.copy()
@@ -75,6 +78,7 @@ class Simulation:
 
     def natural_disaster(self, severity: float):
         # Dynamic Event: Natural Disaster if pollution or temp too high
+        logger.info("\n 💨 Natural Disaster!")
         if (
             self.environment_factors["pollution"] > 0.5
             or self.environment_factors["temperature"] > 35.0
@@ -105,6 +109,7 @@ class Simulation:
 
     def predator_event(self, severity: float):
         # Dynamic Event: Predator if population is too high
+        logger.info("\n💥 Disaster!")
         alive_count = len([e for e in self.entities if e.is_alive()])
 
         predator_types = [
@@ -221,13 +226,14 @@ class Simulation:
         )
 
     def random_events(self):
+        # Random environmental events that can affect resources, temperature, or health
+        logger.info("\n 🃏 Wild Card!")
         event_type = random.choice(
             [
                 "resource_spike",
                 "resource_crash",
                 "disease_outbreak",
                 "heatwave",
-                "radiation_burst",
             ]
         )
 
@@ -411,7 +417,7 @@ class Simulation:
 
     def over_population(self):
         logger.info(
-            f"{Back.magenta}Population pushing sustainable limits captain!{Style.reset}"
+            f"📢 {Back.magenta}Population pushing sustainable limits captain!{Style.reset}"
         )
         self.environment_factors["growth_rate"] *= 0.85
         self.environment_factors["mutation_rate"] *= 1.1  # evolution speeds up
@@ -516,7 +522,7 @@ class Simulation:
             self.environment_factors["disaster_impact"], 1.0
         )
 
-    def run_simulation(self):
+    def run_simulation(self):  # noqa: C901
         """
         Runs the simulation for the specified number of Epochs.
         """
@@ -533,8 +539,10 @@ class Simulation:
             logger.info(f"\n--- Epoch {self.current_time} ---")
             time.sleep(0.33)  # Simulate time passing
 
+            # if random.random() < self.environment_factors["event_chance"]:
+            #     self.random_events()  # Check for random events
             if random.random() < self.environment_factors["event_chance"]:
-                self.random_events()  # Check for random events
+                trigger_random_events(self)
 
             self.predator_event(severity=0.3)  # Check for predator events
             self.natural_disaster(severity=0.25)  # Check for natural disasters
@@ -588,9 +596,21 @@ class Simulation:
                 if (
                     alive_count < self.environment_factors["optimal_density"]
                     and self.count > 16
-                    and random.random() < 0.25
+                    and random.random() < 0.2
                 ):
-                    self.baby_boom()  # Check for baby boom events
+                    if self.boom_count < 7:  # Limit number of baby booms
+                        # Only allow baby boom if last one was >10 loops ago
+                        if (
+                            not hasattr(self, "last_boom_epoch")
+                            or (self.current_time - self.last_boom_epoch) > 10
+                        ):
+                            self.baby_boom()  # Check for baby boom events
+                            self.boom_count += 1
+                            self.last_boom_epoch = self.current_time
+                        else:
+                            logger.info("Baby boom skipped: last boom was too recent.")
+                    else:
+                        logger.info("Maximum number of baby booms reached.")
 
                 self.update_environment()  # Update environment for next Epoch
                 self.apply_feedback_loops(alive_count)  # Dynamic environmental feedback

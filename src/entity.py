@@ -23,12 +23,12 @@ class Entity:
                            Examples: 'max_age', 'metabolism_rate', 'resilience'.
     """
 
-    def __init__(self, initial_parameters: dict = None):
+    def __init__(self, initial_parameters: dict = None):  # type: ignore
         """
         Initializes a new entity with default or provided parameters.
 
         Args:
-            initial_parameters A dictionary of custom parameters for this entity. Defaults to None.
+            initial_parameters A dictionary of custom parameters for this entity. Defaults2 to None.
         """
         self.id = str(uuid.uuid4())[:8]
         self.age = 0
@@ -46,6 +46,7 @@ class Entity:
 
         self.health = self.parameters["initial_health"]
         self.energy = self.parameters["initial_energy"]
+        self.resilience = self.parameters.get("resilience", 0.1)
 
     def is_alive(self) -> bool:
         return self.status != "dead"

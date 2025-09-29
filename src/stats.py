@@ -7,7 +7,7 @@ from colored import Back, Fore, Style
 from utils.logging_config import setup_logger
 
 logger = setup_logger(__name__)
-totals_json = "logs/sim_totals.json"
+totals_json = "../logs/sim_totals.json"
 
 final_totals = {
     "world_name": "",
@@ -143,10 +143,12 @@ def compare_last_runs(n=5, filename=totals_json):
     Args:
         n (int): Number of recent runs to display.
         filename (str): Path to the JSON file containing simulation totals.
+    Returns:
+        list: The last n simulation run entries, or an empty list if none found.
     """
     if not os.path.exists(filename):
         print("No simulation history found.")
-        return
+        return []
 
     with open(filename) as f:
         data = json.load(f)
@@ -154,9 +156,10 @@ def compare_last_runs(n=5, filename=totals_json):
     print(f"\n📊 Last {min(n, len(data))} Simulation Runs:\n")
     for entry in data[-n:]:
         print(
-            f"🌍 {entry['name']:<20} | "
+            f"🌍 {entry['world_name']:<20} | "
             f"📈 Max: {entry['max_entities']:<5} | "
             f"👶 Births: {entry['total_births']:<5} | "
             f"💀 Deaths: {entry['total_deaths']:<5} | "
             f"✅ Alive End: {entry['total_alive_at_conclusion']}"
         )
+    return data[-n:]

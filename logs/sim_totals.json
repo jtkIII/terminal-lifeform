@@ -138,5 +138,47 @@
     "total_disasters": 168,
     "total_mutations": 22351,
     "max_entities": 5205
+  },
+  {
+    "world_name": "default",
+    "run_id": "2025-09-29T14:48:46",
+    "epochs": 200,
+    "total_entities": 17358,
+    "total_alive_at_conclusion": 362,
+    "total_struggling": 115,
+    "total_thriving": 178,
+    "total_deaths": 16996,
+    "total_births": 16416,
+    "total_disasters": 153,
+    "total_mutations": 21033,
+    "max_entities": 6466
+  },
+  {
+    "world_name": "default",
+    "run_id": "2025-09-29T16:52:26",
+    "epochs": 200,
+    "total_entities": 18208,
+    "total_alive_at_conclusion": 339,
+    "total_struggling": 72,
+    "total_thriving": 79,
+    "total_deaths": 17869,
+    "total_births": 17045,
+    "total_disasters": 160,
+    "total_mutations": 23611,
+    "max_entities": 6031
+  },
+  {
+    "world_name": "red_queen_world",
+    "run_id": "2025-09-29T16:54:31",
+    "epochs": 200,
+    "total_entities": 1796,
+    "total_alive_at_conclusion": 14,
+    "total_struggling": 1,
+    "total_thriving": 13,
+    "total_deaths": 19651,
+    "total_births": 18349,
+    "total_disasters": 198,
+    "total_mutations": 25567,
+    "max_entities": 391
   }
 ]

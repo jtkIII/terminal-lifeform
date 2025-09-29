@@ -6,7 +6,11 @@ from colored import Back, Fore, Style
 from tqdm import tqdm
 
 from entity import Entity
-from events import trigger_random_events
+from events import (
+    trigger_natural_disaster,
+    trigger_predator_event,
+    trigger_random_events,
+)
 from stats import event_tracker, update_totals
 from utils.entity_utils import (
     calc_energy_change,
@@ -111,75 +115,6 @@ class Simulation:
                 name=len(removed_entities),
             )
 
-    def predator_event(self, severity: float):
-        # Dynamic Event: Predator if population is too high
-        logger.info("\n💥 Disaster!")
-        alive_count = len([e for e in self.entities if e.is_alive()])
-
-        predator_types = [
-            ("Nucluear War", 0.8),
-            ("Dimensional Rift", 0.75),
-            ("Asteroid Impact", 0.7),
-            ("Environmental Collapse", 0.65),
-            ("Supervolcano", 0.6),
-            ("Genetic Experiment Gone Wrong", 0.6),
-            ("Ancient Beast", 0.55),
-            ("Supernatural Entities", 0.5),
-            ("Cybernetic Organisms", 0.5),
-            ("Mutant Swarm", 0.45),
-            ("Alien Invasion", 0.4),
-            ("Sentient AI", 0.4),
-            ("Robot Uprising", 0.35),
-            ("Godzilla", 0.33),
-            ("Apex Predator", 0.31),
-            ("Space Pirates", 0.3),
-            ("Time Travelers", 0.25),
-            ("Human Sacrifice", 0.225),
-            ("Zombie Outbreak", 0.2),
-            ("Plague", 0.15),
-            ("Mutant Wolf Pack", 0.1),
-        ]
-        predator_type, damage = random.choice(predator_types)
-
-        if (
-            alive_count > self.environment_factors["predator_threshold"]
-            and random.random() > self.environment_factors["predator_chance"]
-        ):
-            num_to_remove = int(
-                alive_count
-                * self.environment_factors["predator_impact_percentage"]
-                * damage
-                * severity
-            )
-
-            num_to_remove = max(1, num_to_remove)  # Ensure 1 entity is removed
-
-            # Prioritize struggling entities if possible, otherwise random
-            struggling_entities = [
-                e for e in self.entities if e.status == "struggling" and e.is_alive()
-            ]
-            if len(struggling_entities) >= num_to_remove:
-                targets = random.sample(struggling_entities, num_to_remove)
-            else:
-                targets = random.sample(
-                    [e for e in self.entities if e.is_alive()],
-                    min(num_to_remove, alive_count),
-                )
-
-            removed_entities = []
-
-            for entity in targets:
-                entity.health = 0  # Predator instantly kills
-                entity.update_status()  # Mark as dead
-                removed_entities.append(entity.name)
-
-            event_tracker(
-                "disaster",
-                event=f"Disaster Alert! - {predator_type} Attack!!!",
-                time=self.current_time,
-                name=len(removed_entities),
-            )
-
     def baby_boom(self):
         logger.info("\n👶 Baby Boom!")
         pause_simulation(20, desc="baby boom...", delay=0.05)
@@ -228,64 +163,6 @@ class Simulation:
             time=self.current_time,
             name=f"{num_new_babies} new entities born.",
         )
-
-    def random_events(self):
-        # Random environmental events that can affect resources, temperature, or health
-        logger.info("\n 🃏 Wild Card!")
-        event_type = random.choice(
-            [
-                "resource_spike",
-                "resource_crash",
-                "disease_outbreak",
-                "heatwave",
-            ]
-        )
-
-        if event_type == "resource_spike":
-            self.environment_factors["resource_availability"] = min(
-                1.0, self.environment_factors["resource_availability"] + 0.2
-            )
-            logger.info(
-                f"Time {self.current_time}: {Back.red}Environmental Event - \
-                    Resource Spike! {Style.reset}"
-            )
-        elif event_type == "resource_crash":
-            self.environment_factors["resource_availability"] = max(
-                0.0, self.environment_factors["resource_availability"] - 0.3
-            )
-            self.environment_factors["temperature"] = max(
-                0.0, self.environment_factors["temperature"] - random.uniform(5, 15)
-            )
-            logger.info(
-                f"Time {self.current_time}: {Back.red} Environmental Event \
-                    - Resource Crash! {Style.reset}"
-            )
-        elif event_type == "disease_outbreak":
-            # Reduce health of a random subset of entities
-            for entity in random.sample(self.entities, min(len(self.entities), 10)):
-                if entity.is_alive():
-                    entity.health = max(0, entity.health - random.uniform(10, 30))
-            logger.info(
-                f"Time {self.current_time}: {Back.red} Environmental Event \
-                    - Disease Outbreak! {Style.reset}"
-            )
-        elif event_type == "heatwave":
-            self.environment_factors["temperature"] = min(
-                45.0,
-                self.environment_factors["temperature"] + random.uniform(5, 10),
-            )
-            logger.info(
-                f"Time {self.current_time}: {Back.red} Environmental Event \
-                    - Heatwave! {Style.reset}"
-            )
-        elif event_type == "radiation_burst":
-            for entity in random.sample(self.entities, min(len(self.entities), 5)):
-                if entity.is_alive():
-                    entity.health = max(0, entity.health - random.uniform(20, 40))
-            logger.info(
-                f"Time {self.current_time}: {Back.red} Environmental Event \
-                    - Radiation Burst! {Style.reset}"
-            )
 
     def process_entity(self, entity):
         """
@@ -543,13 +420,13 @@ class Simulation:
             logger.info(f"\n--- Epoch {self.current_time} ---")
             time.sleep(0.33)  # Simulate time passing
 
-            # if random.random() < self.environment_factors["event_chance"]:
-            #     self.random_events()  # Check for random events
             if random.random() < self.environment_factors["event_chance"]:
                 trigger_random_events(self)
 
-            self.predator_event(severity=0.3)  # Check for predator events
-            self.natural_disaster(severity=0.25)  # Check for natural disasters
+            trigger_predator_event(self, severity=0.3)
+
+            # self.natural_disaster(severity=0.25)  # Check for natural disasters
+            trigger_natural_disaster(self, severity=0.25)
 
             logger.info(
                 f"{Fore.blue}Environment:{Style.reset} {Fore.green} \

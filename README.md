@@ -2,13 +2,13 @@
 
 🧬 **Terminal Lifeform** — a terminal-native digital ecosystem where tiny lifeforms evolve, struggle, and die in a sandbox of entropy.
 
-![experimental](docs/badge1.svg) ![version](docs/badge2.svg)
+![experimental](docs/pics/badge1.svg) ![version](docs/pics/badge2.svg)
 
 **Ents live and they die.**  
 **Sometimes they even can thrive.**  
 **Usually, they die.**
 
-![screenshot](docs/screenshot.png)
+![screenshot](docs/pics/screenshot.png)
 
 ---
 
@@ -116,6 +116,8 @@ if entity.age > 50:
 - ☠️ Struggling=7
 
 So ideally it needs to be a little less deadly, but be careful. Small tweaks can create big changes.
+
+![Compare Runs](docs/pics/compare_runs.jpg)
 
 ---
 

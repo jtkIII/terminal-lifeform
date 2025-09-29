@@ -8,7 +8,7 @@ def setup_logger(name=__name__):
     )  # Set to logging.DEBUG to see detailed interaction logs
 
     # Use mode="w" to overwrite the log file each run
-    file_handler = logging.FileHandler("logs/simulation.log", mode="w")
+    file_handler = logging.FileHandler("../../simulation.log", mode="w")
     console_handler = logging.StreamHandler()
     formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 

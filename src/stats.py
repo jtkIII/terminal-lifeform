@@ -10,6 +10,9 @@ logger = setup_logger(__name__)
 totals_json = "logs/sim_totals.json"
 
 final_totals = {
+    "world_name": "",
+    "run_id": "",
+    "epochs": 0,
     "total_entities": 0,
     "total_alive_at_conclusion": 0,
     "total_struggling": 0,
@@ -18,8 +21,6 @@ final_totals = {
     "total_births": 0,
     "total_disasters": 0,
     "total_mutations": 0,
-    "name": "",
-    "epochs": 0,
     "max_entities": 0,
 }
 
@@ -27,7 +28,7 @@ final_totals = {
 def update_totals(
     epochs: int,
     max_entities: int,
-    name: str,
+    world_name: str,
     total: int,
     alive: int,
     struggling: int,
@@ -39,19 +40,19 @@ def update_totals(
     final_totals.update(
         {
             "run_id": datetime.now().isoformat(timespec="seconds"),
-            "name": name,
+            "world_name": world_name,
+            "epochs": epochs,
             "total_entities": total,
             "total_alive_at_conclusion": alive,
             "total_struggling": struggling,
             "total_thriving": thriving,
-            "epochs": epochs,
             "max_entities": max_entities,
         }
     )
 
     logger.info(
         "\n"
-        f"🌍 --- Final Totals for World: {name} --- {epochs} Epochs ---\n"
+        f"🌍 --- Final Totals for World: {world_name} --- {epochs} Epochs ---\n"
         f"📊 --- Run ID: {final_totals['run_id']} ---\n"
         f"🧬 {Fore.green}Total Entities:{Style.reset} {total}, "
         f"📈 {Fore.green}Max Entities:{Style.reset} {max_entities}, "

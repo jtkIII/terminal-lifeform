@@ -53,9 +53,9 @@ uv run src/main.py
 
 ### 📎 Latest List
 
-- ✅ `docs/NEXTSTEPS.md`
-- ✅ `added requirements.txt` for users who don't use `uv`
-- ✅ Mentioned `uv` in `pyproject.toml`'s `[tool]` section
+- ✅ docs/NEXTSTEPS.md
+- ✅ added build-system / setuptools
+- ✅ added interactive choose world menu
 
 ## 🛠 Roadmap Ideas
 

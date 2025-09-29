@@ -110,5 +110,33 @@
     "total_disasters": 166,
     "total_mutations": 23163,
     "max_entities": 6124
+  },
+  {
+    "world_name": "harsh_world",
+    "run_id": "2025-09-29T07:59:29",
+    "epochs": 200,
+    "total_entities": 350,
+    "total_alive_at_conclusion": 0,
+    "total_struggling": 0,
+    "total_thriving": 0,
+    "total_deaths": 350,
+    "total_births": 167,
+    "total_disasters": 0,
+    "total_mutations": 244,
+    "max_entities": 122
+  },
+  {
+    "world_name": "default",
+    "run_id": "2025-09-29T08:04:09",
+    "epochs": 200,
+    "total_entities": 17361,
+    "total_alive_at_conclusion": 341,
+    "total_struggling": 49,
+    "total_thriving": 73,
+    "total_deaths": 17020,
+    "total_births": 16198,
+    "total_disasters": 168,
+    "total_mutations": 22351,
+    "max_entities": 5205
   }
 ]

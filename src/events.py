@@ -2,7 +2,7 @@ import random
 
 from colored import Back, Fore, Style
 
-from logging_config import setup_logger
+from utils.logging_config import setup_logger
 
 logger = setup_logger(__name__)
 

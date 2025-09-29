@@ -6,10 +6,14 @@ from colored import Back, Fore, Style
 from tqdm import tqdm
 
 from entity import Entity
-from entity_utils import calc_energy_change, calc_health_change, validate_entity_params
 from events import trigger_random_events
-from logging_config import setup_logger
 from stats import event_tracker, update_totals
+from utils.entity_utils import (
+    calc_energy_change,
+    calc_health_change,
+    validate_entity_params,
+)
+from utils.logging_config import setup_logger
 from utils.utils import pause_simulation, time_passes
 
 logger = setup_logger(__name__)

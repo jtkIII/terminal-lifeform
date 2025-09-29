@@ -47,6 +47,7 @@ class Entity:
         self.health = self.parameters["initial_health"]
         self.energy = self.parameters["initial_energy"]
         self.resilience = self.parameters.get("resilience", 0.1)
+        self.foraging_efficiency = self.parameters.get("foraging_efficiency", 0.1)
 
     def is_alive(self) -> bool:
         return self.status != "dead"

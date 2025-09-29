@@ -7,6 +7,7 @@ from colored import Back, Fore, Style
 from logging_config import setup_logger
 
 logger = setup_logger(__name__)
+totals_json = "logs/sim_totals.json"
 
 final_totals = {
     "total_entities": 0,
@@ -50,23 +51,22 @@ def update_totals(
 
     logger.info(
         "\n"
-        f"--- Final Totals for World: {name} --- {epochs} Epochs ---\n"
-        f"--- Run ID: {final_totals['run_id']} ---\n"
-        f"{Fore.green}Total Entities:{Style.reset} {total}, "
-        f"{Fore.green}Max Entities:{Style.reset} {max_entities}, "
-        f"{Fore.green}Total Deaths:{Style.reset} {final_totals['total_deaths']}, "
-        f"{Fore.green}Total Births:{Style.reset} {final_totals['total_births']}, "
-        f"{Fore.green}Total Mutations:{Style.reset} {final_totals['total_mutations']}, "
-        "\n --- Summary ---"
-        f"{Fore.green}Alive at Conclusion:{Style.reset} {alive}, "
-        f"{Fore.green}Thriving:{Style.reset} {thriving}, "
-        f"{Fore.green}Struggling:{Style.reset} {struggling}"
+        f"🌍 --- Final Totals for World: {name} --- {epochs} Epochs ---\n"
+        f"📊 --- Run ID: {final_totals['run_id']} ---\n"
+        f"🧬 {Fore.green}Total Entities:{Style.reset} {total}, "
+        f"📈 {Fore.green}Max Entities:{Style.reset} {max_entities}, "
+        f"💀 {Fore.green}Total Deaths:{Style.reset} {final_totals['total_deaths']}, "
+        f"👶 {Fore.green}Total Births:{Style.reset} {final_totals['total_births']}, "
+        f"🔬 {Fore.green}Total Mutations:{Style.reset} {final_totals['total_mutations']}, "
+        f"✅ {Fore.green}Alive at Conclusion:{Style.reset} {alive}, "
+        f"🌿 {Fore.green}Thriving:{Style.reset} {thriving}, "
+        f"🫤 {Fore.green}Struggling:{Style.reset} {struggling}"
     )
 
     append_totals_to_file()
 
 
-def append_totals_to_file(filename: str = "logs/sim_totals.json"):
+def append_totals_to_file(filename: str = totals_json):
     """
     Append the final totals to a specified JSON file.
     Each entry is appended as a new object in a list.
@@ -134,3 +134,28 @@ def event_tracker(event_type: str, **kwargs):
 
     else:
         logger.warning(f"Unknown event type: {event_type}")
+
+
+def compare_last_runs(n=5, filename=totals_json):
+    """
+    Compare and display the last n simulation runs from the log file.
+    Args:
+        n (int): Number of recent runs to display.
+        filename (str): Path to the JSON file containing simulation totals.
+    """
+    if not os.path.exists(filename):
+        print("No simulation history found.")
+        return
+
+    with open(filename) as f:
+        data = json.load(f)
+
+    print(f"\n📊 Last {min(n, len(data))} Simulation Runs:\n")
+    for entry in data[-n:]:
+        print(
+            f"🌍 {entry['name']:<20} | "
+            f"📈 Max: {entry['max_entities']:<5} | "
+            f"👶 Births: {entry['total_births']:<5} | "
+            f"💀 Deaths: {entry['total_deaths']:<5} | "
+            f"✅ Alive End: {entry['total_alive_at_conclusion']}"
+        )

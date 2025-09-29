@@ -16,8 +16,10 @@ def choose_world_interactively() -> str:
 
     print("\n🌍 Available Worlds:\n")
     for idx, name in enumerate(worlds, start=1):
-        desc = WORLD_PRESETS[name].get("description", "No description provided.")
-        print(f"  {idx}. {name:<25} — {desc}")
+        preset = WORLD_PRESETS[name]
+        icon = preset.get("icon", "")
+        desc = preset.get("description", "No description provided.")
+        print(f"{idx}. {icon} {name:<23} — {desc}")
 
     print("\n  0. 🎲 Random World         — Choose a random preset from the list above")
 

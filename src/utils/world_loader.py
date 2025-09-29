@@ -58,6 +58,7 @@ WORLD_PRESETS = {
     "default": {
         "name": "default",
         "description": "Balanced simulation with moderate conditions and average dynamics.",
+        "icon": "🌍",
         "resource_availability": 1.0,
         "temperature": 25.0,
         "pollution": 0.1,
@@ -86,13 +87,14 @@ WORLD_PRESETS = {
     "harsh_world": {
         "name": "harsh_world",
         "description": "A brutal environment with scarce resources and frequent threats.",
+        "icon": "🏜️",
         "resource_availability": 0.4,
         "temperature": 5.0,
         "pollution": 0.6,
         "event_chance": 0.08,
         "interaction_strength": 0.8,
-        "mutation_rate": 0.2,
-        "mutation_strength": 0.05,
+        "mutation_rate": 0.22,
+        "mutation_strength": 0.052,
         "predator_chance": 0.25,
         "predator_threshold": 150,
         "predator_impact_percentage": 0.25,
@@ -114,6 +116,7 @@ WORLD_PRESETS = {
     "garden_world": {
         "name": "garden_world",
         "description": "A utopian paradise with abundant resources and minimal dangers.",
+        "icon": "🌳",
         "resource_availability": 1.3,
         "temperature": 22.0,
         "pollution": 0.01,
@@ -142,13 +145,14 @@ WORLD_PRESETS = {
     "chaotic_world": {
         "name": "chaotic_world",
         "description": "Volatile and unpredictable environment with frequent disasters and mutations.",
+        "icon": "🌪️",
         "resource_availability": 0.9,
         "temperature": 30.0,
         "pollution": 0.3,
         "event_chance": 0.15,
         "interaction_strength": 0.7,
-        "mutation_rate": 0.3,
-        "mutation_strength": 0.1,
+        "mutation_rate": 0.6,
+        "mutation_strength": 0.3,
         "predator_chance": 0.3,
         "predator_threshold": 200,
         "predator_impact_percentage": 0.25,
@@ -170,6 +174,7 @@ WORLD_PRESETS = {
     "dunbars_world": {
         "name": "dunbars_world",
         "description": "Cooperation thrives in small groups, but growth beyond ~200 causes rapid collapse.",
+        "icon": "👥",
         "resource_availability": 0.9,
         "resource_regeneration_rate": 0.7,
         "temperature": 20.0,
@@ -198,6 +203,7 @@ WORLD_PRESETS = {
     "post_cataclysmic_world": {
         "name": "post_cataclysmic_world",
         "description": "Life clings on after mass extinction — low resources, slow recovery, but huge evolutionary leaps.",
+        "icon": "🪨",
         "resource_availability": 0.3,
         "resource_regeneration_rate": 0.2,
         "temperature": 10.0,
@@ -225,6 +231,7 @@ WORLD_PRESETS = {
     "runaway_evolution_world": {
         "name": "runaway_evolution_world",
         "description": "Extreme radiation and mutation pressure drive rapid, chaotic evolutionary leaps.",
+        "icon": "🧬",
         "resource_availability": 1.0,
         "resource_regeneration_rate": 0.6,
         "temperature": 35.0,
@@ -252,6 +259,7 @@ WORLD_PRESETS = {
     "red_queen_world": {
         "name": "red_queen_world",
         "description": "Intense competition and constant adaptation — evolve or die in an endless arms race.",
+        "icon": "👑",
         "resource_availability": 0.7,
         "resource_regeneration_rate": 0.5,
         "temperature": 28.0,

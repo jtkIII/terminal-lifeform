@@ -26,5 +26,19 @@
     "total_disasters": 140,
     "total_mutations": 6012,
     "max_entities": 583
+  },
+  {
+    "world_name": "default",
+    "run_id": "2025-09-28T22:12:31",
+    "epochs": 200,
+    "total_entities": 19922,
+    "total_alive_at_conclusion": 1009,
+    "total_struggling": 101,
+    "total_thriving": 582,
+    "total_deaths": 18913,
+    "total_births": 18163,
+    "total_disasters": 162,
+    "total_mutations": 25537,
+    "max_entities": 5726
   }
 ]

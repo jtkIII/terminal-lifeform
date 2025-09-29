@@ -1,5 +1,6 @@
 import json
 import os
+from datetime import datetime
 
 from colored import Back, Fore, Style
 
@@ -36,6 +37,7 @@ def update_totals(
     """
     final_totals.update(
         {
+            "run_id": datetime.now().isoformat(timespec="seconds"),
             "name": name,
             "total_entities": total,
             "total_alive_at_conclusion": alive,
@@ -49,6 +51,7 @@ def update_totals(
     logger.info(
         "\n"
         f"--- Final Totals for World: {name} --- {epochs} Epochs ---\n"
+        f"--- Run ID: {final_totals['run_id']} ---\n"
         f"{Fore.green}Total Entities:{Style.reset} {total}, "
         f"{Fore.green}Max Entities:{Style.reset} {max_entities}, "
         f"{Fore.green}Total Deaths:{Style.reset} {final_totals['total_deaths']}, "

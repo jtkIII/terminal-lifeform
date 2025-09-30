@@ -6,6 +6,7 @@ from colored import Back, Fore, Style
 from tqdm import tqdm
 
 from entity import Entity
+from enviroment import adapt_environment, apply_feedback_loops, update_environment
 from events import (
     trigger_natural_disaster,
     trigger_predator_event,
@@ -36,9 +37,12 @@ class Simulation:
         self.max_entities = 0
         self.count = 0
         self.boom_count = 0
+        self.drift = random.uniform(0.95, 1.05)
         self.last_boom_epoch = -20  # Ensure first boom can happen after 20 epochs
         self.population_history: list[int] = []
         self.memory_window: int = 17  # how many epochs back the world 'remembers'
+        self.memory_window = world.get("memory_window", 50)
+        self.memory_sensitivity = world.get("memory_sensitivity", 1.0)
 
         if isinstance(world, dict):
             self.environment_factors = world.copy()
@@ -57,34 +61,6 @@ class Simulation:
         self.entities.append(entity)
         self.total_entities += 1
         logger.info(f"Added new entity: {entity.id}: {entity.name}")
-
-    def update_environment(self):
-        """
-        Updates environmental factors over time or based on random events.
-        """
-        self.environment_factors["resource_availability"] = max(
-            0.1, 1.0 - (self.current_time / self.epochs) * 0.5
-        )  # Gradual changes over time
-
-        self.environment_factors["temperature"] = 25.0 + 10 * (
-            self.current_time / self.epochs - 0.5
-        )  # Oscillates
-
-        self.environment_factors["pollution"] = min(
-            0.8, (self.current_time / self.epochs) * 0.3
-        )  # Gradual increase in polution over time
-
-        self.environment_factors["event_chance"] = min(
-            0.1, self.environment_factors["event_chance"] + 0.001
-        )  # Slight increase in event chance over time
-
-        self.environment_factors["interaction_strength"] = min(
-            1.0, self.environment_factors["interaction_strength"] + 0.001
-        )  # Should this decrease over time? Maybe not.
-
-        self.environment_factors["mutation_rate"] = min(
-            0.3, self.environment_factors["mutation_rate"] + 0.0005
-        )  # Slight increase in mutation rate over time
 
     def natural_disaster(self, severity: float):
         # Dynamic Event: Natural Disaster if pollution or temp too high
@@ -174,12 +150,72 @@ class Simulation:
         if not entity.is_alive():
             return  # Skip dead entities
 
+        for entity in self.entities:  # Update entity's environmental memory
+            condition = self.environment_factors["resource_availability"] - 0.5
+            # Positive if abundant, negative if scarce
+            entity.environment_memory.append(condition)
+            if len(entity.environment_memory) > entity.memory_span:
+                entity.environment_memory.pop(0)
+
         entity.age += 1
         energy_change = calc_energy_change(entity, self.environment_factors)
         entity.energy = max(0.0, min(100.0, entity.energy + energy_change))
         health_change = calc_health_change(entity, self.environment_factors)
         entity.health = max(0.0, min(100.0, entity.health + health_change))
         entity.update_status()
+
+    def adapt_entities(self):
+        """
+        Adjust each entity's traits based on rolling memory of past environmental conditions.
+        This simulates phenotypic plasticity — short-term adaptation within a lifetime.
+        """
+        for entity in self.entities:
+            if not entity.is_alive():
+                continue
+
+            # --- 1. Record current environmental condition ---
+            condition = self.environment_factors["resource_availability"] - 0.5
+            # Positive = abundance, Negative = scarcity
+            if not hasattr(entity, "environment_memory"):
+                entity.environment_memory = []
+            if not hasattr(entity, "memory_span"):
+                entity.memory_span = 20  # how many epochs they “remember”
+
+            entity.environment_memory.append(condition)
+            if len(entity.environment_memory) > entity.memory_span:
+                entity.environment_memory.pop(0)
+
+            # --- 2. Calculate average condition ---
+            avg_condition = sum(entity.environment_memory) / len(
+                entity.environment_memory
+            )
+
+            # --- 3. Adapt traits based on history ---
+            # These multipliers are gentle so adaptation is gradual.
+            if avg_condition < -0.1:
+                # Life has been hard: survival mode
+                entity.resilience *= 1.02
+                entity.metabolism_rate *= 0.97
+                entity.reproduction_chance *= 0.93
+
+            elif avg_condition > 0.1:
+                # Life has been easy: growth mode
+                entity.resilience *= 0.97
+                entity.metabolism_rate *= 1.03
+                entity.reproduction_chance *= 1.07
+
+            # --- 4. Add small randomness for individual variation ---
+            drift = random.uniform(0.98, 1.02)
+            entity.resilience *= drift
+            entity.metabolism_rate *= drift
+            entity.reproduction_chance *= drift
+
+            # --- 5. Clamp values to prevent runaway explosion ---
+            entity.resilience = max(0.1, min(entity.resilience, 5.0))
+            entity.metabolism_rate = max(0.1, min(entity.metabolism_rate, 5.0))
+            entity.reproduction_chance = max(
+                0.001, min(entity.reproduction_chance, 2.0)
+            )
 
     def efficiency_modifier(self, alive_count):
         if alive_count > self.environment_factors["prosperity_threshold"]:
@@ -343,123 +379,6 @@ class Simulation:
 
         self.entities.extend(new_entities)
 
-    def apply_feedback_loops(self, population: int) -> None:
-        """
-        Mutate the world state in-place based on current population and environmental feedback loops.
-        This creates emergent behavior where the simulation environment evolves dynamically over time.
-        """
-
-        # --- Resource feedback ---
-        # As population grows, resources become scarcer unless regeneration is very high.
-        pressure = population / (self.environment_factors["carrying_capacity"] + 1)
-        self.environment_factors["resource_availability"] *= 1 - 0.1 * pressure
-        self.environment_factors["resource_availability"] = max(
-            self.environment_factors["resource_availability"], 0.05
-        )
-
-        # --- Pollution feedback ---
-        # More population = more waste and pollution. But if population crashes, environment heals.
-        pollution_change = 0.05 * pressure - 0.02 * (1 - pressure)
-        self.environment_factors["pollution"] = max(
-            0.0, min(self.environment_factors["pollution"] + pollution_change, 1.0)
-        )
-
-        # --- Mutation pressure feedback ---
-        # Higher radiation or pollution boosts mutation rate slightly over time.
-        self.environment_factors["mutation_rate"] *= (
-            1 + 0.1 * self.environment_factors["radiation_background"]
-        )
-        self.environment_factors["mutation_rate"] = min(
-            self.environment_factors["mutation_rate"], 1.0
-        )
-
-        # --- Carrying capacity evolution ---
-        # If the population consistently approaches carrying capacity, the environment may adapt
-        # (e.g., niche expansion or ecosystem collapse if overshoot persists).
-        if pressure > 0.8:
-            # Stressful overshoot: risk ecosystem degradation
-            self.environment_factors["carrying_capacity"] *= 0.995
-        elif 0.3 < pressure < 0.6:
-            # Sustainable level: slight growth over time
-            self.environment_factors["carrying_capacity"] *= 1.002
-
-        # Keep carrying capacity reasonable
-        self.environment_factors["carrying_capacity"] = max(
-            50, min(self.environment_factors["carrying_capacity"], 10000)
-        )
-
-        # --- Disaster & event feedback ---
-        # Pollution and radiation slightly increase disaster frequency and impact.
-        self.environment_factors["disaster_chance"] += (
-            0.01 * self.environment_factors["pollution"]
-        )
-        self.environment_factors["disaster_impact"] += (
-            0.01 * self.environment_factors["radiation_background"]
-        )
-
-        # Keep them capped
-        self.environment_factors["disaster_chance"] = min(
-            self.environment_factors["disaster_chance"], 1.0
-        )
-        self.environment_factors["disaster_impact"] = min(
-            self.environment_factors["disaster_impact"], 1.0
-        )
-
-    def adapt_environment(self):
-        """
-        Adaptive environment with ecological memory.
-        World reacts to population pressure AND trends over time.
-        """
-        if not self.environment_factors.get("adaptive_environment"):
-            return
-
-        alive_count = len([e for e in self.entities if e.is_alive()])
-        capacity = self.environment_factors.get("carrying_capacity", 1000)
-        density_ratio = alive_count / capacity
-
-        if self.population_history:
-            avg_past = sum(self.population_history) / len(self.population_history)
-        else:
-            avg_past = alive_count
-
-        trend = (alive_count - avg_past) / avg_past if avg_past > 0 else 0.0
-
-        # --- Push back on persistent overgrowth ---
-        if density_ratio > 1.2 or trend > 0.15:
-            self.environment_factors["resource_availability"] *= 0.9
-            self.environment_factors["disaster_chance"] *= 1.2
-            self.environment_factors["radiation_background"] *= 1.05
-            self.environment_factors["mutation_rate"] *= 1.1
-
-            logger.info(
-                f"🌍 Gaea remembers past abundance. Pop rising ({trend:+.2%}), "
-                "resources restricted and disasters intensify."
-            )
-
-        # --- Assist recovery if population trending downward ---
-        elif density_ratio < 0.4 or trend < -0.15:
-            self.environment_factors["resource_availability"] *= 1.12
-            self.environment_factors["disaster_chance"] *= 0.85
-            self.environment_factors["mutation_rate"] *= 1.15
-
-            logger.info(
-                f"🌱 Gaea recalls past collapse. Pop falling ({trend:+.2%}), "
-                "resources increased to stabilize life."
-            )
-
-        # --- Optional: dampen overshooting ---
-        if abs(trend) > 0.25:
-            self.environment_factors["mutation_rate"] *= 1.2
-            logger.info("⚠️ Rapid change triggers evolutionary pressure!")
-
-        # Clamp factors to avoid runaway values
-        self.environment_factors["resource_availability"] = max(
-            0.1, min(self.environment_factors["resource_availability"], 2.0)
-        )
-        self.environment_factors["mutation_rate"] = max(
-            0.01, min(self.environment_factors["mutation_rate"], 0.8)
-        )
-
     def run_simulation(self):  # noqa: C901
         """
         Runs the simulation for the specified number of Epochs.
@@ -496,7 +415,31 @@ class Simulation:
                 self.process_entity(entity)  # Process each entity individually
 
             self.handle_interactions()  # interactions between entities
+
+            if entity.environment_memory:
+                avg_condition = sum(entity.environment_memory) / len(
+                    entity.environment_memory
+                )
+
+                # If life’s been tough, evolve survival mode:
+                if avg_condition < -0.1:
+                    entity.resilience *= 1.05
+                    entity.metabolism_rate *= 0.95
+                    entity.reproduction_chance *= 0.9
+
+                # If life’s been great, go growth mode:
+                elif avg_condition > 0.1:
+                    entity.resilience *= 0.95
+                    entity.metabolism_rate *= 1.05
+                    entity.reproduction_chance *= 1.1
+
+                # Slight random drift to avoid stagnation
+                entity.resilience *= self.drift
+                entity.metabolism_rate *= self.drift
+
             self.handle_reproduction()
+
+            self.adapt_entities()  # Phenotypic plasticity: short-term adaptation
 
             for entity in self.entities:
                 entity.update_status()  # Re-update status after interactions
@@ -523,7 +466,6 @@ class Simulation:
                 break  # They're all dead, Jim.
             else:
                 # We have survivors, let's process them
-                # fight the bell curve collapse Apply prosperity-based growth modifier
                 self.efficiency_modifier(alive_count)
 
                 if alive_count > self.max_entities:
@@ -554,12 +496,16 @@ class Simulation:
                     else:
                         logger.info("Maximum number of baby booms reached.")
 
-                self.update_environment()  # Update environment for next Epoch
-                self.apply_feedback_loops(alive_count)  # Dynamic environmental feedback
-                self.adapt_environment()  # If world supports it, adaptively change environment
+                update_environment(self)  # Update environment for next Epoch
+                apply_feedback_loops(
+                    self, alive_count
+                )  # Dynamic environmental feedback
+                adapt_environment(
+                    self
+                )  # If world supports it, adaptively change environment
 
                 logger.info(
-                    f" {Back.magenta} Population: Alive={alive_count}, Thriving={thriving_count}, Struggling={struggling_count}{Style.reset}"
+                    f" {Back.magenta}Alive={alive_count}, Thriving={thriving_count}, Struggling={struggling_count}{Style.reset}"
                 )
 
         logger.info(

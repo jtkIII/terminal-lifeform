@@ -35,6 +35,10 @@ class Entity:
         self.status = "alive"
         self.parameters = entity_params.copy()
 
+        self.environment_memory = []  # rolling record of past conditions
+        self.memory_span = 20  # how far back they “remember”
+        self.adaptation_bias = 1.0  # baseline multiplier for adaptation
+
         if random.uniform(1, 3) % 2 == 0:
             self.name = fake.first_name_nonbinary()
         else:
@@ -48,6 +52,9 @@ class Entity:
         self.energy = self.parameters["initial_energy"]
         self.resilience = self.parameters.get("resilience", 0.1)
         self.foraging_efficiency = self.parameters.get("foraging_efficiency", 0.1)
+        self.metabolism_rate = self.parameters.get("metabolism_rate", 0.1)
+        self.reproduction_chance = self.parameters.get("reproduction_chance", 0.05)
+        self.mutation_rate = self.parameters.get("mutation_rate", 0.01)
 
     def is_alive(self) -> bool:
         return self.status != "dead"

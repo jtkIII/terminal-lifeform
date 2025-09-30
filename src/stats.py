@@ -152,7 +152,7 @@ def compare_last_runs(n=5, filename: Path = TOTALS_FILE):
     if not os.path.exists(filename):
         print("No simulation history found.")
         return []
-
+    os.system("cls" if os.name == "nt" else "clear")
     with open(filename) as f:
         data = json.load(f)
 

@@ -60,6 +60,7 @@ uv run src/main.py
 ## 🛠 Roadmap Ideas
 
 - [x] Entity evolution
+- [x] Adaptive enviroment
 - [ ] Save/load state
 - [ ] Visualization or external UI (web? curses? pygame?)
 - [x] Entity logging or journaling
@@ -106,6 +107,36 @@ if entity.age > 50:
     health_change -= 0.05 * (entity.age - 50) ** 2
 
 ```
+
+---
+
+### Details of Adaptive Behavior
+
+🤯 **different ecologies, different stories**
+
+- 🧬 **runaway_evo_world** — explodes early and *burns itself out*, ending tiny but with huge birth/death churn.
+- 🌱 **garden_world** — stable, sustained, and *massive*, a thriving biosphere.
+- 🧠 **inverted_world** — lower max but *remarkably high survival*, meaning the system *self-regulates*.
+- 👥 **dunbars_world** — classic *population cycles* and social constraints keeping things in check.
+
+#### - Emergent Behavior
+
+- 🌿 *Simple worlds* forget fast (like bacteria in a petri dish).
+- 🪐 *Complex biospheres* have long ecological memory (soil chemistry, predator-prey legacies, etc.).
+- 🧬 *Runaway worlds* might *overreact* to short-term changes.
+
+✅ **Result:**
+Each world now *remembers differently* and *feels differently over time*:
+
+| World               | Memory Window | Sensitivity | Behavior                         |
+| ------------------- | ------------- | ----------- | -------------------------------- |
+| `garden_world`      | 80            | 0.8         | Slow-moving, stable feedback     |
+| `runaway_evo_world` | 20            | 1.5         | Panics quickly, big oscillations |
+| `inverted_world`    | 100           | 0.6         | Deep memory, gradual corrections |
+| `island_world`      | 40            | 1.0         | Fast but balanced reactions      |
+
+🐢 Harsh worlds breed slow, tough creatures.
+🐇 Stable worlds explode with reckless, high-energy populations — until they overshoot and crash.
 
 #### Current Version
 

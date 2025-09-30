@@ -95,6 +95,7 @@ WORLD_PRESETS = {
         "prosperity_boost": 1,
         "optimal_density": 1000,
         "density_efficiency": 0.2,
+        "adaptive_environment": False,  # New flag for adaptive behavior notice it's off by default
     },
     "harsh_world": {
         "name": " harsh_world",
@@ -153,6 +154,9 @@ WORLD_PRESETS = {
         "prosperity_boost": 1.35,
         "optimal_density": 1000,
         "density_efficiency": 0.35,
+        "adaptive_environment": True,
+        "memory_window": 80,
+        "memory_sensitivity": 0.8,  # slow to overreact
     },
     "chaotic_world": {
         "name": "chaotic_world",
@@ -269,6 +273,9 @@ WORLD_PRESETS = {
         "prosperity_boost": 1.2,
         "optimal_density": 800,
         "density_efficiency": 0.15,
+        "adaptive_environment": True,
+        "memory_window": 20,
+        "memory_sensitivity": 1.5,  # overreacts to trends
     },
     "red_queen_world": {
         # It takes all the running you can do, to keep in the same place.
@@ -362,7 +369,7 @@ WORLD_PRESETS = {
     },
     "tidal_locked_world": {
         "name": "tidal_locked_world",
-        "description": "One face scorched by endless day, the other frozen in eternal night. Survival thrives only on the razor-thin twilight band.",
+        "description": "One face scorched by endless day, the other frozen in eternal night. Survival thrives on the razor-thin twilight band.",
         "icon": "🌞",
         "resource_availability": 0.7,
         "resource_regeneration_rate": 0.35,
@@ -391,7 +398,7 @@ WORLD_PRESETS = {
     },
     "bioengineered_world": {
         "name": "bioengineered_world",
-        "description": "A finely tuned artificial biosphere. Cooperation is rewarded, but growth beyond a limit triggers automatic collapse protocols.",
+        "description": "Finely tuned biosphere where cooperation is rewarded but growth beyond a limit triggers automatic collapse protocols.",
         "icon": "🧪",
         "resource_availability": 1.2,
         "resource_regeneration_rate": 0.8,
@@ -449,7 +456,7 @@ WORLD_PRESETS = {
     },
     "entropy_world": {
         "name": "entropy_world",
-        "description": "A self-correcting biosphere — abundance sows the seeds of destruction, while collapse nurtures new life. Chaos and order oscillate forever.",
+        "description": "A self-correcting biosphere — abundance sows the seeds of destruction, while collapse nurtures new life.",
         "icon": "🌀",
         "resource_availability": 0.9,
         "resource_regeneration_rate": 0.5,
@@ -478,7 +485,7 @@ WORLD_PRESETS = {
     },
     "inverted_world": {
         "name": "inverted_world",
-        "description": "A paradoxical biosphere where strength is a liability, scarcity breeds abundance, and disasters spark evolution. Survival belongs to the weak.",
+        "description": "Where strength is a liability, scarcity breeds abundance, and disasters spark evolution. The Meak shall inherit the Earth.",
         "icon": "🔁",
         "resource_availability": 0.6,
         "resource_regeneration_rate": 0.8,
@@ -504,10 +511,13 @@ WORLD_PRESETS = {
         "prosperity_boost": 1.8,  # Huge boost from disasters/scarcity
         "optimal_density": 1200,  # Crowded ecosystems do better
         "density_efficiency": 0.5,
+        "adaptive_environment": True,
+        "memory_window": 100,
+        "memory_sensitivity": 0.6,  # very stable
     },
     "sentient_world": {
         "name": "sentient_world",
-        "description": "The biosphere is no longer passive — it reacts to life. If populations surge, nature strikes back. If they struggle, the world softens. Existence becomes a negotiation with the planet itself.",
+        "description": "The biosphere is no longer passive — it reacts to life. Existence becomes a negotiation with the planet itself.",
         "icon": "🧠",
         "resource_availability": 0.9,
         "resource_regeneration_rate": 0.6,

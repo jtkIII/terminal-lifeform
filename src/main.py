@@ -1,3 +1,4 @@
+import os
 import random
 import sys
 
@@ -19,9 +20,9 @@ def choose_world() -> str:
         preset = WORLD_PRESETS[name]
         icon = preset.get("icon", "")
         desc = preset.get("description", "No description provided.")
-        print(f"{idx}. {icon} {name:<23} — {desc}")
+        print(f"{idx:<2} {icon:<5} {name:<5} — {desc}")
 
-    print("\n  0. 🎲 Random World         — Choose a random preset from the list above")
+    print("\n0. 🎲 Random World         — Choose a random preset from the list above")
 
     while True:
         choice = input("\nEnter the number of the world you want to run: ").strip()
@@ -54,6 +55,7 @@ if __name__ == "__main__":
         if len(sys.argv) > 1:  # If a world name was provided as an argument, use it.
             world_name = sys.argv[1]
         else:
+            os.system("cls" if os.name == "nt" else "clear")
             world_name = choose_world()  # Otherwise, show the interactive selector.
 
         run_simulation(world_name)

@@ -1,13 +1,17 @@
 import json
 import os
 from datetime import datetime
+from pathlib import Path
 
 from colored import Back, Fore, Style
 
 from utils.logging_config import setup_logger
 
 logger = setup_logger(__name__)
-totals_json = "../logs/sim_totals.json"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]  # goes up from src/ to project root
+LOGS_DIR = PROJECT_ROOT / "logs"
+LOGS_DIR.mkdir(exist_ok=True)  # ensure logs/ exists
+TOTALS_FILE = LOGS_DIR / "sim_totals.json"
 
 final_totals = {
     "world_name": "",
@@ -67,25 +71,24 @@ def update_totals(
     append_totals_to_file()
 
 
-def append_totals_to_file(filename: str = totals_json):
+def append_totals_to_file(filename: Path = TOTALS_FILE):
     """
     Append the final totals to a specified JSON file.
     Each entry is appended as a new object in a list.
     """
     try:
         data = []
-        if os.path.exists(filename):
-            with open(filename) as file:
-                try:
-                    data = json.load(file)
-                except json.JSONDecodeError:
-                    data = []
+        if filename.exists():
+            try:
+                data = json.loads(filename.read_text())
+            except json.JSONDecodeError:
+                data = []
+
         data.append(final_totals.copy())
-        with open(filename, "w") as file:
-            json.dump(data, file, indent=2)
-        logger.info(f"Final totals appended to {filename}")
+        filename.write_text(json.dumps(data, indent=2))
+        logger.info(f"✅ Final totals appended to {filename}")
     except Exception as e:
-        logger.error(f"Failed to append totals to {filename}: {e}")
+        logger.error(f"❌ Failed to append totals to {filename}: {e}")
 
 
 def event_tracker(event_type: str, **kwargs):
@@ -137,7 +140,7 @@ def event_tracker(event_type: str, **kwargs):
         logger.warning(f"Unknown event type: {event_type}")
 
 
-def compare_last_runs(n=5, filename=totals_json):
+def compare_last_runs(n=5, filename: Path = TOTALS_FILE):
     """
     Compare and display the last n simulation runs from the log file.
     Args:
@@ -156,10 +159,10 @@ def compare_last_runs(n=5, filename=totals_json):
     print(f"\n📊 Last {min(n, len(data))} Simulation Runs:\n")
     for entry in data[-n:]:
         print(
-            f"🌍 {entry['world_name']:<20} | "
-            f"📈 Max: {entry['max_entities']:<5} | "
+            f"🌍 {entry['world_name']:<20} "
+            f"✅ Alive End: {entry['total_alive_at_conclusion']:<10} "
             f"👶 Births: {entry['total_births']:<5} | "
             f"💀 Deaths: {entry['total_deaths']:<5} | "
-            f"✅ Alive End: {entry['total_alive_at_conclusion']}"
+            f"📈 Max: {entry['max_entities']} "
         )
     return data[-n:]

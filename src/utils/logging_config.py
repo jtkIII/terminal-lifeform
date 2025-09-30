@@ -1,4 +1,10 @@
 import logging
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]  # goes up from src/ to project root
+LOGS_DIR = PROJECT_ROOT / "logs"
+LOGS_DIR.mkdir(exist_ok=True)  # ensure logs/ exists
+LOG_FILE = LOGS_DIR / "simulation.log"
 
 
 def setup_logger(name=__name__):
@@ -8,7 +14,7 @@ def setup_logger(name=__name__):
     )  # Set to logging.DEBUG to see detailed interaction logs
 
     # Use mode="w" to overwrite the log file each run
-    file_handler = logging.FileHandler("../../simulation.log", mode="w")
+    file_handler = logging.FileHandler(LOG_FILE, mode="w")
     console_handler = logging.StreamHandler()
     formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 

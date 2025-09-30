@@ -37,6 +37,8 @@ class Simulation:
         self.count = 0
         self.boom_count = 0
         self.last_boom_epoch = -20  # Ensure first boom can happen after 20 epochs
+        self.population_history: list[int] = []
+        self.memory_window: int = 17  # how many epochs back the world 'remembers'
 
         if isinstance(world, dict):
             self.environment_factors = world.copy()
@@ -403,13 +405,68 @@ class Simulation:
             self.environment_factors["disaster_impact"], 1.0
         )
 
+    def adapt_environment(self):
+        """
+        Adaptive environment with ecological memory.
+        World reacts to population pressure AND trends over time.
+        """
+        if not self.environment_factors.get("adaptive_environment"):
+            return
+
+        alive_count = len([e for e in self.entities if e.is_alive()])
+        capacity = self.environment_factors.get("carrying_capacity", 1000)
+        density_ratio = alive_count / capacity
+
+        if self.population_history:
+            avg_past = sum(self.population_history) / len(self.population_history)
+        else:
+            avg_past = alive_count
+
+        trend = (alive_count - avg_past) / avg_past if avg_past > 0 else 0.0
+
+        # --- Push back on persistent overgrowth ---
+        if density_ratio > 1.2 or trend > 0.15:
+            self.environment_factors["resource_availability"] *= 0.9
+            self.environment_factors["disaster_chance"] *= 1.2
+            self.environment_factors["radiation_background"] *= 1.05
+            self.environment_factors["mutation_rate"] *= 1.1
+
+            logger.info(
+                f"🌍 Gaea remembers past abundance. Pop rising ({trend:+.2%}), "
+                "resources restricted and disasters intensify."
+            )
+
+        # --- Assist recovery if population trending downward ---
+        elif density_ratio < 0.4 or trend < -0.15:
+            self.environment_factors["resource_availability"] *= 1.12
+            self.environment_factors["disaster_chance"] *= 0.85
+            self.environment_factors["mutation_rate"] *= 1.15
+
+            logger.info(
+                f"🌱 Gaea recalls past collapse. Pop falling ({trend:+.2%}), "
+                "resources increased to stabilize life."
+            )
+
+        # --- Optional: dampen overshooting ---
+        if abs(trend) > 0.25:
+            self.environment_factors["mutation_rate"] *= 1.2
+            logger.info("⚠️ Rapid change triggers evolutionary pressure!")
+
+        # Clamp factors to avoid runaway values
+        self.environment_factors["resource_availability"] = max(
+            0.1, min(self.environment_factors["resource_availability"], 2.0)
+        )
+        self.environment_factors["mutation_rate"] = max(
+            0.01, min(self.environment_factors["mutation_rate"], 0.8)
+        )
+
     def run_simulation(self):  # noqa: C901
         """
         Runs the simulation for the specified number of Epochs.
         """
 
         logger.info(
-            f"\n🌍 Terminal Lifeform Sim Init with the {self.world_name} world; 📜 {self.world_description}"
+            f"\n🌍 Terminal Lifeform in {self.world_name} world; 📜 {self.world_description}"
         )
         pause_simulation(20, desc="init term lifeform...", delay=0.05)
 
@@ -424,8 +481,6 @@ class Simulation:
                 trigger_random_events(self)
 
             trigger_predator_event(self, severity=0.3)
-
-            # self.natural_disaster(severity=0.25)  # Check for natural disasters
             trigger_natural_disaster(self, severity=0.25)
 
             logger.info(
@@ -441,6 +496,7 @@ class Simulation:
                 self.process_entity(entity)  # Process each entity individually
 
             self.handle_interactions()  # interactions between entities
+            self.handle_reproduction()
 
             for entity in self.entities:
                 entity.update_status()  # Re-update status after interactions
@@ -454,8 +510,9 @@ class Simulation:
                     )
 
             self.entities = [entity for entity in self.entities if entity.is_alive()]
-            self.handle_reproduction()
+
             alive_count = len(self.entities)
+            self.population_history.append(alive_count)
             thriving_count = sum(1 for e in self.entities if e.status == "thriving")
             struggling_count = sum(1 for e in self.entities if e.status == "struggling")
 
@@ -465,6 +522,7 @@ class Simulation:
                 )
                 break  # They're all dead, Jim.
             else:
+                # We have survivors, let's process them
                 # fight the bell curve collapse Apply prosperity-based growth modifier
                 self.efficiency_modifier(alive_count)
 
@@ -473,6 +531,9 @@ class Simulation:
 
                 if alive_count > self.environment_factors["carrying_capacity"]:
                     self.over_population()
+
+                if len(self.population_history) > self.memory_window:
+                    self.population_history.pop(0)  # keep memory bounded
 
                 if (
                     alive_count < self.environment_factors["optimal_density"]
@@ -495,6 +556,7 @@ class Simulation:
 
                 self.update_environment()  # Update environment for next Epoch
                 self.apply_feedback_loops(alive_count)  # Dynamic environmental feedback
+                self.adapt_environment()  # If world supports it, adaptively change environment
 
                 logger.info(
                     f" {Back.magenta} Population: Alive={alive_count}, Thriving={thriving_count}, Struggling={struggling_count}{Style.reset}"

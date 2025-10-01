@@ -5,6 +5,8 @@ Date: 2024-06-10
 Description: Utility functions for entity state calculations.
 """
 
+import random
+
 from entity import Entity
 from utils.logging_config import setup_logger
 
@@ -103,6 +105,87 @@ def add_entity(sim, entity: Entity):
     sim.entities.append(entity)
     sim.total_entities += 1
     logger.info(f"Added new entity: {entity.id}: {entity.name}")
+
+
+def process_entity(sim, entity: Entity):
+    """
+    Applies all updates to a single entity for the current Epoch.
+    """
+
+    if not entity.is_alive():
+        return  # Skip dead entities
+
+    for entity in sim.entities:  # Update entity's environmental memory
+        condition = sim.environment_factors["resource_availability"] - 0.5
+        # Positive if abundant, negative if scarce
+        entity.environment_memory.append(condition)
+        if len(entity.environment_memory) > entity.memory_span:
+            entity.environment_memory.pop(0)
+
+    entity.age += 1
+    energy_change = calc_energy_change(entity, sim.environment_factors)
+    entity.energy = max(0.0, min(100.0, entity.energy + energy_change))
+    health_change = calc_health_change(entity, sim.environment_factors)
+    entity.health = max(0.0, min(100.0, entity.health + health_change))
+    entity.update_status()
+
+
+def adapt_entities(sim):
+    """
+    Adjust entity traits based on environmental history.
+    Resets memory on significant mutation to simulate evolutionary leaps.
+    """
+    for entity in sim.entities:
+        if not entity.is_alive():
+            continue
+
+        # Initialize memory-related attributes if missing
+        if not hasattr(entity, "environment_memory"):
+            entity.environment_memory = []
+        if not hasattr(entity, "memory_span"):
+            entity.memory_span = 20
+
+        # Record current environment condition relative to baseline
+        condition = sim.environment_factors["resource_availability"] - 0.5
+        entity.environment_memory.append(condition)
+        if len(entity.environment_memory) > entity.memory_span:
+            entity.environment_memory.pop(0)
+
+        avg_condition = sum(entity.environment_memory) / len(entity.environment_memory)
+
+        # --- 1. Phenotypic adaptation (within lifetime) ---
+        if avg_condition < -0.1:
+            # Scarcity = survival traits
+            entity.resilience *= 1.02
+            entity.metabolism_rate *= 0.97
+            entity.reproduction_chance *= 0.93
+        elif avg_condition > 0.1:
+            # Abundance = growth traits
+            entity.resilience *= 0.97
+            entity.metabolism_rate *= 1.03
+            entity.reproduction_chance *= 1.07
+
+        # --- 2. Small random drift ---
+        drift = random.uniform(0.98, 1.02)
+        entity.resilience *= drift
+        entity.metabolism_rate *= drift
+        entity.reproduction_chance *= drift
+
+        # --- 3. Mutation events (evolutionary leaps) ---
+        if random.random() < sim.environment_factors.get("mutation_rate", 0.05) * 0.1:
+            # Reset memory on big mutation — the entity 'forgets' old pressures
+            entity.environment_memory.clear()
+
+            # Big changes (±20%) — this simulates evolution, not just plasticity
+            mutation_factor = random.uniform(0.8, 1.2)
+            entity.resilience *= mutation_factor
+            entity.metabolism_rate *= mutation_factor
+            entity.reproduction_chance *= mutation_factor
+
+        # --- 4. Clamp to avoid runaway traits ---
+        entity.resilience = max(0.1, min(entity.resilience, 5.0))
+        entity.metabolism_rate = max(0.1, min(entity.metabolism_rate, 5.0))
+        entity.reproduction_chance = max(0.001, min(entity.reproduction_chance, 2.0))
 
 
 # filepath: /home/jtk/Dev/TerminalLifeform/src/utils/entity_utils.py

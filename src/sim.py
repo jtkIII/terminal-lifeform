@@ -26,11 +26,7 @@ from stats import (
     update_global_trait_tracker,
     update_totals,
 )
-from utils.entity_utils import (
-    add_entity,
-    calc_energy_change,
-    calc_health_change,
-)
+from utils.entity_utils import adapt_entities, add_entity, process_entity
 from utils.logging_config import setup_logger
 from utils.utils import pause_simulation, time_passes
 
@@ -55,7 +51,7 @@ class Simulation:
         self.population_history: list[int] = []
         self.memory_window: int = 17  # how many epochs back the world 'remembers'
         self.memory_window = world.get("memory_window", 50)
-        self.memory_sensitivity = world.get("memory_sensitivity", 1.0)
+        self.memory_sensitivity = world.get("memory_sensitivity", 1.1)
 
         if isinstance(world, dict):
             self.environment_factors = world.copy()
@@ -68,37 +64,6 @@ class Simulation:
             add_entity(self, Entity())
 
         logger.info(f"Simulation initialized with {len(self.entities)} entities.")
-
-    def natural_disaster(self, severity: float):
-        # Dynamic Event: Natural Disaster if pollution or temp too high
-        logger.info("\n 💨 Natural Disaster!")
-        if (
-            self.environment_factors["pollution"] > 0.5
-            or self.environment_factors["temperature"] > 35.0
-        ) and random.random() < self.environment_factors["disaster_chance"]:
-            # Disaster occurs
-            alive_count = len([e for e in self.entities if e.is_alive()])
-            num_to_remove = int(
-                alive_count * self.environment_factors["disaster_impact"] * severity
-            )
-            num_to_remove = max(1, num_to_remove)  # Ensure at least 1 entity is removed
-
-            removed_entities = []
-
-            for entity in random.sample(
-                [e for e in self.entities if e.is_alive()],
-                min(num_to_remove, alive_count),
-            ):
-                entity.health = 0  # Disaster instantly kills
-                entity.update_status()  # Mark as dead
-                removed_entities.append(entity.name)
-
-            event_tracker(
-                "disaster",
-                event="Natural Disaster!",
-                time=self.current_time,
-                name=len(removed_entities),
-            )
 
     def baby_boom(self):
         logger.info("\n👶 Baby Boom!")
@@ -148,92 +113,6 @@ class Simulation:
             time=self.current_time,
             name=f"{num_new_babies} new entities born.",
         )
-
-    def process_entity(self, entity):
-        """
-        Applies all updates to a single entity for the current Epoch.
-        """
-
-        if not entity.is_alive():
-            return  # Skip dead entities
-
-        for entity in self.entities:  # Update entity's environmental memory
-            condition = self.environment_factors["resource_availability"] - 0.5
-            # Positive if abundant, negative if scarce
-            entity.environment_memory.append(condition)
-            if len(entity.environment_memory) > entity.memory_span:
-                entity.environment_memory.pop(0)
-
-        entity.age += 1
-        energy_change = calc_energy_change(entity, self.environment_factors)
-        entity.energy = max(0.0, min(100.0, entity.energy + energy_change))
-        health_change = calc_health_change(entity, self.environment_factors)
-        entity.health = max(0.0, min(100.0, entity.health + health_change))
-        entity.update_status()
-
-    def adapt_entities(self):
-        """
-        Adjust entity traits based on environmental history.
-        Resets memory on significant mutation to simulate evolutionary leaps.
-        """
-        for entity in self.entities:
-            if not entity.is_alive():
-                continue
-
-            # Initialize memory-related attributes if missing
-            if not hasattr(entity, "environment_memory"):
-                entity.environment_memory = []
-            if not hasattr(entity, "memory_span"):
-                entity.memory_span = 20
-
-            # Record current environment condition relative to baseline
-            condition = self.environment_factors["resource_availability"] - 0.5
-            entity.environment_memory.append(condition)
-            if len(entity.environment_memory) > entity.memory_span:
-                entity.environment_memory.pop(0)
-
-            avg_condition = sum(entity.environment_memory) / len(
-                entity.environment_memory
-            )
-
-            # --- 1. Phenotypic adaptation (within lifetime) ---
-            if avg_condition < -0.1:
-                # Scarcity = survival traits
-                entity.resilience *= 1.02
-                entity.metabolism_rate *= 0.97
-                entity.reproduction_chance *= 0.93
-            elif avg_condition > 0.1:
-                # Abundance = growth traits
-                entity.resilience *= 0.97
-                entity.metabolism_rate *= 1.03
-                entity.reproduction_chance *= 1.07
-
-            # --- 2. Small random drift ---
-            drift = random.uniform(0.98, 1.02)
-            entity.resilience *= drift
-            entity.metabolism_rate *= drift
-            entity.reproduction_chance *= drift
-
-            # --- 3. Mutation events (evolutionary leaps) ---
-            if (
-                random.random()
-                < self.environment_factors.get("mutation_rate", 0.05) * 0.1
-            ):
-                # Reset memory on big mutation — the entity 'forgets' old pressures
-                entity.environment_memory.clear()
-
-                # Big changes (±20%) — this simulates evolution, not just plasticity
-                mutation_factor = random.uniform(0.8, 1.2)
-                entity.resilience *= mutation_factor
-                entity.metabolism_rate *= mutation_factor
-                entity.reproduction_chance *= mutation_factor
-
-            # --- 4. Clamp to avoid runaway traits ---
-            entity.resilience = max(0.1, min(entity.resilience, 5.0))
-            entity.metabolism_rate = max(0.1, min(entity.metabolism_rate, 5.0))
-            entity.reproduction_chance = max(
-                0.001, min(entity.reproduction_chance, 2.0)
-            )
 
     def efficiency_modifier(self, alive_count):
         if alive_count > self.environment_factors["prosperity_threshold"]:
@@ -430,7 +309,7 @@ class Simulation:
             time_passes(0.75)  # Simulate time passing
 
             for entity in self.entities:
-                self.process_entity(entity)  # Process each entity individually
+                process_entity(self, entity)  # Process each entity individually
 
             self.handle_interactions()  # interactions between entities
 
@@ -457,7 +336,7 @@ class Simulation:
 
             self.handle_reproduction()
 
-            self.adapt_entities()  # Phenotypic plasticity: short-term adaptation
+            adapt_entities(self)  # Phenotypic plasticity: short-term adaptation
 
             for entity in self.entities:
                 entity.update_status()  # Re-update status after interactions
@@ -515,14 +394,9 @@ class Simulation:
                         logger.info("Maximum number of baby booms reached.")
 
                 record_trait_snapshot(self.entities, self.epoch_count)
-
-                update_environment(self)  # Update environment for next Epoch
-                apply_feedback_loops(
-                    self, alive_count
-                )  # Dynamic environmental feedback
-                adapt_environment(
-                    self
-                )  # If world supports it, adaptively change environment
+                update_environment(self)
+                apply_feedback_loops(self, alive_count)
+                adapt_environment(self)
 
                 logger.info(
                     f" {Back.magenta}Alive={alive_count}, Thriving={thriving_count}, Struggling={struggling_count}{Style.reset}"

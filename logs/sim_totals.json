@@ -754,5 +754,61 @@
     "total_disasters": 9,
     "total_mutations": 630,
     "max_entities": 607
+  },
+  {
+    "world_name": "entropy_world",
+    "run_id": "2025-10-01T15:08:55",
+    "epochs": 300,
+    "total_entities": 896,
+    "total_alive_at_conclusion": 68,
+    "total_struggling": 14,
+    "total_thriving": 43,
+    "total_deaths": 828,
+    "total_births": 288,
+    "total_disasters": 35,
+    "total_mutations": 455,
+    "max_entities": 385
+  },
+  {
+    "world_name": "bioengineered_world",
+    "run_id": "2025-10-01T15:16:05",
+    "epochs": 300,
+    "total_entities": 1013,
+    "total_alive_at_conclusion": 516,
+    "total_struggling": 501,
+    "total_thriving": 1,
+    "total_deaths": 497,
+    "total_births": 270,
+    "total_disasters": 1,
+    "total_mutations": 199,
+    "max_entities": 745
+  },
+  {
+    "world_name": "dunbars_world",
+    "run_id": "2025-10-01T15:21:41",
+    "epochs": 300,
+    "total_entities": 641,
+    "total_alive_at_conclusion": 182,
+    "total_struggling": 24,
+    "total_thriving": 111,
+    "total_deaths": 459,
+    "total_births": 265,
+    "total_disasters": 0,
+    "total_mutations": 264,
+    "max_entities": 195
+  },
+  {
+    "world_name": "sentinel_world",
+    "run_id": "2025-10-01T15:36:24",
+    "epochs": 150,
+    "total_entities": 805,
+    "total_alive_at_conclusion": 395,
+    "total_struggling": 12,
+    "total_thriving": 217,
+    "total_deaths": 410,
+    "total_births": 125,
+    "total_disasters": 33,
+    "total_mutations": 191,
+    "max_entities": 505
   }
 ]

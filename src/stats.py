@@ -20,6 +20,8 @@ LOGS_DIR = PROJECT_ROOT / "logs"
 LOGS_DIR.mkdir(exist_ok=True)  # ensure logs/ exists
 TOTALS_FILE = LOGS_DIR / "sim_totals.json"
 
+trait_history = []  # store per-epoch trait snapshots
+
 final_totals = {
     "world_name": "",
     "run_id": "",
@@ -215,6 +217,139 @@ def compare_last_runs(n=5, filename: Path = TOTALS_FILE):
     else:
         print("No worlds used more than once.")
     return data[-n:]
+
+
+# def record_trait_snapshot(entities, epoch: int):
+#     """
+#     Record average trait values across all living entities for this epoch.
+#     """
+#     alive = [e for e in entities if e.is_alive()]
+#     if not alive:
+#         # No survivors — still log a zeroed-out snapshot
+#         trait_history.append(
+#             {
+#                 "epoch": epoch,
+#                 "population": 0,
+#                 "avg_resilience": 0.0,
+#                 "avg_metabolism_rate": 0.0,
+#                 "avg_reproduction_chance": 0.0,
+#                 "avg_health": 0.0,
+#                 "avg_energy": 0.0,
+#             }
+#         )
+#         return
+
+#     trait_history.append(
+#         {
+#             "epoch": epoch,
+#             "population": len(alive),
+#             "avg_resilience": sum(e.resilience for e in alive) / len(alive),
+#             "avg_metabolism_rate": sum(e.metabolism_rate for e in alive) / len(alive),
+#             "avg_reproduction_chance": sum(e.reproduction_chance for e in alive)
+#             / len(alive),
+#             "avg_health": sum(e.health for e in alive) / len(alive),
+#             "avg_energy": sum(e.energy for e in alive) / len(alive),
+#         }
+#     )
+
+
+# def save_trait_history(filename="logs/trait_evolution.json"):
+#     """
+#     Save all recorded trait history data to a JSON file at the end of the simulation.
+#     """
+
+#     os.makedirs(os.path.dirname(filename), exist_ok=True)
+#     with open(filename, "w") as f:
+#         json.dump(trait_history, f, indent=2)
+
+
+def record_trait_snapshot(entities, epoch: int):
+    alive = [e for e in entities if e.is_alive()]
+    if not alive:
+        trait_history.append(
+            {
+                "epoch": epoch,
+                "population": 0,
+                "avg_resilience": 0.0,
+                "avg_metabolism_rate": 0.0,
+                "avg_reproduction_chance": 0.0,
+                "avg_health": 0.0,
+                "avg_energy": 0.0,
+            }
+        )
+        return
+
+    trait_history.append(
+        {
+            "epoch": epoch,
+            "population": len(alive),
+            "avg_resilience": sum(e.resilience for e in alive) / len(alive),
+            "avg_metabolism_rate": sum(e.metabolism_rate for e in alive) / len(alive),
+            "avg_reproduction_chance": sum(e.reproduction_chance for e in alive)
+            / len(alive),
+            "avg_health": sum(e.health for e in alive) / len(alive),
+            "avg_energy": sum(e.energy for e in alive) / len(alive),
+        }
+    )
+
+
+def save_trait_history(filename="logs/trait_evolution.json"):
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+    with open(filename, "w") as f:
+        json.dump(trait_history, f, indent=2)
+
+
+def update_global_trait_tracker(filename="logs/trait_tracker.json"):
+    """
+    Update a global running average of traits across *all* runs.
+    """
+    # Compute final averages for this run
+    if not trait_history:
+        return
+    final_epoch = trait_history[
+        -1
+    ]  # could average all epochs, but last epoch is often most interesting
+
+    # Load existing tracker
+    if os.path.exists(filename):
+        with open(filename, "r") as f:
+            tracker = json.load(f)
+    else:
+        tracker = {
+            "total_runs": 0,
+            "avg_resilience": 0.0,
+            "avg_metabolism_rate": 0.0,
+            "avg_reproduction_chance": 0.0,
+            "avg_health": 0.0,
+            "avg_energy": 0.0,
+            "avg_population": 0.0,
+        }
+
+    n = tracker["total_runs"]
+    tracker["total_runs"] += 1
+
+    # Running average update (classic incremental mean)
+    tracker["avg_resilience"] = (
+        tracker["avg_resilience"] * n + final_epoch["avg_resilience"]
+    ) / (n + 1)
+    tracker["avg_metabolism_rate"] = (
+        tracker["avg_metabolism_rate"] * n + final_epoch["avg_metabolism_rate"]
+    ) / (n + 1)
+    tracker["avg_reproduction_chance"] = (
+        tracker["avg_reproduction_chance"] * n + final_epoch["avg_reproduction_chance"]
+    ) / (n + 1)
+    tracker["avg_health"] = (tracker["avg_health"] * n + final_epoch["avg_health"]) / (
+        n + 1
+    )
+    tracker["avg_energy"] = (tracker["avg_energy"] * n + final_epoch["avg_energy"]) / (
+        n + 1
+    )
+    tracker["avg_population"] = (
+        tracker["avg_population"] * n + final_epoch["population"]
+    ) / (n + 1)
+
+    with open(filename, "w") as f:
+        json.dump(tracker, f, indent=2)
 
 
 # filepath: /home/jtk/Dev/TerminalLifeform/src/stats.py

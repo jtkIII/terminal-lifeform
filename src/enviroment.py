@@ -38,7 +38,7 @@ def adapt_environment(sim):
         sim.environment_factors["mutation_rate"] *= 1.1
 
         logger.info(
-            f"🌍 Gaea remembers past abundance. Pop rising ({trend:+.2%}), "
+            f"🌍 JTk remembers past abundance. Pop rising ({trend:+.2%}), "
             "resources restricted and disasters intensify."
         )
 
@@ -49,7 +49,7 @@ def adapt_environment(sim):
         sim.environment_factors["mutation_rate"] *= 1.15
 
         logger.info(
-            f"🌱 Gaea recalls past collapse. Pop falling ({trend:+.2%}), "
+            f"🌱 JTk recalls past collapse. Pop falling ({trend:+.2%}), "
             "resources increased to stabilize life."
         )
 

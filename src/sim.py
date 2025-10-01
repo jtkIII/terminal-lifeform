@@ -19,7 +19,13 @@ from events import (
     trigger_predator_event,
     trigger_random_events,
 )
-from stats import event_tracker, update_totals
+from stats import (
+    event_tracker,
+    record_trait_snapshot,
+    save_trait_history,
+    update_global_trait_tracker,
+    update_totals,
+)
 from utils.entity_utils import (
     calc_energy_change,
     calc_health_change,
@@ -514,6 +520,8 @@ class Simulation:
                     else:
                         logger.info("Maximum number of baby booms reached.")
 
+                record_trait_snapshot(self.entities, self.count)
+
                 update_environment(self)  # Update environment for next Epoch
                 apply_feedback_loops(
                     self, alive_count
@@ -529,6 +537,9 @@ class Simulation:
         logger.info(
             f"\n--- Simulation {self.world_name} Finished at Epoch {self.current_time} ---"
         )
+
+        save_trait_history()
+        update_global_trait_tracker()
 
         update_totals(
             self.epochs,

@@ -1,4 +1,10 @@
-# filepath: /home/jtk/Dev/TerminalLifeform/src/params.py
+"""
+File: params.py
+Author: Jtk III
+Date: 2024-06-10
+Description: Default parameters for entities and environment.
+"""
+
 import random
 
 default_environment_factors = {
@@ -31,19 +37,6 @@ default_environment_factors = {
     "prosperity_boost": 1.3,  # Growth multiplier if above threshold
 }
 
-# Override with specific simulation parameters
-# override_params = {
-#     # "temperature": 20.0,
-#     # "pollution": 0.1,
-#     # "event_chance": 0.03,
-#     # "interaction_strength": 0.3,
-#     # "mutation_rate": 0.13,
-#     # "mutation_strength": 0.13,
-#     # "predator_chance": 0.13,
-#     # "predator_threshold": 1200,
-#     "predator_impact_percentage": 0.1,  # 1% of population removed by predator
-# }
-
 entity_params = {
     "max_age": 99,
     "initial_health": 100.0,
@@ -62,30 +55,3 @@ entity_params = {
     "aggression": 0.3,
     "cooperation": 0.1,
 }
-
-# hardy_entity_params = {
-#     "max_age": 111,
-#     "resilience": 0.31,
-#     "foraging_efficiency": 0.55,
-#     "metabolism_rate": 0.3,
-#     "reproduction_chance": 0.25,
-#     "aggression": 0.25,
-# }
-
-# random_parameters = {
-#     "max_age": random.randint(55, 135),
-#     "metabolism_rate": random.uniform(0.1, 1.0),
-#     "foraging_efficiency": random.uniform(0.35, 1.0),
-#     "resilience": random.uniform(0.0, 1.0),
-#     "reproduction_chance": random.uniform(0.05, 0.3),
-#     "aggression": random.uniform(0.0, 1.0),
-# }
-
-# max_parameters = {
-#     "max_age": 135,
-#     "metabolism_rate": 1.0,
-#     "foraging_efficiency": 1.0,
-#     "resilience": 1.0,
-#     "reproduction_chance": 0.5,
-#     "aggression": 1.0,
-# }

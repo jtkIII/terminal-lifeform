@@ -1,3 +1,10 @@
+"""
+File: enviroment.py
+Author: Jtk III
+Date: 2024-06-10
+Description: Environment functions for the simulation.
+"""
+
 from utils.logging_config import setup_logger
 
 logger = setup_logger(__name__)
@@ -150,3 +157,6 @@ def apply_feedback_loops(sim, population: int) -> None:
     sim.environment_factors["disaster_impact"] = min(
         sim.environment_factors["disaster_impact"], 1.0
     )
+
+
+# filepath: /home/jtk/Dev/TerminalLifeform/src/enviroment.py

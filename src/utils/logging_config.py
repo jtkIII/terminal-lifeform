@@ -1,3 +1,10 @@
+"""
+File: logging_config.py
+Author: Jtk III
+Date: 2024-06-10
+Description: Logging configuration for the simulation.
+"""
+
 import logging
 from pathlib import Path
 
@@ -30,3 +37,6 @@ def setup_logger(name=__name__):
         logger.addHandler(console_handler)
 
     return logger
+
+
+# filepath: /home/jtk/Dev/TerminalLifeform/src/utils/logging_config.py

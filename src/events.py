@@ -1,3 +1,10 @@
+"""
+File: events.py
+Author: Jtk III
+Date: 2024-06-10
+Description: Random and dynamic event functions for the simulation.
+"""
+
 import random
 
 from colored import Back, Style
@@ -199,3 +206,6 @@ def trigger_natural_disaster(sim, severity: float):
             time=sim.current_time,
             name=len(removed_entities),
         )
+
+
+# filepath: /home/jtk/Dev/TerminalLifeform/src/events.py

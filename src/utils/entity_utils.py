@@ -1,3 +1,10 @@
+"""
+File: entity_utils.py
+Author: Jtk III
+Date: 2024-06-10
+Description: Utility functions for entity state calculations.
+"""
+
 from entity import Entity
 
 
@@ -84,3 +91,6 @@ def validate_entity_params(params: dict):
     missing = [k for k in required_keys if k not in params]
     if missing:
         raise ValueError(f"Missing entity parameters: {missing}")
+
+
+# filepath: /home/jtk/Dev/TerminalLifeform/src/utils/entity_utils.py

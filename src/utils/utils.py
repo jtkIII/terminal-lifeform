@@ -1,3 +1,10 @@
+"""
+File: utils.py
+Author: Jtk III
+Date: 2024-06-10
+Description: General utility functions for the simulation.
+"""
+
 import random
 import time
 
@@ -23,3 +30,6 @@ def time_passes(delay: float = 0.01):
     """Simulate time passing with a short delay."""
     if random.random() < 0.1:  # 10% chance to pause
         time.sleep(delay)  # simulate time passing
+
+
+# filepath: /home/jtk/Dev/TerminalLifeform/src/utils/utils.py

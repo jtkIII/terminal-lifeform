@@ -1,3 +1,10 @@
+"""
+File: sim.py
+Author: Jtk III
+Date: 2024-06-10
+Description: Core simulation engine for Terminal Lifeform.
+"""
+
 import math
 import random
 import time
@@ -166,51 +173,62 @@ class Simulation:
 
     def adapt_entities(self):
         """
-        Adjust each entity's traits based on rolling memory of past environmental conditions.
-        This simulates phenotypic plasticity — short-term adaptation within a lifetime.
+        Adjust entity traits based on environmental history.
+        Resets memory on significant mutation to simulate evolutionary leaps.
         """
         for entity in self.entities:
             if not entity.is_alive():
                 continue
 
-            # --- 1. Record current environmental condition ---
-            condition = self.environment_factors["resource_availability"] - 0.5
-            # Positive = abundance, Negative = scarcity
+            # Initialize memory-related attributes if missing
             if not hasattr(entity, "environment_memory"):
                 entity.environment_memory = []
             if not hasattr(entity, "memory_span"):
-                entity.memory_span = 20  # how many epochs they “remember”
+                entity.memory_span = 20
 
+            # Record current environment condition relative to baseline
+            condition = self.environment_factors["resource_availability"] - 0.5
             entity.environment_memory.append(condition)
             if len(entity.environment_memory) > entity.memory_span:
                 entity.environment_memory.pop(0)
 
-            # --- 2. Calculate average condition ---
             avg_condition = sum(entity.environment_memory) / len(
                 entity.environment_memory
             )
 
-            # --- 3. Adapt traits based on history ---
-            # These multipliers are gentle so adaptation is gradual.
+            # --- 1. Phenotypic adaptation (within lifetime) ---
             if avg_condition < -0.1:
-                # Life has been hard: survival mode
+                # Scarcity = survival traits
                 entity.resilience *= 1.02
                 entity.metabolism_rate *= 0.97
                 entity.reproduction_chance *= 0.93
-
             elif avg_condition > 0.1:
-                # Life has been easy: growth mode
+                # Abundance = growth traits
                 entity.resilience *= 0.97
                 entity.metabolism_rate *= 1.03
                 entity.reproduction_chance *= 1.07
 
-            # --- 4. Add small randomness for individual variation ---
+            # --- 2. Small random drift ---
             drift = random.uniform(0.98, 1.02)
             entity.resilience *= drift
             entity.metabolism_rate *= drift
             entity.reproduction_chance *= drift
 
-            # --- 5. Clamp values to prevent runaway explosion ---
+            # --- 3. Mutation events (evolutionary leaps) ---
+            if (
+                random.random()
+                < self.environment_factors.get("mutation_rate", 0.05) * 0.1
+            ):
+                # Reset memory on big mutation — the entity 'forgets' old pressures
+                entity.environment_memory.clear()
+
+                # Big changes (±20%) — this simulates evolution, not just plasticity
+                mutation_factor = random.uniform(0.8, 1.2)
+                entity.resilience *= mutation_factor
+                entity.metabolism_rate *= mutation_factor
+                entity.reproduction_chance *= mutation_factor
+
+            # --- 4. Clamp to avoid runaway traits ---
             entity.resilience = max(0.1, min(entity.resilience, 5.0))
             entity.metabolism_rate = max(0.1, min(entity.metabolism_rate, 5.0))
             entity.reproduction_chance = max(

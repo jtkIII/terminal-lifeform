@@ -1,3 +1,11 @@
+"""
+File: world_loader.py
+Author: Jtk III
+Date: 2024-06-10
+Description: Load and manage world presets for the simulation.
+"""
+
+import random
 from copy import deepcopy
 
 
@@ -64,6 +72,30 @@ def add_mutant_worlds():
     )
     WORLD_PRESETS["mutant_garden_world"] = mutant
     WORLD_PRESETS["mutant_chaotic_world"] = chaotic_mutant  # More extreme chaos
+
+
+def choose_world() -> str:
+    """Prompt the user to choose a world preset interactively with descriptions and a random option."""
+    worlds = list_worlds()
+
+    print("\n🌍 Available Worlds:\n")
+    for idx, name in enumerate(worlds, start=1):
+        preset = WORLD_PRESETS[name]
+        icon = preset.get("icon", "")
+        desc = preset.get("description", "No description provided.")
+        print(f"{idx:<2} {icon:<5} {name:<5} — {desc}")
+
+    print("\n0. 🎲 Random World         — Choose a random preset from the list above")
+
+    while True:
+        choice = input("\nEnter the number of the world you want to run: ").strip()
+        if choice.isdigit():
+            choice_int = int(choice)
+            if choice_int == 0:
+                return random.choice(worlds)
+            if 1 <= choice_int <= len(worlds):
+                return worlds[choice_int - 1]
+        print("❌ Invalid choice. Please enter a valid number.")
 
 
 WORLD_PRESETS = {
@@ -546,3 +578,5 @@ WORLD_PRESETS = {
         "adaptive_environment": True,  # New parameter to enable environmental feedback
     },
 }
+
+# filepath: /home/jtk/Dev/TerminalLifeform/src/utils/world_loader.py

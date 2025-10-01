@@ -502,5 +502,33 @@
     "total_disasters": 220,
     "total_mutations": 652,
     "max_entities": 326
+  },
+  {
+    "world_name": "sentient_world",
+    "run_id": "2025-09-30T19:50:04",
+    "epochs": 200,
+    "total_entities": 747,
+    "total_alive_at_conclusion": 251,
+    "total_struggling": 150,
+    "total_thriving": 1,
+    "total_deaths": 496,
+    "total_births": 142,
+    "total_disasters": 28,
+    "total_mutations": 389,
+    "max_entities": 404
+  },
+  {
+    "world_name": "sentinel_world",
+    "run_id": "2025-09-30T19:52:00",
+    "epochs": 200,
+    "total_entities": 854,
+    "total_alive_at_conclusion": 279,
+    "total_struggling": 88,
+    "total_thriving": 1,
+    "total_deaths": 1071,
+    "total_births": 305,
+    "total_disasters": 62,
+    "total_mutations": 628,
+    "max_entities": 536
   }
 ]

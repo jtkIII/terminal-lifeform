@@ -1,3 +1,10 @@
+"""
+File: stats.py
+Author: Jtk III
+Date: 2024-06-10
+Description: Statistics and logging for the simulation.
+"""
+
 import json
 import os
 from datetime import datetime
@@ -165,4 +172,49 @@ def compare_last_runs(n=5, filename: Path = TOTALS_FILE):
             f"💀 Deaths: {entry['total_deaths']:<5} | "
             f"📈 Max: {entry['max_entities']} "
         )
+    #  Jtk says: Let's also return an average of alive at conclusion
+    avg_alive = sum(e["total_alive_at_conclusion"] for e in data[-n:]) / min(
+        n, len(data)
+    )
+    print(
+        f"\n📈 Average Alive at end over last {min(n, len(data))} runs: {avg_alive:.2f}\n"
+    )
+    #  Jtk says: which world was used most often
+    world_counts = {}
+    for e in data:
+        world = e["world_name"]
+        world_counts[world] = world_counts.get(world, 0) + 1
+    most_common_world = max(world_counts, key=world_counts.get)  # type: ignore
+    # Display most commonly used world in a table-like format with average alive at conclusion
+    print("\n")
+    print(f"{'World Name':<25} {'Runs':<5} {'Avg Alive End':<13}")
+    print("-" * 45)
+    filtered_worlds = [
+        (world, num_runs) for world, num_runs in world_counts.items() if num_runs > 1
+    ]
+    if filtered_worlds:
+        # Calculate average alive at conclusion for each world
+        world_alive_averages = {}
+        for world, _ in filtered_worlds:
+            alive_values = [
+                entry["total_alive_at_conclusion"]
+                for entry in data
+                if entry["world_name"] == world
+            ]
+            avg_alive_for_world = sum(alive_values) / len(alive_values)
+            world_alive_averages[world] = avg_alive_for_world
+
+        for world, num_runs in sorted(
+            filtered_worlds, key=lambda x: x[1], reverse=True
+        ):
+            avg_alive = world_alive_averages[world]
+            print(f"{world:<25} {num_runs:<5} {avg_alive:<13.2f}")
+        print(
+            f"\n🌍 Most common worlds: {most_common_world} ({world_counts[most_common_world]} runs)"
+        )
+    else:
+        print("No worlds used more than once.")
     return data[-n:]
+
+
+# filepath: /home/jtk/Dev/TerminalLifeform/src/stats.py

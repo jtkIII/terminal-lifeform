@@ -1,4 +1,10 @@
-# filepath: /home/jtk/Dev/TerminalLifeform/src/entity.py
+"""
+File: entity.py
+Author: Jtk III
+Date: 2024-06-10
+Description: Defines the Entity class representing individuals in the simulation.
+"""
+
 import random
 import uuid
 
@@ -85,3 +91,6 @@ class Entity:
             f"Entity({self.id}: {self.name} Age:{self.age}, Health:{self.health:.1f}, "
             f"Energy:{self.energy:.1f}, Status:'{self.status}')"
         )
+
+
+# filepath: /home/jtk/Dev/TerminalLifeform/src/entity.py

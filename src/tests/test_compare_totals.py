@@ -8,7 +8,7 @@ Description: Test script to compare totals from the last N runs.
 from stats import compare_last_runs
 
 try:
-    results = compare_last_runs(n=10)
+    results = compare_last_runs(n=22)
     assert results, "No results returned from compare_last_runs"
     print("✅ Tests completed successfully.")
 except Exception as e:

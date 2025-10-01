@@ -530,5 +530,47 @@
     "total_disasters": 62,
     "total_mutations": 628,
     "max_entities": 536
+  },
+  {
+    "world_name": "chaotic_world",
+    "run_id": "2025-09-30T21:05:51",
+    "epochs": 200,
+    "total_entities": 661,
+    "total_alive_at_conclusion": 174,
+    "total_struggling": 80,
+    "total_thriving": 0,
+    "total_deaths": 487,
+    "total_births": 158,
+    "total_disasters": 40,
+    "total_mutations": 257,
+    "max_entities": 281
+  },
+  {
+    "world_name": "sentient_world",
+    "run_id": "2025-09-30T21:07:38",
+    "epochs": 200,
+    "total_entities": 746,
+    "total_alive_at_conclusion": 233,
+    "total_struggling": 155,
+    "total_thriving": 1,
+    "total_deaths": 1000,
+    "total_births": 300,
+    "total_disasters": 72,
+    "total_mutations": 596,
+    "max_entities": 382
+  },
+  {
+    "world_name": "post_cataclysmic_world",
+    "run_id": "2025-09-30T21:45:55",
+    "epochs": 200,
+    "total_entities": 600,
+    "total_alive_at_conclusion": 76,
+    "total_struggling": 38,
+    "total_thriving": 0,
+    "total_deaths": 1524,
+    "total_births": 463,
+    "total_disasters": 238,
+    "total_mutations": 816,
+    "max_entities": 250
   }
 ]

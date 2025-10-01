@@ -9,6 +9,7 @@ version = "0.1.0"
 dependencies = [
     "colored>=2.3.0",
     "faker>=37.4.0",
+    "matplotlib>=3.10.6",
     "rich>=14.0.0",
     "snakeviz>=2.2.2",
     "tqdm>=4.67.1",

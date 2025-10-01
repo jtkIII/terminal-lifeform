@@ -27,9 +27,9 @@ from stats import (
     update_totals,
 )
 from utils.entity_utils import (
+    add_entity,
     calc_energy_change,
     calc_health_change,
-    validate_entity_params,
 )
 from utils.logging_config import setup_logger
 from utils.utils import pause_simulation, time_passes
@@ -42,13 +42,13 @@ class Simulation:
     Manages the overall simulation, including entities, time, and environment.
     """
 
-    def __init__(self, world, initial_entities=5, time_steps=1000):
+    def __init__(self, world, init_ents=5, epochs=1000):
         self.entities = []
         self.current_time = 0
         self.total_entities = 0
-        self.epochs = time_steps
+        self.epochs = epochs
         self.max_entities = 0
-        self.count = 0
+        self.epoch_count = 0
         self.boom_count = 0
         self.drift = random.uniform(0.95, 1.05)
         self.last_boom_epoch = -20  # Ensure first boom can happen after 20 epochs
@@ -64,16 +64,10 @@ class Simulation:
         else:
             raise ValueError("Simulation 'world' parameter must be a dict")
 
-        for _ in range(initial_entities):
-            self.add_entity(Entity())
+        for _ in range(init_ents):
+            add_entity(self, Entity())
 
         logger.info(f"Simulation initialized with {len(self.entities)} entities.")
-
-    def add_entity(self, entity: Entity):
-        validate_entity_params(entity.parameters)
-        self.entities.append(entity)
-        self.total_entities += 1
-        logger.info(f"Added new entity: {entity.id}: {entity.name}")
 
     def natural_disaster(self, severity: float):
         # Dynamic Event: Natural Disaster if pollution or temp too high
@@ -409,14 +403,14 @@ class Simulation:
         """
 
         logger.info(
-            f"\n🌍 Terminal Lifeform in {self.world_name} world; 📜 {self.world_description}"
+            f"\n🌍 Terminal Lifeform running {self.world_name} world; 📜 {self.world_description}"
         )
         pause_simulation(20, desc="init term lifeform...", delay=0.05)
 
         # Main simulation loop
         for t in tqdm(range(self.epochs), desc="Terminal Lifeform Sim Progress"):
             self.current_time = t
-            self.count += 1
+            self.epoch_count += 1
             logger.info(f"\n--- Epoch {self.current_time} ---")
             time.sleep(0.33)  # Simulate time passing
 
@@ -503,7 +497,7 @@ class Simulation:
 
                 if (
                     alive_count < self.environment_factors["optimal_density"]
-                    and self.count > 16
+                    and self.epoch_count > 16
                     and random.random() < 0.2
                 ):
                     if self.boom_count < 7:  # Limit number of baby booms
@@ -520,7 +514,7 @@ class Simulation:
                     else:
                         logger.info("Maximum number of baby booms reached.")
 
-                record_trait_snapshot(self.entities, self.count)
+                record_trait_snapshot(self.entities, self.epoch_count)
 
                 update_environment(self)  # Update environment for next Epoch
                 apply_feedback_loops(

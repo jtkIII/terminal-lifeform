@@ -11,6 +11,7 @@ from copy import deepcopy
 
 def list_worlds() -> list[str]:
     """Return a list of all available world preset names."""
+    add_mutant_worlds()  # Ensure mutant worlds are added
     return list(WORLD_PRESETS.keys())
 
 
@@ -30,6 +31,7 @@ def describe_world(name: str) -> str:
 
 
 def load_world(name: str = "default") -> dict:
+    print(f"\n🚀 Launching Terminal Lifeform using {name}\n")
     if name not in WORLD_PRESETS:
         print(f"[WARN] Unknown world '{name}', falling back to 'default'.")
         name = "default"
@@ -130,12 +132,12 @@ WORLD_PRESETS = {
         "adaptive_environment": False,  # New flag for adaptive behavior notice it's off by default
     },
     "harsh_world": {
-        "name": " harsh_world",
+        "name": "Harsh World",
         "description": "A brutal environment with scarce resources and frequent threats.",
         "icon": "🏜️",
-        "resource_availability": 0.4,
-        "temperature": 5.0,
-        "pollution": 0.6,
+        "resource_availability": 0.44,  # low resources
+        "temperature": 5.0,  # cold
+        "pollution": 0.6,  # higher pollution
         "event_chance": 0.08,
         "interaction_strength": 0.8,
         "mutation_rate": 0.22,
@@ -149,13 +151,13 @@ WORLD_PRESETS = {
         "radiation_background": 0.2,
         "disaster_chance": 0.05,
         "disaster_impact": 0.4,
-        "growth_rate": 0.8,
+        "growth_rate": 0.84,
         "death_rate": 1.4,
         "competition_intensity": 0.9,
-        "carrying_capacity": 300,
+        "carrying_capacity": 400,
         "prosperity_threshold": 200,
         "prosperity_boost": 1.3,
-        "optimal_density": 600,
+        "optimal_density": 800,
         "density_efficiency": 0.2,
     },
     "garden_world": {

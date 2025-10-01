@@ -6,6 +6,11 @@ Description: Utility functions for entity state calculations.
 """
 
 from entity import Entity
+from utils.logging_config import setup_logger
+
+# from utils.utils import pause_simulation, time_passes
+
+logger = setup_logger(__name__)
 
 
 def calc_energy_change(entity: Entity, environment_factors: dict) -> float:
@@ -91,6 +96,13 @@ def validate_entity_params(params: dict):
     missing = [k for k in required_keys if k not in params]
     if missing:
         raise ValueError(f"Missing entity parameters: {missing}")
+
+
+def add_entity(sim, entity: Entity):
+    validate_entity_params(entity.parameters)
+    sim.entities.append(entity)
+    sim.total_entities += 1
+    logger.info(f"Added new entity: {entity.id}: {entity.name}")
 
 
 # filepath: /home/jtk/Dev/TerminalLifeform/src/utils/entity_utils.py

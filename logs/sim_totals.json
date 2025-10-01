@@ -42,7 +42,7 @@
     "max_entities": 5726
   },
   {
-    "world_name": "harsh_world",
+    "world_name": "Harsh World",
     "run_id": "2025-09-29T07:03:44",
     "epochs": 200,
     "total_entities": 751,
@@ -84,7 +84,7 @@
     "max_entities": 6225
   },
   {
-    "world_name": "harsh_world",
+    "world_name": "Harsh World",
     "run_id": "2025-09-29T07:20:21",
     "epochs": 200,
     "total_entities": 337,
@@ -112,7 +112,7 @@
     "max_entities": 6124
   },
   {
-    "world_name": "harsh_world",
+    "world_name": "Harsh World",
     "run_id": "2025-09-29T07:59:29",
     "epochs": 200,
     "total_entities": 350,
@@ -224,7 +224,7 @@
     "max_entities": 756
   },
   {
-    "world_name": "harsh_world",
+    "world_name": "Harsh World",
     "run_id": "2025-09-29T18:32:18",
     "epochs": 200,
     "total_entities": 120,
@@ -642,5 +642,117 @@
     "total_disasters": 0,
     "total_mutations": 174,
     "max_entities": 196
+  },
+  {
+    "world_name": "bioengineered_world",
+    "run_id": "2025-10-01T13:24:59",
+    "epochs": 200,
+    "total_entities": 937,
+    "total_alive_at_conclusion": 732,
+    "total_struggling": 38,
+    "total_thriving": 162,
+    "total_deaths": 205,
+    "total_births": 192,
+    "total_disasters": 0,
+    "total_mutations": 98,
+    "max_entities": 746
+  },
+  {
+    "world_name": "chaotic_world",
+    "run_id": "2025-10-01T13:29:20",
+    "epochs": 200,
+    "total_entities": 670,
+    "total_alive_at_conclusion": 174,
+    "total_struggling": 84,
+    "total_thriving": 1,
+    "total_deaths": 701,
+    "total_births": 357,
+    "total_disasters": 40,
+    "total_mutations": 357,
+    "max_entities": 260
+  },
+  {
+    "world_name": "Harsh World",
+    "run_id": "2025-10-01T13:38:54",
+    "epochs": 200,
+    "total_entities": 589,
+    "total_alive_at_conclusion": 84,
+    "total_struggling": 79,
+    "total_thriving": 0,
+    "total_deaths": 505,
+    "total_births": 166,
+    "total_disasters": 47,
+    "total_mutations": 228,
+    "max_entities": 196
+  },
+  {
+    "world_name": "garden_world",
+    "run_id": "2025-10-01T14:14:30",
+    "epochs": 200,
+    "total_entities": 852,
+    "total_alive_at_conclusion": 587,
+    "total_struggling": 0,
+    "total_thriving": 363,
+    "total_deaths": 265,
+    "total_births": 145,
+    "total_disasters": 29,
+    "total_mutations": 337,
+    "max_entities": 672
+  },
+  {
+    "world_name": "dunbars_world",
+    "run_id": "2025-10-01T14:21:06",
+    "epochs": 300,
+    "total_entities": 618,
+    "total_alive_at_conclusion": 159,
+    "total_struggling": 14,
+    "total_thriving": 101,
+    "total_deaths": 459,
+    "total_births": 253,
+    "total_disasters": 0,
+    "total_mutations": 281,
+    "max_entities": 194
+  },
+  {
+    "world_name": "sentinel_world",
+    "run_id": "2025-10-01T14:32:57",
+    "epochs": 300,
+    "total_entities": 913,
+    "total_alive_at_conclusion": 65,
+    "total_struggling": 65,
+    "total_thriving": 0,
+    "total_deaths": 848,
+    "total_births": 235,
+    "total_disasters": 35,
+    "total_mutations": 354,
+    "max_entities": 512
+  },
+  {
+    "world_name": "sentient_world",
+    "run_id": "2025-10-01T14:37:46",
+    "epochs": 300,
+    "total_entities": 845,
+    "total_alive_at_conclusion": 57,
+    "total_struggling": 10,
+    "total_thriving": 42,
+    "total_deaths": 788,
+    "total_births": 252,
+    "total_disasters": 32,
+    "total_mutations": 665,
+    "max_entities": 384
+  },
+  {
+    "world_name": "runaway_evo_world",
+    "run_id": "2025-10-01T14:57:16",
+    "epochs": 300,
+    "total_entities": 876,
+    "total_alive_at_conclusion": 32,
+    "total_struggling": 32,
+    "total_thriving": 0,
+    "total_deaths": 844,
+    "total_births": 193,
+    "total_disasters": 9,
+    "total_mutations": 630,
+    "max_entities": 607
   }
 ]

@@ -1272,5 +1272,47 @@
     "total_disasters": 0,
     "total_mutations": 531,
     "max_entities": 155
+  },
+  {
+    "world_name": "Tidal Locked",
+    "run_id": "2025-10-02T17:50:50",
+    "epochs": 150,
+    "total_entities": 328,
+    "total_alive_at_conclusion": 61,
+    "total_struggling": 26,
+    "total_thriving": 0,
+    "total_deaths": 267,
+    "total_births": 176,
+    "total_disasters": 1,
+    "total_mutations": 624,
+    "max_entities": 133
+  },
+  {
+    "world_name": "Garden World",
+    "run_id": "2025-10-02T17:53:55",
+    "epochs": 150,
+    "total_entities": 273,
+    "total_alive_at_conclusion": 116,
+    "total_struggling": 103,
+    "total_thriving": 2,
+    "total_deaths": 157,
+    "total_births": 120,
+    "total_disasters": 0,
+    "total_mutations": 442,
+    "max_entities": 138
+  },
+  {
+    "world_name": "Garden World",
+    "run_id": "2025-10-02T17:58:21",
+    "epochs": 150,
+    "total_entities": 371,
+    "total_alive_at_conclusion": 124,
+    "total_struggling": 54,
+    "total_thriving": 20,
+    "total_deaths": 247,
+    "total_births": 122,
+    "total_disasters": 0,
+    "total_mutations": 419,
+    "max_entities": 221
   }
 ]

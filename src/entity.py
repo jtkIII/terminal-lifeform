@@ -74,16 +74,11 @@ class Entity:
             self.parameters.update(initial_parameters)
 
         # "max_age": 99,
-
-        # "health_recovery_rate": 1.15,
-        # "health_decay_rate": 1.35,
         # "thriving_threshold_health": 65.0,
         # "thriving_threshold_energy": 60.0,
         # "struggling_threshold_health": 33.0,
         # "struggling_threshold_energy": 22.0,
         # "min_reproduction_age": 13,
-        # "aggression": 0.3,
-        # "cooperation": 0.1,
 
         self.health = self.parameters["initial_health"]
         self.energy = self.parameters["initial_energy"]
@@ -93,6 +88,9 @@ class Entity:
         self.reproduction_chance = self.parameters.get("reproduction_chance", 0.05)
         self.mutation_rate = self.parameters.get("mutation_rate", 0.01)
         self.aggression = self.parameters.get("aggression", 0.1)
+        self.cooperation = self.parameters.get("cooperation", 0.1)
+        self.health_recovery_rate = self.parameters.get("health_recovery_rate", 1.0)
+        self.health_decay_rate = self.parameters.get("health_decay_rate", 1.0)
 
     def is_alive(self) -> bool:
         # return self.status != "dead"

@@ -7,12 +7,13 @@ Description: Utility functions for entity state calculations.
 
 import random
 
-from entity import Entity
+from entity import Entity, Status
 from utils.logging_config import setup_logger
 from utils.utils import passive_aggressive_threshold, pause_simulation
 
 # from utils.utils import pause_simulation, time_passes
-
+WORLD_WIDTH = 1920
+WORLD_HEIGHT = 1080
 logger = setup_logger(__name__)
 
 
@@ -45,20 +46,20 @@ def calc_health_change(entity: Entity, environment_factors: dict) -> float:
     temperature = environment_factors.get("temperature", 25.0)
     pollution = environment_factors.get("pollution", 0.0)
     radiation = environment_factors.get("radiation_background", 0.0)
-    recovery = entity.parameters["health_recovery_rate"]
-    decay = entity.parameters["health_decay_rate"]
+    recovery = entity.health_recovery_rate
+    decay = entity.health_decay_rate
     resilience = entity.parameters["resilience"]
     death_rate = environment_factors.get("death_rate", 1.33)
 
     health_change = -0.005  # Base decay
 
+    if entity.health >= 95.0:
+        return health_change  # No more gain; just base decay
+
     if radiation > 0.2:
         decay += (
             (radiation - 0.2) * (1.5 - resilience) * 0.5
         )  # Radiation increases decay
-
-    if entity.health >= 95.0:
-        return health_change  # No more gain; just base decay
 
     # Energy effect
     if energy > 50.0:
@@ -124,9 +125,9 @@ def process_entity(sim, entity: Entity):
 
     if passive_aggressive_threshold(entity.aggression) > random.random():
         if sim.environment_factors["resource_availability"] < 0.6:
-            # if random.random() < 0.2:  # don't log every time
-            logger.info("\n🎃 Trick or Treat!")
-            pause_simulation(20, desc="agressive beahiour?", delay=0.025)
+            if random.random() < 0.2:  # don't log every time
+                logger.info("\n😈 Ent on Ent Violence!")
+                pause_simulation(10, desc="agressive beahiour?", delay=0.01)
             # ents attacking each other?
             if len(sim.entities) > 1:
                 target = random.choice(
@@ -181,17 +182,23 @@ def adapt_entities(sim):
             entity.resilience *= 1.02
             entity.metabolism_rate *= 0.97
             entity.reproduction_chance *= 0.93
+            entity.aggression *= 1.01
+            entity.foraging_efficiency *= 1.03
         elif avg_condition > 0.1:
             # Abundance = growth traits
             entity.resilience *= 0.97
             entity.metabolism_rate *= 1.03
             entity.reproduction_chance *= 1.07
+            entity.aggression *= 0.99
+            entity.foraging_efficiency *= 0.97
 
         # --- 2. Small random drift ---
         drift = random.uniform(0.98, 1.02)
         entity.resilience *= drift
         entity.metabolism_rate *= drift
         entity.reproduction_chance *= drift
+        entity.aggression *= drift
+        entity.foraging_efficiency *= drift
 
         # --- 3. Mutation events (evolutionary leaps) ---
         if random.random() < sim.environment_factors.get("mutation_rate", 0.05) * 0.1:
@@ -203,11 +210,29 @@ def adapt_entities(sim):
             entity.resilience *= mutation_factor
             entity.metabolism_rate *= mutation_factor
             entity.reproduction_chance *= mutation_factor
+            entity.aggression *= mutation_factor
+            entity.foraging_efficiency *= mutation_factor
 
         # --- 4. Clamp to avoid runaway traits ---
         entity.resilience = max(0.1, min(entity.resilience, 5.0))
         entity.metabolism_rate = max(0.1, min(entity.metabolism_rate, 5.0))
         entity.reproduction_chance = max(0.001, min(entity.reproduction_chance, 2.0))
+        entity.aggression = max(0.0, min(entity.aggression, 1.0))
+        entity.foraging_efficiency = max(0.1, min(entity.foraging_efficiency, 5.0))
+
+
+def move_entity(entity):
+    """Simple random movement — can evolve later."""
+    if not entity.is_alive() or entity.status == Status.DORMANT:
+        return  # don't move if dead or dormant
+
+    dx = random.choice([-1, 0, 1])
+    dy = random.choice([-1, 0, 1])
+
+    # Future: bias dx/dy by traits or environment
+
+    entity.x = max(0, min(WORLD_WIDTH, entity.x + dx))
+    entity.y = max(0, min(WORLD_HEIGHT, entity.y + dy))
 
 
 # filepath: /home/jtk/Dev/TerminalLifeform/src/utils/entity_utils.py

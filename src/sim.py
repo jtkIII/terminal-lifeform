@@ -38,7 +38,7 @@ from stats import (
     update_global_trait_tracker,
     update_totals,
 )
-from utils.entity_utils import adapt_entities, add_entity, process_entity
+from utils.entity_utils import adapt_entities, add_entity, move_entity, process_entity
 from utils.logging_config import setup_logger
 from utils.utils import pause_simulation, time_passes
 
@@ -107,6 +107,7 @@ class Simulation:
             # First pass: process each entity
             for entity in self.entities:
                 process_entity(self, entity)  # Process each entity individually
+                move_entity(entity)  # Random movement in the world
                 if entity.environment_memory:
                     handle_enviroment_memory(entity, self.drift)
 

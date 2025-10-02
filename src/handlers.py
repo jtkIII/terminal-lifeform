@@ -81,7 +81,9 @@ def handle_reproduction(sim):
         if (
             entity.status != "struggling"
             and entity.age >= entity.parameters["min_reproduction_age"]
-            and random.random() < entity.parameters["reproduction_chance"]
+            and random.random()
+            < entity.parameters["reproduction_chance"]
+            + sim.environment_factors["repoduction_rate"]
         ):
             offspring_params = entity.parameters.copy()
             offspring_params = handle_mutation(sim, offspring_params)

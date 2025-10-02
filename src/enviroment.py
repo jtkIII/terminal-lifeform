@@ -27,7 +27,6 @@ def adapt_environment(sim):
     else:
         avg_past = alive_count
 
-    # trend = (alive_count - avg_past) / avg_past if avg_past > 0 else 0.0
     trend = ((alive_count - avg_past) / avg_past) * sim.memory_sensitivity
 
     # --- Push back on persistent overgrowth ---
@@ -157,6 +156,23 @@ def apply_feedback_loops(sim, population: int) -> None:
     sim.environment_factors["disaster_impact"] = min(
         sim.environment_factors["disaster_impact"], 1.0
     )
+
+
+def handle_enviroment_memory(entity, drift: float):
+    avg_condition = sum(entity.environment_memory) / len(entity.environment_memory)
+
+    if avg_condition < -0.1:  # life’s tough, evolve survival mode
+        entity.resilience *= 1.05
+        entity.metabolism_rate *= 0.95
+        entity.reproduction_chance *= 0.9
+
+    elif avg_condition > 0.1:  # Life's been good for me so far...
+        entity.resilience *= 0.95
+        entity.metabolism_rate *= 1.05
+        entity.reproduction_chance *= 1.1
+
+    entity.resilience *= drift
+    entity.metabolism_rate *= drift
 
 
 # filepath: /home/jtk/Dev/TerminalLifeform/src/enviroment.py

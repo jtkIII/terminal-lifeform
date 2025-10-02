@@ -2,1351 +2,1351 @@
   {
     "epoch": 1,
     "population": 120,
-    "avg_resilience": 0.17469320644697103,
-    "avg_metabolism_rate": 0.3091649529903439,
-    "avg_reproduction_chance": 1.3815572364181359,
-    "avg_health": 99.39017339475346,
-    "avg_energy": 99.72208958532748
+    "avg_resilience": 0.1633628206504217,
+    "avg_metabolism_rate": 0.31927431700499437,
+    "avg_reproduction_chance": 1.5305195645255156,
+    "avg_health": 99.51062407690343,
+    "avg_energy": 99.84277988779586
   },
   {
     "epoch": 2,
-    "population": 119,
-    "avg_resilience": 0.1694246926952092,
-    "avg_metabolism_rate": 0.3183878139376261,
-    "avg_reproduction_chance": 1.488920949603622,
-    "avg_health": 98.79819999999994,
-    "avg_energy": 99.69909999999996
+    "population": 120,
+    "avg_resilience": 0.14800803115303446,
+    "avg_metabolism_rate": 0.33864879563051375,
+    "avg_reproduction_chance": 1.7954351157728319,
+    "avg_health": 99.01720343176152,
+    "avg_energy": 99.75559720606196
   },
   {
     "epoch": 3,
-    "population": 119,
-    "avg_resilience": 0.16463719563911192,
-    "avg_metabolism_rate": 0.32786841149695606,
-    "avg_reproduction_chance": 1.5918695722287133,
-    "avg_health": 98.09257398253443,
-    "avg_energy": 99.5045975678513
+    "population": 120,
+    "avg_resilience": 0.13444217818577345,
+    "avg_metabolism_rate": 0.3604567517931682,
+    "avg_reproduction_chance": 1.9918309456663947,
+    "avg_health": 98.62201512864613,
+    "avg_energy": 99.79698834187177
   },
   {
     "epoch": 4,
-    "population": 119,
-    "avg_resilience": 0.15988714897035822,
-    "avg_metabolism_rate": 0.3379877338608918,
-    "avg_reproduction_chance": 1.7034594588354017,
-    "avg_health": 97.46276191539489,
-    "avg_energy": 99.23321036932468
+    "population": 120,
+    "avg_resilience": 0.12154821765079675,
+    "avg_metabolism_rate": 0.38185213277833013,
+    "avg_reproduction_chance": 1.9947266098144298,
+    "avg_health": 98.25008562256014,
+    "avg_energy": 99.59097884554475
   },
   {
     "epoch": 5,
-    "population": 119,
-    "avg_resilience": 0.1551901520752987,
-    "avg_metabolism_rate": 0.34815615657895604,
-    "avg_reproduction_chance": 1.8181850517178562,
-    "avg_health": 96.98449064832256,
-    "avg_energy": 99.08000391031187
+    "population": 120,
+    "avg_resilience": 0.11069482022238114,
+    "avg_metabolism_rate": 0.406598208850015,
+    "avg_reproduction_chance": 1.995002895949521,
+    "avg_health": 97.82660802967355,
+    "avg_energy": 99.54093774701919
   },
   {
     "epoch": 6,
-    "population": 119,
-    "avg_resilience": 0.15062696875415194,
-    "avg_metabolism_rate": 0.35860994172540317,
-    "avg_reproduction_chance": 1.9323800969733305,
-    "avg_health": 96.3620495630986,
-    "avg_energy": 98.94327749759884
+    "population": 120,
+    "avg_resilience": 0.10206044429705365,
+    "avg_metabolism_rate": 0.43308969316215407,
+    "avg_reproduction_chance": 1.9948125326676198,
+    "avg_health": 97.36906247370752,
+    "avg_energy": 99.54450904425104
   },
   {
     "epoch": 7,
-    "population": 119,
-    "avg_resilience": 0.14628918262354504,
-    "avg_metabolism_rate": 0.36962268952073024,
-    "avg_reproduction_chance": 1.9847463972183417,
-    "avg_health": 95.7036601592968,
-    "avg_energy": 98.79088457114607
+    "population": 120,
+    "avg_resilience": 0.10088523488714964,
+    "avg_metabolism_rate": 0.4595809908544801,
+    "avg_reproduction_chance": 1.9947285512128279,
+    "avg_health": 96.94348121055194,
+    "avg_energy": 99.53448938058835
   },
   {
     "epoch": 8,
-    "population": 119,
-    "avg_resilience": 0.14171447500285098,
-    "avg_metabolism_rate": 0.3798859365970263,
-    "avg_reproduction_chance": 1.9808090970428025,
-    "avg_health": 95.06018547089458,
-    "avg_energy": 98.77188673715827
+    "population": 120,
+    "avg_resilience": 0.1008613960508823,
+    "avg_metabolism_rate": 0.48830654187243944,
+    "avg_reproduction_chance": 1.9950766013354841,
+    "avg_health": 96.45355756372227,
+    "avg_energy": 99.39710314557159
   },
   {
     "epoch": 9,
-    "population": 118,
-    "avg_resilience": 0.13638127130748706,
-    "avg_metabolism_rate": 0.39011522341965077,
-    "avg_reproduction_chance": 1.9946343319139446,
-    "avg_health": 94.53519999999986,
-    "avg_energy": 98.61759999999995
+    "population": 120,
+    "avg_resilience": 0.1009086072290676,
+    "avg_metabolism_rate": 0.5188127800680016,
+    "avg_reproduction_chance": 1.9844293830362725,
+    "avg_health": 96.07749939560365,
+    "avg_energy": 99.3170020582864
   },
   {
     "epoch": 10,
-    "population": 118,
-    "avg_resilience": 0.13265671917194347,
-    "avg_metabolism_rate": 0.4005883442247447,
-    "avg_reproduction_chance": 1.990815155451894,
-    "avg_health": 93.87399217776988,
-    "avg_energy": 98.40851422456632
+    "population": 119,
+    "avg_resilience": 0.09999999999999978,
+    "avg_metabolism_rate": 0.5528729930978532,
+    "avg_reproduction_chance": 1.9991773721494472,
+    "avg_health": 95.7189999999998,
+    "avg_energy": 99.35949999999993
   },
   {
     "epoch": 11,
-    "population": 118,
-    "avg_resilience": 0.12885680437461727,
-    "avg_metabolism_rate": 0.4129019250787836,
-    "avg_reproduction_chance": 1.9946009653515369,
-    "avg_health": 93.33844013871169,
-    "avg_energy": 98.19925944774796
+    "population": 119,
+    "avg_resilience": 0.10060199793181877,
+    "avg_metabolism_rate": 0.5847601913928313,
+    "avg_reproduction_chance": 1.9946840372547125,
+    "avg_health": 93.7785870786178,
+    "avg_energy": 99.25429959938879
   },
   {
     "epoch": 12,
-    "population": 118,
-    "avg_resilience": 0.1252952201735226,
-    "avg_metabolism_rate": 0.4257504095347578,
-    "avg_reproduction_chance": 1.993145142900223,
-    "avg_health": 92.7241446131397,
-    "avg_energy": 98.12819386315573
+    "population": 119,
+    "avg_resilience": 0.10060914737078416,
+    "avg_metabolism_rate": 0.6199455400023185,
+    "avg_reproduction_chance": 1.9843021890551578,
+    "avg_health": 93.40831160218895,
+    "avg_energy": 99.10517795347896
   },
   {
     "epoch": 13,
     "population": 118,
-    "avg_resilience": 0.12146421058710893,
-    "avg_metabolism_rate": 0.43798197370553327,
-    "avg_reproduction_chance": 1.9940525420715545,
-    "avg_health": 91.96797980332136,
-    "avg_energy": 97.82907304877229
+    "avg_resilience": 0.10004080839087809,
+    "avg_metabolism_rate": 0.663619834551828,
+    "avg_reproduction_chance": 2.0,
+    "avg_health": 92.999339882986,
+    "avg_energy": 99.14721949152523
   },
   {
     "epoch": 14,
     "population": 118,
-    "avg_resilience": 0.11810245185137658,
-    "avg_metabolism_rate": 0.45161672759910787,
-    "avg_reproduction_chance": 1.9941237497709645,
-    "avg_health": 91.4062988462308,
-    "avg_energy": 97.72452490846526
+    "avg_resilience": 0.10063900143871825,
+    "avg_metabolism_rate": 0.7032577142581118,
+    "avg_reproduction_chance": 1.9948931416190212,
+    "avg_health": 92.53603995284418,
+    "avg_energy": 98.98831405021221
   },
   {
     "epoch": 15,
     "population": 118,
-    "avg_resilience": 0.1151579495519338,
-    "avg_metabolism_rate": 0.4667821220498935,
-    "avg_reproduction_chance": 1.9842067407919015,
-    "avg_health": 90.75423346673229,
-    "avg_energy": 97.56635907718042
+    "avg_resilience": 0.10064223685130269,
+    "avg_metabolism_rate": 0.7477905151323373,
+    "avg_reproduction_chance": 1.9948430586725607,
+    "avg_health": 92.04793122863674,
+    "avg_energy": 98.87991336191565
   },
   {
     "epoch": 16,
     "population": 118,
-    "avg_resilience": 0.11226200864877932,
-    "avg_metabolism_rate": 0.48216715793355874,
-    "avg_reproduction_chance": 1.9843941160651755,
-    "avg_health": 90.16111701904865,
-    "avg_energy": 97.46030219023233
+    "avg_resilience": 0.10082785481075,
+    "avg_metabolism_rate": 0.7946087553701887,
+    "avg_reproduction_chance": 1.9950630103497695,
+    "avg_health": 91.70628285876877,
+    "avg_energy": 98.90773739732566
   },
   {
     "epoch": 17,
-    "population": 117,
-    "avg_resilience": 0.10822136872882969,
-    "avg_metabolism_rate": 0.49419435723952243,
-    "avg_reproduction_chance": 1.9925877510327303,
-    "avg_health": 89.5543196581195,
-    "avg_energy": 97.32630512820484
+    "population": 118,
+    "avg_resilience": 0.10082308563094479,
+    "avg_metabolism_rate": 0.8448165664337087,
+    "avg_reproduction_chance": 1.995028814838898,
+    "avg_health": 91.26065486604024,
+    "avg_energy": 98.78794698974205
   },
   {
     "epoch": 18,
-    "population": 117,
-    "avg_resilience": 0.10673771082609226,
-    "avg_metabolism_rate": 0.507789997544745,
-    "avg_reproduction_chance": 1.992250872789984,
-    "avg_health": 88.96569575569175,
-    "avg_energy": 97.09127577718122
+    "population": 118,
+    "avg_resilience": 0.10080009100242278,
+    "avg_metabolism_rate": 0.8976580957923659,
+    "avg_reproduction_chance": 1.994863940981815,
+    "avg_health": 90.79847297918552,
+    "avg_energy": 98.6577008838465
   },
   {
     "epoch": 19,
-    "population": 117,
-    "avg_resilience": 0.1049883262767452,
-    "avg_metabolism_rate": 0.5215437487699787,
-    "avg_reproduction_chance": 1.9824623830491117,
-    "avg_health": 88.28980069698247,
-    "avg_energy": 97.0081439861234
+    "population": 118,
+    "avg_resilience": 0.1007768872093839,
+    "avg_metabolism_rate": 0.9516587110193092,
+    "avg_reproduction_chance": 1.9946975673935823,
+    "avg_health": 90.36788235554006,
+    "avg_energy": 98.62107991273328
   },
   {
     "epoch": 20,
-    "population": 116,
-    "avg_resilience": 0.10269929106207176,
-    "avg_metabolism_rate": 0.5379929400686657,
-    "avg_reproduction_chance": 1.9984563755231486,
-    "avg_health": 87.65294568965489,
-    "avg_energy": 96.82173146551692
+    "population": 118,
+    "avg_resilience": 0.10077079135283759,
+    "avg_metabolism_rate": 1.010887763642063,
+    "avg_reproduction_chance": 1.9841219776474797,
+    "avg_health": 89.76855373818381,
+    "avg_energy": 98.5497404845689
   },
   {
     "epoch": 21,
-    "population": 116,
-    "avg_resilience": 0.10244419545065665,
-    "avg_metabolism_rate": 0.5524109043402123,
-    "avg_reproduction_chance": 1.9835759019510157,
-    "avg_health": 87.09905044722993,
-    "avg_energy": 96.63950701991382
+    "population": 117,
+    "avg_resilience": 0.10011622649063051,
+    "avg_metabolism_rate": 1.0823707058782313,
+    "avg_reproduction_chance": 1.9996596830923092,
+    "avg_health": 89.38857441190025,
+    "avg_energy": 98.54523461538423
   },
   {
     "epoch": 22,
-    "population": 115,
-    "avg_resilience": 0.10120960675680685,
-    "avg_metabolism_rate": 0.571046389908169,
-    "avg_reproduction_chance": 1.9998663923863618,
-    "avg_health": 86.36955391304312,
-    "avg_energy": 96.4708639130432
+    "population": 117,
+    "avg_resilience": 0.10082629931326507,
+    "avg_metabolism_rate": 1.143906164559132,
+    "avg_reproduction_chance": 1.9949589274092867,
+    "avg_health": 88.96674177680198,
+    "avg_energy": 98.44708004100464
   },
   {
     "epoch": 23,
-    "population": 115,
-    "avg_resilience": 0.10167705091677036,
-    "avg_metabolism_rate": 0.5860863807079275,
-    "avg_reproduction_chance": 1.9948045517843294,
-    "avg_health": 85.7420112039131,
-    "avg_energy": 96.17024547468151
+    "population": 155,
+    "avg_resilience": 0.1202346628415642,
+    "avg_metabolism_rate": 0.9911683092095483,
+    "avg_reproduction_chance": 1.8242080836633734,
+    "avg_health": 88.642599390401,
+    "avg_energy": 96.154661147812
   },
   {
     "epoch": 24,
-    "population": 115,
-    "avg_resilience": 0.10139578506512484,
-    "avg_metabolism_rate": 0.6041499786356614,
-    "avg_reproduction_chance": 1.9927244782911688,
-    "avg_health": 85.10426159457397,
-    "avg_energy": 95.99979376662685
+    "population": 155,
+    "avg_resilience": 0.11612653147812202,
+    "avg_metabolism_rate": 1.0565498253582857,
+    "avg_reproduction_chance": 1.8820932814941784,
+    "avg_health": 88.33933934340465,
+    "avg_energy": 96.10182146227247
   },
   {
     "epoch": 25,
-    "population": 115,
-    "avg_resilience": 0.10129726282710554,
-    "avg_metabolism_rate": 0.6218976854035405,
-    "avg_reproduction_chance": 1.9938202317944909,
-    "avg_health": 83.25407794567667,
-    "avg_energy": 95.86123495929118
+    "population": 155,
+    "avg_resilience": 0.11221261603361368,
+    "avg_metabolism_rate": 1.122977255294156,
+    "avg_reproduction_chance": 1.9473355239230266,
+    "avg_health": 87.91243326880709,
+    "avg_energy": 96.10257211844252
   },
   {
     "epoch": 26,
-    "population": 115,
-    "avg_resilience": 0.10113588709575061,
-    "avg_metabolism_rate": 0.6372543255303488,
-    "avg_reproduction_chance": 1.9906117868710156,
-    "avg_health": 82.65658864110121,
-    "avg_energy": 95.79633577905261
+    "population": 155,
+    "avg_resilience": 0.10884903549016775,
+    "avg_metabolism_rate": 1.19257375987833,
+    "avg_reproduction_chance": 1.9878443409320627,
+    "avg_health": 87.57970162313951,
+    "avg_energy": 96.01989426690068
   },
   {
     "epoch": 27,
-    "population": 115,
-    "avg_resilience": 0.10113257515792039,
-    "avg_metabolism_rate": 0.6567517303786925,
-    "avg_reproduction_chance": 1.99162410379624,
-    "avg_health": 81.96659546365912,
-    "avg_energy": 95.48420966246218
+    "population": 154,
+    "avg_resilience": 0.10544205641733059,
+    "avg_metabolism_rate": 1.281706803078305,
+    "avg_reproduction_chance": 2.0,
+    "avg_health": 87.1233377528375,
+    "avg_energy": 96.01473856278847
   },
   {
     "epoch": 28,
-    "population": 115,
-    "avg_resilience": 0.1011375550492298,
-    "avg_metabolism_rate": 0.6769139502359474,
-    "avg_reproduction_chance": 1.9940812370889314,
-    "avg_health": 81.34080756327971,
-    "avg_energy": 95.42364982151918
+    "population": 154,
+    "avg_resilience": 0.10290478826814582,
+    "avg_metabolism_rate": 1.3601433998940298,
+    "avg_reproduction_chance": 1.9880489566852262,
+    "avg_health": 86.70828567998849,
+    "avg_energy": 95.98163043609868
   },
   {
     "epoch": 29,
-    "population": 115,
-    "avg_resilience": 0.10122290202549963,
-    "avg_metabolism_rate": 0.6989605364056183,
-    "avg_reproduction_chance": 1.9946650565814064,
-    "avg_health": 80.75967382500637,
-    "avg_energy": 95.21362683047832
+    "population": 153,
+    "avg_resilience": 0.10038226186744034,
+    "avg_metabolism_rate": 1.4536966494925998,
+    "avg_reproduction_chance": 2.0,
+    "avg_health": 86.35327375523117,
+    "avg_energy": 95.97204649120107
   },
   {
     "epoch": 30,
-    "population": 115,
-    "avg_resilience": 0.10107014244935408,
-    "avg_metabolism_rate": 0.7178783906930342,
-    "avg_reproduction_chance": 1.9939594075229121,
-    "avg_health": 80.030034402431,
-    "avg_energy": 95.08027799830796
+    "population": 153,
+    "avg_resilience": 0.1004950877403333,
+    "avg_metabolism_rate": 1.5462049922477041,
+    "avg_reproduction_chance": 1.9879622861076183,
+    "avg_health": 85.96345048946722,
+    "avg_energy": 95.88312266983762
   },
   {
     "epoch": 31,
     "population": 152,
-    "avg_resilience": 0.12032321647888056,
-    "avg_metabolism_rate": 0.6327333620782227,
-    "avg_reproduction_chance": 1.8246322946244729,
-    "avg_health": 81.6596205944665,
-    "avg_energy": 93.76383374109808
+    "avg_resilience": 0.09999999999999976,
+    "avg_metabolism_rate": 1.6519554778912642,
+    "avg_reproduction_chance": 2.0,
+    "avg_health": 85.60276286261649,
+    "avg_energy": 95.9249658641947
   },
   {
     "epoch": 32,
     "population": 152,
-    "avg_resilience": 0.11901934087241857,
-    "avg_metabolism_rate": 0.6507490899712737,
-    "avg_reproduction_chance": 1.846031886212142,
-    "avg_health": 81.1093782052249,
-    "avg_energy": 93.66963152343233
+    "avg_resilience": 0.10062356877426779,
+    "avg_metabolism_rate": 1.7549639117028744,
+    "avg_reproduction_chance": 1.9878954971848126,
+    "avg_health": 85.22613537302054,
+    "avg_energy": 95.88590236873463
   },
   {
     "epoch": 33,
-    "population": 152,
-    "avg_resilience": 0.11793089951502705,
-    "avg_metabolism_rate": 0.671102008971352,
-    "avg_reproduction_chance": 1.8734031138371283,
-    "avg_health": 79.67087785281846,
-    "avg_energy": 93.51743068093543
+    "population": 151,
+    "avg_resilience": 0.10000695094371695,
+    "avg_metabolism_rate": 1.878777862903383,
+    "avg_reproduction_chance": 2.0,
+    "avg_health": 84.80111358430753,
+    "avg_energy": 95.87446445636452
   },
   {
     "epoch": 34,
-    "population": 152,
-    "avg_resilience": 0.11656802744266889,
-    "avg_metabolism_rate": 0.6906354729854108,
-    "avg_reproduction_chance": 1.897516826284281,
-    "avg_health": 79.05665543789596,
-    "avg_energy": 93.35501019000391
+    "population": 151,
+    "avg_resilience": 0.10049834083444767,
+    "avg_metabolism_rate": 1.99430941542907,
+    "avg_reproduction_chance": 1.9960009683496007,
+    "avg_health": 84.50089546670179,
+    "avg_energy": 95.79686698750514
   },
   {
     "epoch": 35,
-    "population": 152,
-    "avg_resilience": 0.11521791687163328,
-    "avg_metabolism_rate": 0.7107392434570438,
-    "avg_reproduction_chance": 1.915131705023281,
-    "avg_health": 78.54260014363267,
-    "avg_energy": 93.31287596210011
+    "population": 151,
+    "avg_resilience": 0.10049232277417036,
+    "avg_metabolism_rate": 2.1257817271751844,
+    "avg_reproduction_chance": 1.9957914754988468,
+    "avg_health": 84.05129779949527,
+    "avg_energy": 95.72084351594175
   },
   {
     "epoch": 36,
     "population": 151,
-    "avg_resilience": 0.11367893081210664,
-    "avg_metabolism_rate": 0.7349022643842426,
-    "avg_reproduction_chance": 1.9585310496917314,
-    "avg_health": 77.8820670402942,
-    "avg_energy": 93.13703903354227
+    "avg_resilience": 0.1005088607678779,
+    "avg_metabolism_rate": 2.2509041877454057,
+    "avg_reproduction_chance": 1.9949855866833754,
+    "avg_health": 83.74125218103728,
+    "avg_energy": 95.76935266693309
   },
   {
     "epoch": 37,
     "population": 151,
-    "avg_resilience": 0.11291941256674222,
-    "avg_metabolism_rate": 0.7575270961571523,
-    "avg_reproduction_chance": 1.9829069434256326,
-    "avg_health": 77.29434984981609,
-    "avg_energy": 93.0684950704234
+    "avg_resilience": 0.10054425901950703,
+    "avg_metabolism_rate": 2.397806651157337,
+    "avg_reproduction_chance": 1.9961233983773004,
+    "avg_health": 83.22599404140193,
+    "avg_energy": 95.64079414556659
   },
   {
     "epoch": 38,
     "population": 151,
-    "avg_resilience": 0.11210446668009752,
-    "avg_metabolism_rate": 0.7818788607246844,
-    "avg_reproduction_chance": 1.9941482223089786,
-    "avg_health": 76.78355223199087,
-    "avg_energy": 92.85115150428383
+    "avg_resilience": 0.1004964183195006,
+    "avg_metabolism_rate": 2.548191205903458,
+    "avg_reproduction_chance": 1.9959858370787449,
+    "avg_health": 82.80016783611202,
+    "avg_energy": 95.57625545715133
   },
   {
     "epoch": 39,
     "population": 151,
-    "avg_resilience": 0.11099742944624832,
-    "avg_metabolism_rate": 0.8054840871121315,
-    "avg_reproduction_chance": 1.9942145266574358,
-    "avg_health": 76.22587618001361,
-    "avg_energy": 92.75529596971643
+    "avg_resilience": 0.10061089330895259,
+    "avg_metabolism_rate": 2.7117666220991627,
+    "avg_reproduction_chance": 1.9958835475355283,
+    "avg_health": 82.49619141341384,
+    "avg_energy": 95.4975302736632
   },
   {
     "epoch": 40,
     "population": 151,
-    "avg_resilience": 0.11003207270931135,
-    "avg_metabolism_rate": 0.8289361941614197,
-    "avg_reproduction_chance": 1.9842736042168392,
-    "avg_health": 75.65899328161859,
-    "avg_energy": 92.62985589942397
+    "avg_resilience": 0.10069102453951556,
+    "avg_metabolism_rate": 2.8906882476620623,
+    "avg_reproduction_chance": 1.9961389717069502,
+    "avg_health": 82.07477603574908,
+    "avg_energy": 95.4593884809876
   },
   {
     "epoch": 41,
-    "population": 150,
-    "avg_resilience": 0.10837642970535656,
-    "avg_metabolism_rate": 0.8582009150405779,
-    "avg_reproduction_chance": 1.999140824464135,
-    "avg_health": 74.9750373220746,
-    "avg_energy": 92.49515748190052
+    "population": 151,
+    "avg_resilience": 0.10063990365428575,
+    "avg_metabolism_rate": 3.0717646232739315,
+    "avg_reproduction_chance": 1.9878322654814449,
+    "avg_health": 81.602988445749,
+    "avg_energy": 95.3825179737439
   },
   {
     "epoch": 42,
-    "population": 198,
-    "avg_resilience": 0.12519351646244634,
-    "avg_metabolism_rate": 0.7426397342470387,
-    "avg_reproduction_chance": 1.82716133900473,
-    "avg_health": 78.1239715979938,
-    "avg_energy": 92.02270691494823
+    "population": 150,
+    "avg_resilience": 0.10008808532244655,
+    "avg_metabolism_rate": 3.295375612376792,
+    "avg_reproduction_chance": 2.0,
+    "avg_health": 81.15638655066708,
+    "avg_energy": 95.424974819672
   },
   {
     "epoch": 43,
-    "population": 198,
-    "avg_resilience": 0.12328088075164112,
-    "avg_metabolism_rate": 0.7642273736245896,
-    "avg_reproduction_chance": 1.8489308330280012,
-    "avg_health": 77.65134934293759,
-    "avg_energy": 91.91129806001197
+    "population": 150,
+    "avg_resilience": 0.10049098332238256,
+    "avg_metabolism_rate": 3.483657395436826,
+    "avg_reproduction_chance": 1.9958894108520493,
+    "avg_health": 80.68022517291847,
+    "avg_energy": 95.37717336672277
   },
   {
     "epoch": 44,
-    "population": 198,
-    "avg_resilience": 0.12122861876486932,
-    "avg_metabolism_rate": 0.7889364303943657,
-    "avg_reproduction_chance": 1.8727805748532647,
-    "avg_health": 77.18921234338022,
-    "avg_energy": 91.8355622102224
+    "population": 150,
+    "avg_resilience": 0.10052083108456847,
+    "avg_metabolism_rate": 3.682494877822804,
+    "avg_reproduction_chance": 1.9960391332846203,
+    "avg_health": 80.2978359306915,
+    "avg_energy": 95.28035599838655
   },
   {
     "epoch": 45,
-    "population": 198,
-    "avg_resilience": 0.11915468576067097,
-    "avg_metabolism_rate": 0.8118133472998593,
-    "avg_reproduction_chance": 1.8962701270255033,
-    "avg_health": 76.70929454301721,
-    "avg_energy": 91.72376123098032
+    "population": 150,
+    "avg_resilience": 0.10068836315708546,
+    "avg_metabolism_rate": 3.63802441241411,
+    "avg_reproduction_chance": 1.9858944430481271,
+    "avg_health": 79.94427936499524,
+    "avg_energy": 95.2953686945162
   },
   {
     "epoch": 46,
-    "population": 198,
-    "avg_resilience": 0.11729812405911512,
-    "avg_metabolism_rate": 0.8372231631838528,
-    "avg_reproduction_chance": 1.9222568931888322,
-    "avg_health": 76.22287949735122,
-    "avg_energy": 91.62497201654344
+    "population": 150,
+    "avg_resilience": 0.1005287604543718,
+    "avg_metabolism_rate": 3.808510177142003,
+    "avg_reproduction_chance": 1.9874452196518595,
+    "avg_health": 79.45065983674264,
+    "avg_energy": 95.19421452940634
   },
   {
     "epoch": 47,
-    "population": 198,
-    "avg_resilience": 0.11544590135901744,
-    "avg_metabolism_rate": 0.8621718098839143,
-    "avg_reproduction_chance": 1.9451881113335259,
-    "avg_health": 75.68228288328717,
-    "avg_energy": 91.5345011841825
+    "population": 149,
+    "avg_resilience": 0.09999999999999976,
+    "avg_metabolism_rate": 3.9759902963766973,
+    "avg_reproduction_chance": 2.0,
+    "avg_health": 78.96637741330807,
+    "avg_energy": 95.19126508595205
   },
   {
     "epoch": 48,
-    "population": 197,
-    "avg_resilience": 0.11356014652899667,
-    "avg_metabolism_rate": 0.8909197772075428,
-    "avg_reproduction_chance": 1.9843219272561263,
-    "avg_health": 75.1228903554339,
-    "avg_energy": 91.45358312683486
+    "population": 149,
+    "avg_resilience": 0.10056986798251219,
+    "avg_metabolism_rate": 4.075835136177031,
+    "avg_reproduction_chance": 1.9960712595432502,
+    "avg_health": 78.55866049958162,
+    "avg_energy": 95.24181624434166
   },
   {
     "epoch": 49,
-    "population": 197,
-    "avg_resilience": 0.11225728175188078,
-    "avg_metabolism_rate": 0.9190330586266133,
-    "avg_reproduction_chance": 1.9943945675162502,
-    "avg_health": 74.58959634736202,
-    "avg_energy": 91.39607301955994
+    "population": 149,
+    "avg_resilience": 0.10069523376292794,
+    "avg_metabolism_rate": 4.142578257404304,
+    "avg_reproduction_chance": 1.9876579787512656,
+    "avg_health": 78.23032167964251,
+    "avg_energy": 95.08398456474342
   },
   {
     "epoch": 50,
-    "population": 197,
-    "avg_resilience": 0.1107093047495233,
-    "avg_metabolism_rate": 0.9439337116672379,
-    "avg_reproduction_chance": 1.9943754702057233,
-    "avg_health": 74.08742984224696,
-    "avg_energy": 91.30836956740431
+    "population": 148,
+    "avg_resilience": 0.10004210500554725,
+    "avg_metabolism_rate": 4.213629371713426,
+    "avg_reproduction_chance": 2.0,
+    "avg_health": 77.65620769951143,
+    "avg_energy": 95.08257773796174
   },
   {
     "epoch": 51,
-    "population": 197,
-    "avg_resilience": 0.10952663430612458,
-    "avg_metabolism_rate": 0.9739304158580507,
-    "avg_reproduction_chance": 1.9963409846892837,
-    "avg_health": 73.5798408615893,
-    "avg_energy": 91.19572179406104
+    "population": 148,
+    "avg_resilience": 0.10062471205793283,
+    "avg_metabolism_rate": 4.239370949900028,
+    "avg_reproduction_chance": 1.9957820650105873,
+    "avg_health": 77.39214622735878,
+    "avg_energy": 95.02372940824847
   },
   {
     "epoch": 52,
-    "population": 197,
-    "avg_resilience": 0.10834907342182973,
-    "avg_metabolism_rate": 1.000509646850031,
-    "avg_reproduction_chance": 1.9956076722882967,
-    "avg_health": 73.15175410279225,
-    "avg_energy": 91.10709903003905
+    "population": 148,
+    "avg_resilience": 0.1005128549163042,
+    "avg_metabolism_rate": 4.266815171620195,
+    "avg_reproduction_chance": 1.995769160978792,
+    "avg_health": 76.93875773756132,
+    "avg_energy": 94.93853736338006
   },
   {
     "epoch": 53,
-    "population": 259,
-    "avg_resilience": 0.12494258882449547,
-    "avg_metabolism_rate": 0.8562102943032921,
-    "avg_reproduction_chance": 1.8279458864710154,
-    "avg_health": 75.8700517941544,
-    "avg_energy": 90.58777788066789
+    "population": 148,
+    "avg_resilience": 0.10054090073233163,
+    "avg_metabolism_rate": 4.298000760045463,
+    "avg_reproduction_chance": 1.98757674983181,
+    "avg_health": 76.4170465535707,
+    "avg_energy": 94.8982793642223
   },
   {
     "epoch": 54,
-    "population": 259,
-    "avg_resilience": 0.12304258341448134,
-    "avg_metabolism_rate": 0.8831461780883609,
-    "avg_reproduction_chance": 1.8508588108404311,
-    "avg_health": 75.43016354364399,
-    "avg_energy": 90.4976958633391
+    "population": 147,
+    "avg_resilience": 0.10000353807851488,
+    "avg_metabolism_rate": 4.345614512028858,
+    "avg_reproduction_chance": 2.0,
+    "avg_health": 75.9335537096325,
+    "avg_energy": 94.79974462385968
   },
   {
     "epoch": 55,
-    "population": 259,
-    "avg_resilience": 0.12104675918310333,
-    "avg_metabolism_rate": 0.9129002232822673,
-    "avg_reproduction_chance": 1.8729928677432681,
-    "avg_health": 74.9971637790352,
-    "avg_energy": 90.47354661233786
+    "population": 147,
+    "avg_resilience": 0.10054493857514943,
+    "avg_metabolism_rate": 4.353940601808942,
+    "avg_reproduction_chance": 1.9868351928589816,
+    "avg_health": 75.62294375892668,
+    "avg_energy": 94.71457837118189
   },
   {
     "epoch": 56,
-    "population": 259,
-    "avg_resilience": 0.11889734519627078,
-    "avg_metabolism_rate": 0.9389868970343364,
-    "avg_reproduction_chance": 1.8905121747819258,
-    "avg_health": 74.60065274043463,
-    "avg_energy": 90.36781948508222
+    "population": 146,
+    "avg_resilience": 0.10003338511273951,
+    "avg_metabolism_rate": 4.412179914338922,
+    "avg_reproduction_chance": 2.0,
+    "avg_health": 75.04257130527128,
+    "avg_energy": 94.67733540447432
   },
   {
     "epoch": 57,
-    "population": 259,
-    "avg_resilience": 0.11699350398125295,
-    "avg_metabolism_rate": 0.9666122097119999,
-    "avg_reproduction_chance": 1.9178318140344588,
-    "avg_health": 74.12533085557669,
-    "avg_energy": 90.32703072319428
+    "population": 146,
+    "avg_resilience": 0.10050295883927039,
+    "avg_metabolism_rate": 4.427497086384813,
+    "avg_reproduction_chance": 1.9957650323570162,
+    "avg_health": 74.78066005216859,
+    "avg_energy": 94.73180955618535
   },
   {
     "epoch": 58,
-    "population": 258,
-    "avg_resilience": 0.11474106133929955,
-    "avg_metabolism_rate": 0.9961841645725918,
-    "avg_reproduction_chance": 1.952014899100665,
-    "avg_health": 73.65660385340644,
-    "avg_energy": 90.25634832433116
+    "population": 146,
+    "avg_resilience": 0.10058813856626209,
+    "avg_metabolism_rate": 4.455527291889134,
+    "avg_reproduction_chance": 1.9959138555680698,
+    "avg_health": 74.25264691318253,
+    "avg_energy": 94.63676848992803
   },
   {
     "epoch": 59,
-    "population": 258,
-    "avg_resilience": 0.1131308871144033,
-    "avg_metabolism_rate": 1.0254473309819043,
-    "avg_reproduction_chance": 1.971030512807896,
-    "avg_health": 73.19078075560161,
-    "avg_energy": 90.20388247305605
+    "population": 146,
+    "avg_resilience": 0.100646619946475,
+    "avg_metabolism_rate": 4.4886380495716915,
+    "avg_reproduction_chance": 1.9956441219118424,
+    "avg_health": 73.87503516851025,
+    "avg_energy": 94.49305958004808
   },
   {
     "epoch": 60,
-    "population": 257,
-    "avg_resilience": 0.11154121781522783,
-    "avg_metabolism_rate": 1.060737287199279,
-    "avg_reproduction_chance": 1.9940324889790775,
-    "avg_health": 72.69364552874077,
-    "avg_energy": 90.09534383170589
+    "population": 146,
+    "avg_resilience": 0.10069438132991199,
+    "avg_metabolism_rate": 4.515405703275388,
+    "avg_reproduction_chance": 1.9955441781259893,
+    "avg_health": 73.37820756963382,
+    "avg_energy": 94.48880164225862
   },
   {
     "epoch": 61,
-    "population": 257,
-    "avg_resilience": 0.11033095206316143,
-    "avg_metabolism_rate": 1.0925083894447187,
-    "avg_reproduction_chance": 1.9939801364017784,
-    "avg_health": 72.21302478824741,
-    "avg_energy": 89.99359349723198
+    "population": 146,
+    "avg_resilience": 0.10064391014479152,
+    "avg_metabolism_rate": 4.551526739180073,
+    "avg_reproduction_chance": 1.995829301499265,
+    "avg_health": 72.91975955848018,
+    "avg_energy": 94.40781403533336
   },
   {
     "epoch": 62,
-    "population": 257,
-    "avg_resilience": 0.10899992390042806,
-    "avg_metabolism_rate": 1.123267805692805,
-    "avg_reproduction_chance": 1.9890362210036083,
-    "avg_health": 71.80789735100144,
-    "avg_energy": 89.94872218148407
+    "population": 146,
+    "avg_resilience": 0.10069574468449125,
+    "avg_metabolism_rate": 4.585866276507056,
+    "avg_reproduction_chance": 1.9950547563156966,
+    "avg_health": 72.50334212023469,
+    "avg_energy": 94.32172834484658
   },
   {
     "epoch": 63,
-    "population": 256,
-    "avg_resilience": 0.10759866926196038,
-    "avg_metabolism_rate": 1.161089144686076,
-    "avg_reproduction_chance": 1.997079711216155,
-    "avg_health": 71.28079416976405,
-    "avg_energy": 89.86495178351693
+    "population": 146,
+    "avg_resilience": 0.10067672822587473,
+    "avg_metabolism_rate": 4.616064754141267,
+    "avg_reproduction_chance": 1.9867904162938057,
+    "avg_health": 71.98223393905766,
+    "avg_energy": 94.2278651335313
   },
   {
     "epoch": 64,
-    "population": 256,
-    "avg_resilience": 0.1067061388410351,
-    "avg_metabolism_rate": 1.19498297276964,
-    "avg_reproduction_chance": 1.9875903993479536,
-    "avg_health": 70.83006611060817,
-    "avg_energy": 89.8410773498923
+    "population": 145,
+    "avg_resilience": 0.10005565473096645,
+    "avg_metabolism_rate": 4.694414539000295,
+    "avg_reproduction_chance": 1.9999788902550346,
+    "avg_health": 71.4504455442377,
+    "avg_energy": 94.18533691458471
   },
   {
     "epoch": 65,
-    "population": 255,
-    "avg_resilience": 0.10546782890338877,
-    "avg_metabolism_rate": 1.2316172395655312,
-    "avg_reproduction_chance": 1.9958688048897668,
-    "avg_health": 70.29690324827281,
-    "avg_energy": 89.73388149491501
+    "population": 145,
+    "avg_resilience": 0.10055155898626969,
+    "avg_metabolism_rate": 4.717659182512306,
+    "avg_reproduction_chance": 1.9956625795881053,
+    "avg_health": 71.11124273926214,
+    "avg_energy": 94.18429167136514
   },
   {
     "epoch": 66,
-    "population": 255,
-    "avg_resilience": 0.10494972637945109,
-    "avg_metabolism_rate": 1.2681644842732138,
-    "avg_reproduction_chance": 1.9956912729820244,
-    "avg_health": 69.91875946174002,
-    "avg_energy": 89.65977002982333
+    "population": 145,
+    "avg_resilience": 0.1006576023924817,
+    "avg_metabolism_rate": 4.767249892604945,
+    "avg_reproduction_chance": 1.9957277005497904,
+    "avg_health": 70.61265985246426,
+    "avg_energy": 94.09111970718088
   },
   {
     "epoch": 67,
-    "population": 255,
-    "avg_resilience": 0.10435621958667912,
-    "avg_metabolism_rate": 1.3084208548442167,
-    "avg_reproduction_chance": 1.9926727737114716,
-    "avg_health": 69.43860571929416,
-    "avg_energy": 89.61035639640872
+    "population": 145,
+    "avg_resilience": 0.10071071294419413,
+    "avg_metabolism_rate": 4.805555520880774,
+    "avg_reproduction_chance": 1.9856911190117463,
+    "avg_health": 70.15314336691165,
+    "avg_energy": 93.95655286466037
   },
   {
     "epoch": 68,
-    "population": 254,
-    "avg_resilience": 0.10322653521046816,
-    "avg_metabolism_rate": 1.3549716953096362,
-    "avg_reproduction_chance": 1.998258090389597,
-    "avg_health": 68.89186363944212,
-    "avg_energy": 89.52612084941583
+    "population": 144,
+    "avg_resilience": 0.1000304870785719,
+    "avg_metabolism_rate": 4.8797796347808635,
+    "avg_reproduction_chance": 2.0,
+    "avg_health": 69.54229951344641,
+    "avg_energy": 93.94121940653017
   },
   {
     "epoch": 69,
-    "population": 254,
-    "avg_resilience": 0.10270700475877588,
-    "avg_metabolism_rate": 1.3901405531178943,
-    "avg_reproduction_chance": 1.994528185582283,
-    "avg_health": 68.52553450444825,
-    "avg_energy": 89.46051386794859
+    "population": 144,
+    "avg_resilience": 0.10059800339905561,
+    "avg_metabolism_rate": 4.89291991250224,
+    "avg_reproduction_chance": 1.9958924124911053,
+    "avg_health": 69.19084871300237,
+    "avg_energy": 93.86568674169139
   },
   {
     "epoch": 70,
-    "population": 333,
-    "avg_resilience": 0.12062156749443732,
-    "avg_metabolism_rate": 1.1638202934726445,
-    "avg_reproduction_chance": 1.830885134352663,
-    "avg_health": 72.97057444569859,
-    "avg_energy": 89.63064343476435
+    "population": 144,
+    "avg_resilience": 0.10066022951640517,
+    "avg_metabolism_rate": 4.9254296330961385,
+    "avg_reproduction_chance": 1.9956357041362567,
+    "avg_health": 68.76193343253253,
+    "avg_energy": 93.75361559360346
   },
   {
     "epoch": 71,
-    "population": 333,
-    "avg_resilience": 0.11895878264154125,
-    "avg_metabolism_rate": 1.1953234810480824,
-    "avg_reproduction_chance": 1.8514295234945084,
-    "avg_health": 72.60849918108043,
-    "avg_energy": 89.62373110707564
+    "population": 144,
+    "avg_resilience": 0.10065274729899162,
+    "avg_metabolism_rate": 4.9472698089273415,
+    "avg_reproduction_chance": 1.9954907243500846,
+    "avg_health": 68.32555310924953,
+    "avg_energy": 93.67331096702145
   },
   {
     "epoch": 72,
-    "population": 333,
-    "avg_resilience": 0.11763801553854017,
-    "avg_metabolism_rate": 1.23347203409725,
-    "avg_reproduction_chance": 1.877581761507917,
-    "avg_health": 72.21984753416822,
-    "avg_energy": 89.58864507315681
+    "population": 144,
+    "avg_resilience": 0.10068630706097913,
+    "avg_metabolism_rate": 4.957941020552139,
+    "avg_reproduction_chance": 1.9872288532031424,
+    "avg_health": 67.81326997409207,
+    "avg_energy": 93.6216659410444
   },
   {
     "epoch": 73,
-    "population": 333,
-    "avg_resilience": 0.11657106196217992,
-    "avg_metabolism_rate": 1.273230986071121,
-    "avg_reproduction_chance": 1.901938189759099,
-    "avg_health": 71.81923460276508,
-    "avg_energy": 89.52708354712524
+    "population": 143,
+    "avg_resilience": 0.09999999999999976,
+    "avg_metabolism_rate": 4.99646604508967,
+    "avg_reproduction_chance": 2.0,
+    "avg_health": 66.34815922346932,
+    "avg_energy": 93.53478325228255
   },
   {
     "epoch": 74,
-    "population": 333,
-    "avg_resilience": 0.11542203504529015,
-    "avg_metabolism_rate": 1.3120955689518403,
-    "avg_reproduction_chance": 1.9307537463520348,
-    "avg_health": 71.40290992991403,
-    "avg_energy": 89.46036271600032
+    "population": 143,
+    "avg_resilience": 0.10053447237076699,
+    "avg_metabolism_rate": 4.961597845584505,
+    "avg_reproduction_chance": 1.9950462854256872,
+    "avg_health": 66.23549871434399,
+    "avg_energy": 93.43801283732793
   },
   {
     "epoch": 75,
-    "population": 333,
-    "avg_resilience": 0.11412394674699501,
-    "avg_metabolism_rate": 1.3513515722394263,
-    "avg_reproduction_chance": 1.9588895266450104,
-    "avg_health": 71.03636543162615,
-    "avg_energy": 89.4293638495674
+    "population": 143,
+    "avg_resilience": 0.10057434907276278,
+    "avg_metabolism_rate": 4.960504260218769,
+    "avg_reproduction_chance": 1.9866449726928324,
+    "avg_health": 65.78377931496432,
+    "avg_energy": 93.4013380201124
   },
   {
     "epoch": 76,
-    "population": 333,
-    "avg_resilience": 0.11298126382403417,
-    "avg_metabolism_rate": 1.3890988459287947,
-    "avg_reproduction_chance": 1.9805401714970412,
-    "avg_health": 70.65706975179219,
-    "avg_energy": 89.40806180304412
+    "population": 142,
+    "avg_resilience": 0.10001268611744031,
+    "avg_metabolism_rate": 4.995283754477985,
+    "avg_reproduction_chance": 2.0,
+    "avg_health": 65.10943036900093,
+    "avg_energy": 93.34327557284762
   },
   {
     "epoch": 77,
-    "population": 332,
-    "avg_resilience": 0.11170038714884857,
-    "avg_metabolism_rate": 1.431273881652205,
-    "avg_reproduction_chance": 1.9968932434991253,
-    "avg_health": 70.19000707789796,
-    "avg_energy": 89.33275452597701
+    "population": 142,
+    "avg_resilience": 0.10060047137687807,
+    "avg_metabolism_rate": 4.966866417555152,
+    "avg_reproduction_chance": 1.9957621100116743,
+    "avg_health": 64.80766626343463,
+    "avg_energy": 93.17929663450596
   },
   {
     "epoch": 78,
-    "population": 332,
-    "avg_resilience": 0.11069871602963854,
-    "avg_metabolism_rate": 1.4675399333953418,
-    "avg_reproduction_chance": 1.9956529967886991,
-    "avg_health": 69.82349433285394,
-    "avg_energy": 89.30065315629784
+    "population": 142,
+    "avg_resilience": 0.10071736596814108,
+    "avg_metabolism_rate": 4.963884601393509,
+    "avg_reproduction_chance": 1.9972409999822214,
+    "avg_health": 64.29734507574328,
+    "avg_energy": 93.13616327881282
   },
   {
     "epoch": 79,
-    "population": 332,
-    "avg_resilience": 0.1097523586266817,
-    "avg_metabolism_rate": 1.5154946279200985,
-    "avg_reproduction_chance": 1.997175534639927,
-    "avg_health": 69.41460853203141,
-    "avg_energy": 89.24420101874782
+    "population": 142,
+    "avg_resilience": 0.10057873187038906,
+    "avg_metabolism_rate": 4.966930567840905,
+    "avg_reproduction_chance": 1.9955915210387671,
+    "avg_health": 63.929720999329774,
+    "avg_energy": 93.02930640594361
   },
   {
     "epoch": 80,
-    "population": 332,
-    "avg_resilience": 0.10865908466036305,
-    "avg_metabolism_rate": 1.5569028549138682,
-    "avg_reproduction_chance": 1.9898571965431373,
-    "avg_health": 69.00955926185968,
-    "avg_energy": 89.16465658289361
+    "population": 142,
+    "avg_resilience": 0.10065025041872683,
+    "avg_metabolism_rate": 4.963782175499024,
+    "avg_reproduction_chance": 1.995627223871345,
+    "avg_health": 63.32512372816589,
+    "avg_energy": 92.96941650477969
   },
   {
     "epoch": 81,
-    "population": 331,
-    "avg_resilience": 0.1074196037852842,
-    "avg_metabolism_rate": 1.6061936593720563,
-    "avg_reproduction_chance": 1.9969218951157535,
-    "avg_health": 68.54686742182334,
-    "avg_energy": 89.13798202201072
+    "population": 142,
+    "avg_resilience": 0.10072728591290363,
+    "avg_metabolism_rate": 4.9656605492225765,
+    "avg_reproduction_chance": 1.9870594701563948,
+    "avg_health": 61.447542899240325,
+    "avg_energy": 92.92841299716436
   },
   {
     "epoch": 82,
-    "population": 331,
-    "avg_resilience": 0.10670354004267023,
-    "avg_metabolism_rate": 1.6501984154469078,
-    "avg_reproduction_chance": 1.9970265725470422,
-    "avg_health": 68.14832760327118,
-    "avg_energy": 89.11000247471807
+    "population": 141,
+    "avg_resilience": 0.09999999999999976,
+    "avg_metabolism_rate": 4.993164654599456,
+    "avg_reproduction_chance": 1.9998579393383857,
+    "avg_health": 60.78733111825424,
+    "avg_energy": 92.79235282415037
   },
   {
     "epoch": 83,
-    "population": 331,
-    "avg_resilience": 0.1058122410652548,
-    "avg_metabolism_rate": 1.6953349476153332,
-    "avg_reproduction_chance": 1.9973879653214284,
-    "avg_health": 67.74561073336305,
-    "avg_energy": 89.04294123225216
+    "population": 141,
+    "avg_resilience": 0.1005662723589244,
+    "avg_metabolism_rate": 4.961330269676387,
+    "avg_reproduction_chance": 1.995786825607595,
+    "avg_health": 59.486458966072824,
+    "avg_energy": 92.679861246361
   },
   {
     "epoch": 84,
-    "population": 331,
-    "avg_resilience": 0.10486173370482571,
-    "avg_metabolism_rate": 1.7396906283627829,
-    "avg_reproduction_chance": 1.996149179995055,
-    "avg_health": 66.66143693774318,
-    "avg_energy": 88.95131305099102
+    "population": 141,
+    "avg_resilience": 0.10051206338992243,
+    "avg_metabolism_rate": 4.9647697233966435,
+    "avg_reproduction_chance": 1.9955452992748945,
+    "avg_health": 58.9671682493084,
+    "avg_energy": 92.63512969714569
   },
   {
     "epoch": 85,
-    "population": 331,
-    "avg_resilience": 0.10410425431315837,
-    "avg_metabolism_rate": 1.7893861335832342,
-    "avg_reproduction_chance": 1.993105458616246,
-    "avg_health": 66.25632009736974,
-    "avg_energy": 88.90930679768125
+    "population": 141,
+    "avg_resilience": 0.10062643855592461,
+    "avg_metabolism_rate": 4.962279251923268,
+    "avg_reproduction_chance": 1.9958315893200897,
+    "avg_health": 58.38949135757468,
+    "avg_energy": 92.59073764458866
   },
   {
     "epoch": 86,
-    "population": 330,
-    "avg_resilience": 0.10317705500816103,
-    "avg_metabolism_rate": 1.8450373640235798,
-    "avg_reproduction_chance": 1.9997406986840123,
-    "avg_health": 65.77761152730866,
-    "avg_energy": 88.86681923281357
+    "population": 141,
+    "avg_resilience": 0.10053163578718148,
+    "avg_metabolism_rate": 4.963247627028662,
+    "avg_reproduction_chance": 1.995701228281695,
+    "avg_health": 57.97202147265975,
+    "avg_energy": 92.4789539990774
   },
   {
     "epoch": 87,
-    "population": 330,
-    "avg_resilience": 0.10268511019264799,
-    "avg_metabolism_rate": 1.896148111480882,
-    "avg_reproduction_chance": 1.9927027495147644,
-    "avg_health": 65.35560982598915,
-    "avg_energy": 88.800211376521
+    "population": 140,
+    "avg_resilience": 0.10057870619301179,
+    "avg_metabolism_rate": 4.962844391960854,
+    "avg_reproduction_chance": 1.995700310313334,
+    "avg_health": 57.80715196641516,
+    "avg_energy": 92.32976768690516
   },
   {
     "epoch": 88,
-    "population": 329,
-    "avg_resilience": 0.10192008124436716,
-    "avg_metabolism_rate": 1.9524416767881656,
-    "avg_reproduction_chance": 1.998852080002637,
-    "avg_health": 64.89177328454772,
-    "avg_energy": 88.75732239639837
+    "population": 140,
+    "avg_resilience": 0.10060543324668367,
+    "avg_metabolism_rate": 4.962305527316995,
+    "avg_reproduction_chance": 1.9956493129958817,
+    "avg_health": 57.42943205780723,
+    "avg_energy": 92.18003812061974
   },
   {
     "epoch": 89,
-    "population": 329,
-    "avg_resilience": 0.10166989703611315,
-    "avg_metabolism_rate": 2.001923698673398,
-    "avg_reproduction_chance": 1.994749531796192,
-    "avg_health": 64.55035119485252,
-    "avg_energy": 88.67075810999376
+    "population": 140,
+    "avg_resilience": 0.1006954049253232,
+    "avg_metabolism_rate": 4.965957697139076,
+    "avg_reproduction_chance": 1.9868642391861133,
+    "avg_health": 56.81608686697405,
+    "avg_energy": 92.14429099784518
   },
   {
     "epoch": 90,
-    "population": 329,
-    "avg_resilience": 0.10116581116433915,
-    "avg_metabolism_rate": 2.052751650615648,
-    "avg_reproduction_chance": 1.9958697355911945,
-    "avg_health": 64.11931483431336,
-    "avg_energy": 88.61817607809363
+    "population": 139,
+    "avg_resilience": 0.10006007110793955,
+    "avg_metabolism_rate": 4.9984897088360665,
+    "avg_reproduction_chance": 2.0,
+    "avg_health": 56.11915039048853,
+    "avg_energy": 92.03182301160993
   },
   {
     "epoch": 91,
-    "population": 430,
-    "avg_resilience": 0.11956607010480141,
-    "avg_metabolism_rate": 1.6777880105236582,
-    "avg_reproduction_chance": 1.8324661085127087,
-    "avg_health": 69.83432049389496,
-    "avg_energy": 89.05677561138859
+    "population": 139,
+    "avg_resilience": 0.10070992901456605,
+    "avg_metabolism_rate": 4.9605693998337665,
+    "avg_reproduction_chance": 1.9954504936717952,
+    "avg_health": 55.76599309336714,
+    "avg_energy": 92.03771521281902
   },
   {
     "epoch": 92,
-    "population": 426,
-    "avg_resilience": 0.11837099922073506,
-    "avg_metabolism_rate": 1.700620557903265,
-    "avg_reproduction_chance": 1.8540057945414097,
-    "avg_health": 69.90277047107682,
-    "avg_energy": 89.0449262427163
+    "population": 139,
+    "avg_resilience": 0.10074179334487778,
+    "avg_metabolism_rate": 4.96120029309855,
+    "avg_reproduction_chance": 1.9957150912034791,
+    "avg_health": 55.32349138587157,
+    "avg_energy": 91.929836514822
   },
   {
     "epoch": 93,
-    "population": 419,
-    "avg_resilience": 0.11730079418163715,
-    "avg_metabolism_rate": 1.7044241344693272,
-    "avg_reproduction_chance": 1.873485880512708,
-    "avg_health": 70.26942139379916,
-    "avg_energy": 89.00201613826202
+    "population": 139,
+    "avg_resilience": 0.10073417716557653,
+    "avg_metabolism_rate": 4.965097592324392,
+    "avg_reproduction_chance": 1.9956159694882782,
+    "avg_health": 54.73123349794394,
+    "avg_energy": 91.73648631317933
   },
   {
     "epoch": 94,
-    "population": 416,
-    "avg_resilience": 0.11606967053609216,
-    "avg_metabolism_rate": 1.7321084578764467,
-    "avg_reproduction_chance": 1.896458296777149,
-    "avg_health": 70.22991322381675,
-    "avg_energy": 88.98552865978266
+    "population": 139,
+    "avg_resilience": 0.1006774475993874,
+    "avg_metabolism_rate": 4.958088242304447,
+    "avg_reproduction_chance": 1.994929081667372,
+    "avg_health": 54.247380179141516,
+    "avg_energy": 91.60665601823683
   },
   {
     "epoch": 95,
-    "population": 411,
-    "avg_resilience": 0.11512804136024453,
-    "avg_metabolism_rate": 1.771339826388226,
-    "avg_reproduction_chance": 1.9230217968560384,
-    "avg_health": 69.84280614744844,
-    "avg_energy": 88.94037980329067
+    "population": 139,
+    "avg_resilience": 0.1006563295311707,
+    "avg_metabolism_rate": 4.962423693094704,
+    "avg_reproduction_chance": 1.9954758087414657,
+    "avg_health": 53.79547783614537,
+    "avg_energy": 91.5809810844359
   },
   {
     "epoch": 96,
-    "population": 404,
-    "avg_resilience": 0.11403608303595528,
-    "avg_metabolism_rate": 1.8129626482446406,
-    "avg_reproduction_chance": 1.9524267094834173,
-    "avg_health": 69.45155364792423,
-    "avg_energy": 88.8571188111098
+    "population": 139,
+    "avg_resilience": 0.10073858853196094,
+    "avg_metabolism_rate": 4.9654535265257085,
+    "avg_reproduction_chance": 1.9955287477717778,
+    "avg_health": 53.23270779536122,
+    "avg_energy": 91.50179907358286
   },
   {
     "epoch": 97,
-    "population": 404,
-    "avg_resilience": 0.112827678850557,
-    "avg_metabolism_rate": 1.8477384663573864,
-    "avg_reproduction_chance": 1.9813614268079003,
-    "avg_health": 69.06942523835168,
-    "avg_energy": 88.82782210375758
+    "population": 139,
+    "avg_resilience": 0.10072076900818491,
+    "avg_metabolism_rate": 4.966172432063135,
+    "avg_reproduction_chance": 1.9954836200908603,
+    "avg_health": 52.64080324926945,
+    "avg_energy": 91.32907889326572
   },
   {
     "epoch": 98,
-    "population": 392,
-    "avg_resilience": 0.11173974706088598,
-    "avg_metabolism_rate": 1.8747792544452446,
-    "avg_reproduction_chance": 1.9945638699031236,
-    "avg_health": 68.7107068897779,
-    "avg_energy": 88.77347386353068
+    "population": 139,
+    "avg_resilience": 0.10068751387651602,
+    "avg_metabolism_rate": 4.9637006641799415,
+    "avg_reproduction_chance": 1.9956884603177294,
+    "avg_health": 52.13673024827986,
+    "avg_energy": 91.17567590277531
   },
   {
     "epoch": 99,
-    "population": 392,
-    "avg_resilience": 0.11045850938187794,
-    "avg_metabolism_rate": 1.907182491205025,
-    "avg_reproduction_chance": 1.9918209357940833,
-    "avg_health": 68.35395438747268,
-    "avg_energy": 88.72625963727951
+    "population": 139,
+    "avg_resilience": 0.10076452312624545,
+    "avg_metabolism_rate": 4.95402601896093,
+    "avg_reproduction_chance": 1.985191521505455,
+    "avg_health": 51.71853414610717,
+    "avg_energy": 91.06080515820845
   },
   {
     "epoch": 100,
-    "population": 391,
-    "avg_resilience": 0.10925622575754426,
-    "avg_metabolism_rate": 1.9403280872888027,
-    "avg_reproduction_chance": 1.998205550532261,
-    "avg_health": 67.92090667910736,
-    "avg_energy": 88.68610916789879
+    "population": 138,
+    "avg_resilience": 0.10465443424181253,
+    "avg_metabolism_rate": 4.546748662682316,
+    "avg_reproduction_chance": 1.6965918020571982,
+    "avg_health": 50.87940288416348,
+    "avg_energy": 91.02596436480438
   },
   {
     "epoch": 101,
-    "population": 391,
-    "avg_resilience": 0.1084588498777969,
-    "avg_metabolism_rate": 1.977297956674306,
-    "avg_reproduction_chance": 1.9981122657664698,
-    "avg_health": 67.54274901556177,
-    "avg_energy": 88.67571395787498
+    "population": 138,
+    "avg_resilience": 0.10069712760728669,
+    "avg_metabolism_rate": 4.776030476063205,
+    "avg_reproduction_chance": 1.9525139825067366,
+    "avg_health": 50.72481927102063,
+    "avg_energy": 90.97809426467659
   },
   {
     "epoch": 102,
-    "population": 391,
-    "avg_resilience": 0.10743490885235925,
-    "avg_metabolism_rate": 2.0031673853020404,
-    "avg_reproduction_chance": 1.9929620530601289,
-    "avg_health": 67.21229226862259,
-    "avg_energy": 88.62540856943899
+    "population": 138,
+    "avg_resilience": 0.10073963524260778,
+    "avg_metabolism_rate": 4.941967002895408,
+    "avg_reproduction_chance": 1.9863711605998076,
+    "avg_health": 50.12257390632567,
+    "avg_energy": 90.88981474748788
   },
   {
     "epoch": 103,
-    "population": 390,
-    "avg_resilience": 0.10629514501130917,
-    "avg_metabolism_rate": 2.0400431917426887,
-    "avg_reproduction_chance": 1.9988883811303038,
-    "avg_health": 66.76434708163943,
-    "avg_energy": 88.57843814688142
+    "population": 137,
+    "avg_resilience": 0.10004435608637867,
+    "avg_metabolism_rate": 4.987555210827144,
+    "avg_reproduction_chance": 1.99961951699835,
+    "avg_health": 49.31671031132302,
+    "avg_energy": 90.71215584342418
   },
   {
     "epoch": 104,
-    "population": 390,
-    "avg_resilience": 0.10552747016697904,
-    "avg_metabolism_rate": 2.069368788037825,
-    "avg_reproduction_chance": 1.996874735537597,
-    "avg_health": 66.40252866097538,
-    "avg_energy": 88.54713127250149
+    "population": 137,
+    "avg_resilience": 0.10061584807307779,
+    "avg_metabolism_rate": 4.946688651674913,
+    "avg_reproduction_chance": 1.9938628371453644,
+    "avg_health": 49.061092095823795,
+    "avg_energy": 90.63892636370838
   },
   {
     "epoch": 105,
-    "population": 390,
-    "avg_resilience": 0.10471697386126348,
-    "avg_metabolism_rate": 2.1006678794848717,
-    "avg_reproduction_chance": 1.9944695896390803,
-    "avg_health": 66.00732618887245,
-    "avg_energy": 88.5200541285828
+    "population": 137,
+    "avg_resilience": 0.10070745205968645,
+    "avg_metabolism_rate": 4.953301121000659,
+    "avg_reproduction_chance": 1.9955975789168172,
+    "avg_health": 48.49018796793161,
+    "avg_energy": 90.43244378004552
   },
   {
     "epoch": 106,
-    "population": 389,
-    "avg_resilience": 0.10374102723743732,
-    "avg_metabolism_rate": 2.135165775946868,
-    "avg_reproduction_chance": 1.9989994149946726,
-    "avg_health": 65.56729614854942,
-    "avg_energy": 88.4597404380022
+    "population": 137,
+    "avg_resilience": 0.10071099516959067,
+    "avg_metabolism_rate": 4.957726705301264,
+    "avg_reproduction_chance": 1.9952493733581602,
+    "avg_health": 47.91566988462975,
+    "avg_energy": 90.323585581769
   },
   {
     "epoch": 107,
-    "population": 508,
-    "avg_resilience": 0.12128042388548844,
-    "avg_metabolism_rate": 1.7301176560223908,
-    "avg_reproduction_chance": 1.8338385977429006,
-    "avg_health": 71.08930216119602,
-    "avg_energy": 88.80018508356217
+    "population": 137,
+    "avg_resilience": 0.10068878436729663,
+    "avg_metabolism_rate": 4.957346003235105,
+    "avg_reproduction_chance": 1.9953648455415018,
+    "avg_health": 47.408604195576906,
+    "avg_energy": 90.25305354225124
   },
   {
     "epoch": 108,
-    "population": 496,
-    "avg_resilience": 0.11925147209117469,
-    "avg_metabolism_rate": 1.7715036496773369,
-    "avg_reproduction_chance": 1.8549646456249735,
-    "avg_health": 70.65096168713768,
-    "avg_energy": 88.82261498333871
+    "population": 136,
+    "avg_resilience": 0.10075980243757067,
+    "avg_metabolism_rate": 4.958786087427654,
+    "avg_reproduction_chance": 1.995675446305162,
+    "avg_health": 45.95357958272672,
+    "avg_energy": 90.1447827461836
   },
   {
     "epoch": 109,
-    "population": 484,
-    "avg_resilience": 0.11745072285294082,
-    "avg_metabolism_rate": 1.7881843645910553,
-    "avg_reproduction_chance": 1.883253014681861,
-    "avg_health": 70.42545378091961,
-    "avg_energy": 88.82383681224945
+    "population": 136,
+    "avg_resilience": 0.10074372400290764,
+    "avg_metabolism_rate": 4.958093260224024,
+    "avg_reproduction_chance": 1.9863586717406212,
+    "avg_health": 45.37042575927882,
+    "avg_energy": 90.0907748954009
   },
   {
     "epoch": 110,
-    "population": 467,
-    "avg_resilience": 0.11641382752372484,
-    "avg_metabolism_rate": 1.8116895645321047,
-    "avg_reproduction_chance": 1.908290354408789,
-    "avg_health": 70.14111425025935,
-    "avg_energy": 88.76770058346331
+    "population": 134,
+    "avg_resilience": 0.09999999999999977,
+    "avg_metabolism_rate": 4.991287829638209,
+    "avg_reproduction_chance": 2.0,
+    "avg_health": 43.85775695515742,
+    "avg_energy": 89.90099726535857
   },
   {
     "epoch": 111,
-    "population": 455,
-    "avg_resilience": 0.11467056270505122,
-    "avg_metabolism_rate": 1.8514716370398194,
-    "avg_reproduction_chance": 1.9320327891641123,
-    "avg_health": 69.71489652101714,
-    "avg_energy": 88.85241234513475
+    "population": 134,
+    "avg_resilience": 0.1007165037309986,
+    "avg_metabolism_rate": 4.9639809942632285,
+    "avg_reproduction_chance": 1.995562855686867,
+    "avg_health": 43.71636119054736,
+    "avg_energy": 89.76183928069989
   },
   {
     "epoch": 112,
-    "population": 455,
-    "avg_resilience": 0.11337064347149227,
-    "avg_metabolism_rate": 1.8777782090992576,
-    "avg_reproduction_chance": 1.9552163316220625,
-    "avg_health": 69.37717212814492,
-    "avg_energy": 88.85862240478441
+    "population": 133,
+    "avg_resilience": 0.10073293728196496,
+    "avg_metabolism_rate": 4.960267818293442,
+    "avg_reproduction_chance": 1.9952210316200736,
+    "avg_health": 43.484729790355104,
+    "avg_energy": 89.61839724676487
   },
   {
     "epoch": 113,
-    "population": 445,
-    "avg_resilience": 0.11186336826752817,
-    "avg_metabolism_rate": 1.8859427191434532,
-    "avg_reproduction_chance": 1.983263008957372,
-    "avg_health": 69.20386438282695,
-    "avg_energy": 88.88553472243773
+    "population": 133,
+    "avg_resilience": 0.10072637848558037,
+    "avg_metabolism_rate": 4.956673352694274,
+    "avg_reproduction_chance": 1.9948680723926084,
+    "avg_health": 42.85936590977705,
+    "avg_energy": 89.59739138349656
   },
   {
     "epoch": 114,
-    "population": 441,
-    "avg_resilience": 0.11080301358114432,
-    "avg_metabolism_rate": 1.9025470009857617,
-    "avg_reproduction_chance": 1.9912789587908404,
-    "avg_health": 69.2756112118395,
-    "avg_energy": 88.83872509897549
+    "population": 133,
+    "avg_resilience": 0.10082958299581656,
+    "avg_metabolism_rate": 4.955333210397495,
+    "avg_reproduction_chance": 1.9945879265485773,
+    "avg_health": 42.411582548769225,
+    "avg_energy": 89.42600656823906
   },
   {
     "epoch": 115,
-    "population": 436,
-    "avg_resilience": 0.10946004981510178,
-    "avg_metabolism_rate": 1.9365279160261446,
-    "avg_reproduction_chance": 1.996525751265757,
-    "avg_health": 68.84872425492713,
-    "avg_energy": 88.84894350104652
+    "population": 133,
+    "avg_resilience": 0.10073224100937617,
+    "avg_metabolism_rate": 4.957255627124239,
+    "avg_reproduction_chance": 1.986145155279923,
+    "avg_health": 41.849532391928605,
+    "avg_energy": 89.27386484488981
   },
   {
     "epoch": 116,
-    "population": 425,
-    "avg_resilience": 0.10998270588989272,
-    "avg_metabolism_rate": 1.938232521755696,
-    "avg_reproduction_chance": 1.9816953310841838,
-    "avg_health": 68.44795259186459,
-    "avg_energy": 88.816432281967
+    "population": 133,
+    "avg_resilience": 0.10076463956989924,
+    "avg_metabolism_rate": 4.9513729673907045,
+    "avg_reproduction_chance": 1.9855710373262836,
+    "avg_health": 41.27639398921673,
+    "avg_energy": 89.18060722285402
   },
   {
     "epoch": 117,
-    "population": 417,
-    "avg_resilience": 0.11037743091782123,
-    "avg_metabolism_rate": 1.9368567375516155,
-    "avg_reproduction_chance": 1.9725331455659352,
-    "avg_health": 68.06949691623575,
-    "avg_energy": 88.78368814540629
+    "population": 132,
+    "avg_resilience": 0.10008157897547675,
+    "avg_metabolism_rate": 4.9718090498555005,
+    "avg_reproduction_chance": 1.9989336653560723,
+    "avg_health": 40.341945303620285,
+    "avg_energy": 89.05124919765227
   },
   {
     "epoch": 118,
-    "population": 406,
-    "avg_resilience": 0.11071215927497546,
-    "avg_metabolism_rate": 1.90821764217854,
-    "avg_reproduction_chance": 1.9664975693064237,
-    "avg_health": 67.94897993221502,
-    "avg_energy": 88.73919536048093
+    "population": 132,
+    "avg_resilience": 0.10104563638207695,
+    "avg_metabolism_rate": 4.867550758042846,
+    "avg_reproduction_chance": 1.9855382973056341,
+    "avg_health": 40.078259752147396,
+    "avg_energy": 89.0097053798831
   },
   {
     "epoch": 119,
-    "population": 402,
-    "avg_resilience": 0.11105356351620708,
-    "avg_metabolism_rate": 1.8950064047092468,
-    "avg_reproduction_chance": 1.9582785814240455,
-    "avg_health": 67.65334591786137,
-    "avg_energy": 88.6874733988466
+    "population": 132,
+    "avg_resilience": 0.10100876869730564,
+    "avg_metabolism_rate": 4.768233233815685,
+    "avg_reproduction_chance": 1.9702793831089855,
+    "avg_health": 39.52344770580658,
+    "avg_energy": 88.80664084272503
   },
   {
     "epoch": 120,
-    "population": 396,
-    "avg_resilience": 0.11084644987245122,
-    "avg_metabolism_rate": 1.8954156473716988,
-    "avg_reproduction_chance": 1.954288550480703,
-    "avg_health": 67.19764015359762,
-    "avg_energy": 88.66899781131835
+    "population": 132,
+    "avg_resilience": 0.10101348875641693,
+    "avg_metabolism_rate": 4.6848632776929096,
+    "avg_reproduction_chance": 1.954679539659433,
+    "avg_health": 38.9551615327352,
+    "avg_energy": 88.70755532878384
   },
   {
     "epoch": 121,
-    "population": 396,
-    "avg_resilience": 0.11115106479305056,
-    "avg_metabolism_rate": 1.8867071459724591,
-    "avg_reproduction_chance": 1.9404240191958761,
-    "avg_health": 66.83686226814983,
-    "avg_energy": 88.64384913577263
+    "population": 131,
+    "avg_resilience": 0.10104859764488833,
+    "avg_metabolism_rate": 4.598944034928024,
+    "avg_reproduction_chance": 1.9465610685837518,
+    "avg_health": 38.74672022160972,
+    "avg_energy": 88.54076378569302
   },
   {
     "epoch": 122,
-    "population": 396,
-    "avg_resilience": 0.11125145815941821,
-    "avg_metabolism_rate": 1.882275122058729,
-    "avg_reproduction_chance": 1.9307922422581432,
-    "avg_health": 66.52049617910403,
-    "avg_energy": 88.63388838607082
+    "population": 131,
+    "avg_resilience": 0.10118353560826934,
+    "avg_metabolism_rate": 4.515612675231362,
+    "avg_reproduction_chance": 1.9399056311205192,
+    "avg_health": 38.08862839168949,
+    "avg_energy": 88.46413098635966
   },
   {
     "epoch": 123,
-    "population": 395,
-    "avg_resilience": 0.11129626732575239,
-    "avg_metabolism_rate": 1.8800403233211616,
-    "avg_reproduction_chance": 1.925803439918283,
-    "avg_health": 66.11741532116245,
-    "avg_energy": 88.61548797760265
+    "population": 131,
+    "avg_resilience": 0.10117753456817297,
+    "avg_metabolism_rate": 4.4431690401852855,
+    "avg_reproduction_chance": 1.9371421528343769,
+    "avg_health": 37.55933418998556,
+    "avg_energy": 88.38709950170352
   },
   {
     "epoch": 124,
-    "population": 395,
-    "avg_resilience": 0.11162245327892617,
-    "avg_metabolism_rate": 1.8780263634435403,
-    "avg_reproduction_chance": 1.9182642311350484,
-    "avg_health": 65.78528998981055,
-    "avg_energy": 88.6091223597211
+    "population": 131,
+    "avg_resilience": 0.10130002108739838,
+    "avg_metabolism_rate": 4.37454364990245,
+    "avg_reproduction_chance": 1.9326824679273753,
+    "avg_health": 37.05174564512722,
+    "avg_energy": 88.15293328148377
   },
   {
     "epoch": 125,
-    "population": 516,
-    "avg_resilience": 0.12786610242710766,
-    "avg_metabolism_rate": 1.5062033148241758,
-    "avg_reproduction_chance": 1.7672369268627093,
-    "avg_health": 71.08235861876545,
-    "avg_energy": 88.90345130224382
+    "population": 128,
+    "avg_resilience": 0.10121568753822545,
+    "avg_metabolism_rate": 4.304088587175984,
+    "avg_reproduction_chance": 1.9301904337235958,
+    "avg_health": 36.40676961888026,
+    "avg_energy": 88.08696122279406
   },
   {
     "epoch": 126,
-    "population": 505,
-    "avg_resilience": 0.1281351593020526,
-    "avg_metabolism_rate": 1.514658764567563,
-    "avg_reproduction_chance": 1.7664298570010708,
-    "avg_health": 70.68513769914247,
-    "avg_energy": 88.87195709571488
+    "population": 127,
+    "avg_resilience": 0.10035640383346349,
+    "avg_metabolism_rate": 4.249359942771018,
+    "avg_reproduction_chance": 1.9344326755640635,
+    "avg_health": 35.37271167748084,
+    "avg_energy": 87.87265156491743
   },
   {
     "epoch": 127,
-    "population": 500,
-    "avg_resilience": 0.1283670558450492,
-    "avg_metabolism_rate": 1.4920487870591295,
-    "avg_reproduction_chance": 1.75737715688176,
-    "avg_health": 70.55945079644621,
-    "avg_energy": 88.88439336595798
+    "population": 127,
+    "avg_resilience": 0.1010503693293903,
+    "avg_metabolism_rate": 4.146827943403264,
+    "avg_reproduction_chance": 1.9234141364027548,
+    "avg_health": 35.35455391306454,
+    "avg_energy": 87.82364126416319
   },
   {
     "epoch": 128,
-    "population": 486,
-    "avg_resilience": 0.1286146794083975,
-    "avg_metabolism_rate": 1.510907110022467,
-    "avg_reproduction_chance": 1.7610347047772856,
-    "avg_health": 70.10529465411815,
-    "avg_energy": 88.93321402358517
+    "population": 126,
+    "avg_resilience": 0.10128395690176611,
+    "avg_metabolism_rate": 4.087007979752568,
+    "avg_reproduction_chance": 1.9221638766924247,
+    "avg_health": 35.131614203426196,
+    "avg_energy": 87.54494787682941
   },
   {
     "epoch": 129,
-    "population": 483,
-    "avg_resilience": 0.12894333903722596,
-    "avg_metabolism_rate": 1.5050436948035502,
-    "avg_reproduction_chance": 1.7537133202740856,
-    "avg_health": 70.05947125111963,
-    "avg_energy": 88.97617354871512
+    "population": 125,
+    "avg_resilience": 0.10124849313009823,
+    "avg_metabolism_rate": 4.012514489746538,
+    "avg_reproduction_chance": 1.9151235833898201,
+    "avg_health": 34.81896861740149,
+    "avg_energy": 87.45647944024259
   },
   {
     "epoch": 130,
-    "population": 466,
-    "avg_resilience": 0.12917397368546601,
-    "avg_metabolism_rate": 1.4986342838319644,
-    "avg_reproduction_chance": 1.7503653459876063,
-    "avg_health": 69.85697470935307,
-    "avg_energy": 88.95503418004186
+    "population": 124,
+    "avg_resilience": 0.1011881474275304,
+    "avg_metabolism_rate": 3.939060898688723,
+    "avg_reproduction_chance": 1.9095927060542535,
+    "avg_health": 34.56984770375616,
+    "avg_energy": 87.35487473367839
   },
   {
     "epoch": 131,
-    "population": 463,
-    "avg_resilience": 0.12954013712502765,
-    "avg_metabolism_rate": 1.4902362774414257,
-    "avg_reproduction_chance": 1.7472428018647,
-    "avg_health": 69.65856499600031,
-    "avg_energy": 88.92487413063147
+    "population": 124,
+    "avg_resilience": 0.10122763626490593,
+    "avg_metabolism_rate": 3.8742161711291936,
+    "avg_reproduction_chance": 1.9046760989194311,
+    "avg_health": 33.92129113260145,
+    "avg_energy": 87.25908387064428
   },
   {
     "epoch": 132,
-    "population": 451,
-    "avg_resilience": 0.13257561735260923,
-    "avg_metabolism_rate": 1.4276743182220804,
-    "avg_reproduction_chance": 1.6195767471493014,
-    "avg_health": 69.59411218421728,
-    "avg_energy": 88.99141622449955
+    "population": 115,
+    "avg_resilience": 0.10133537243442008,
+    "avg_metabolism_rate": 3.8157339679121853,
+    "avg_reproduction_chance": 1.9015482722920163,
+    "avg_health": 33.26043417261978,
+    "avg_energy": 87.12584968461609
   },
   {
     "epoch": 133,
-    "population": 451,
-    "avg_resilience": 0.13254788143707877,
-    "avg_metabolism_rate": 1.4288138366718217,
-    "avg_reproduction_chance": 1.618753871088303,
-    "avg_health": 69.32625348938056,
-    "avg_energy": 88.97271520722775
+    "population": 115,
+    "avg_resilience": 0.10178478260719533,
+    "avg_metabolism_rate": 3.773259936974592,
+    "avg_reproduction_chance": 1.9050206630910462,
+    "avg_health": 32.782938709762405,
+    "avg_energy": 87.00142937833053
   },
   {
     "epoch": 134,
-    "population": 443,
-    "avg_resilience": 0.13287647252861579,
-    "avg_metabolism_rate": 1.4228343856388797,
-    "avg_reproduction_chance": 1.6214769908092665,
-    "avg_health": 69.17035829760297,
-    "avg_energy": 88.95781649502312
+    "population": 112,
+    "avg_resilience": 0.10192946679465158,
+    "avg_metabolism_rate": 3.721876719272894,
+    "avg_reproduction_chance": 1.9017209212248873,
+    "avg_health": 31.52962289950158,
+    "avg_energy": 86.81518041873817
   },
   {
     "epoch": 135,
-    "population": 438,
-    "avg_resilience": 0.13291100810158998,
-    "avg_metabolism_rate": 1.4073114005572684,
-    "avg_reproduction_chance": 1.6153209314485801,
-    "avg_health": 69.00638751336557,
-    "avg_energy": 88.94526231571454
+    "population": 112,
+    "avg_resilience": 0.10199609015605968,
+    "avg_metabolism_rate": 3.662123294982643,
+    "avg_reproduction_chance": 1.895520485877688,
+    "avg_health": 30.93331797457999,
+    "avg_energy": 86.75231815381643
   },
   {
     "epoch": 136,
-    "population": 431,
-    "avg_resilience": 0.13289321248268962,
-    "avg_metabolism_rate": 1.4104398720282296,
-    "avg_reproduction_chance": 1.6160326045273938,
-    "avg_health": 68.63328311310721,
-    "avg_energy": 88.94254266570263
+    "population": 112,
+    "avg_resilience": 0.101995732724442,
+    "avg_metabolism_rate": 3.6128621003205974,
+    "avg_reproduction_chance": 1.884778513757331,
+    "avg_health": 30.324699698385263,
+    "avg_energy": 86.57269449224746
   },
   {
     "epoch": 137,
-    "population": 428,
-    "avg_resilience": 0.13264069328071193,
-    "avg_metabolism_rate": 1.4097843949942004,
-    "avg_reproduction_chance": 1.6161813676509977,
-    "avg_health": 67.90388711049813,
-    "avg_energy": 88.96205526663958
+    "population": 111,
+    "avg_resilience": 0.10105751855734814,
+    "avg_metabolism_rate": 3.59694233830499,
+    "avg_reproduction_chance": 1.9021662751180555,
+    "avg_health": 29.284153294482547,
+    "avg_energy": 86.38572867615044
   },
   {
     "epoch": 138,
-    "population": 427,
-    "avg_resilience": 0.1326420613597437,
-    "avg_metabolism_rate": 1.4020093516113974,
-    "avg_reproduction_chance": 1.6143229595637472,
-    "avg_health": 67.72410574420037,
-    "avg_energy": 88.98115785549196
+    "population": 110,
+    "avg_resilience": 0.10182578819946772,
+    "avg_metabolism_rate": 3.4969426191061115,
+    "avg_reproduction_chance": 1.889856051476103,
+    "avg_health": 29.66936821919439,
+    "avg_energy": 86.41496515674703
   },
   {
     "epoch": 139,
-    "population": 414,
-    "avg_resilience": 0.13333662803548718,
-    "avg_metabolism_rate": 1.4022547775601144,
-    "avg_reproduction_chance": 1.6148967933168688,
-    "avg_health": 67.45815764897324,
-    "avg_energy": 88.93926301640572
+    "population": 109,
+    "avg_resilience": 0.10170833765251755,
+    "avg_metabolism_rate": 3.439696613740815,
+    "avg_reproduction_chance": 1.8875556690744812,
+    "avg_health": 29.39310837546421,
+    "avg_energy": 86.13723030539971
   },
   {
     "epoch": 140,
-    "population": 414,
-    "avg_resilience": 0.1332489547813507,
-    "avg_metabolism_rate": 1.4032970408735121,
-    "avg_reproduction_chance": 1.6110287781330888,
-    "avg_health": 67.146083137604,
-    "avg_energy": 88.95163127010778
+    "population": 109,
+    "avg_resilience": 0.10200822180993915,
+    "avg_metabolism_rate": 3.3919304933303445,
+    "avg_reproduction_chance": 1.883391099109709,
+    "avg_health": 28.816724201174328,
+    "avg_energy": 86.06307521538362
   },
   {
     "epoch": 141,
-    "population": 402,
-    "avg_resilience": 0.13321538800880198,
-    "avg_metabolism_rate": 1.3961129128357117,
-    "avg_reproduction_chance": 1.6119645568632552,
-    "avg_health": 66.91589065513914,
-    "avg_energy": 88.93775219978195
+    "population": 108,
+    "avg_resilience": 0.10202084649279834,
+    "avg_metabolism_rate": 3.3199982630726583,
+    "avg_reproduction_chance": 1.8715100135750358,
+    "avg_health": 28.46792655647329,
+    "avg_energy": 86.04071354426198
   },
   {
     "epoch": 142,
-    "population": 398,
-    "avg_resilience": 0.13382985732942082,
-    "avg_metabolism_rate": 1.4001381817766951,
-    "avg_reproduction_chance": 1.6095424640201532,
-    "avg_health": 66.67856661934925,
-    "avg_energy": 88.91891288545098
+    "population": 108,
+    "avg_resilience": 0.10184537100102357,
+    "avg_metabolism_rate": 3.2629000699371407,
+    "avg_reproduction_chance": 1.8686751346254797,
+    "avg_health": 27.887667569706885,
+    "avg_energy": 85.79962932635641
   },
   {
     "epoch": 143,
-    "population": 397,
-    "avg_resilience": 0.13397504507310104,
-    "avg_metabolism_rate": 1.4026668017679422,
-    "avg_reproduction_chance": 1.6129948614665917,
-    "avg_health": 66.28864368707623,
-    "avg_energy": 88.89084366862753
+    "population": 107,
+    "avg_resilience": 0.10209895134331938,
+    "avg_metabolism_rate": 3.2257981114192007,
+    "avg_reproduction_chance": 1.857407882404411,
+    "avg_health": 27.610260925434858,
+    "avg_energy": 85.60416006720422
   },
   {
     "epoch": 144,
-    "population": 397,
-    "avg_resilience": 0.1343138290295837,
-    "avg_metabolism_rate": 1.4011553258587257,
-    "avg_reproduction_chance": 1.6095656072461972,
-    "avg_health": 65.98167499428327,
-    "avg_energy": 88.86341211102598
+    "population": 105,
+    "avg_resilience": 0.10122203959734498,
+    "avg_metabolism_rate": 3.2066455975548878,
+    "avg_reproduction_chance": 1.8743659408381013,
+    "avg_health": 26.603961111563237,
+    "avg_energy": 85.43149693650153
   },
   {
     "epoch": 145,
-    "population": 396,
-    "avg_resilience": 0.1344222096593534,
-    "avg_metabolism_rate": 1.4064697498125909,
-    "avg_reproduction_chance": 1.6152256118475588,
-    "avg_health": 65.61074785364178,
-    "avg_energy": 88.86037671132638
+    "population": 105,
+    "avg_resilience": 0.1018469293187824,
+    "avg_metabolism_rate": 3.118987126282007,
+    "avg_reproduction_chance": 1.8603790180461122,
+    "avg_health": 26.478937874236433,
+    "avg_energy": 85.35736768741
   },
   {
     "epoch": 146,
-    "population": 396,
-    "avg_resilience": 0.1343534324485252,
-    "avg_metabolism_rate": 1.404941290857025,
-    "avg_reproduction_chance": 1.6118199792730636,
-    "avg_health": 65.30357285546843,
-    "avg_energy": 88.87642955262194
+    "population": 105,
+    "avg_resilience": 0.1018028567950629,
+    "avg_metabolism_rate": 3.0754467292934073,
+    "avg_reproduction_chance": 1.8617935852484269,
+    "avg_health": 26.01990849340842,
+    "avg_energy": 85.18736547815863
   },
   {
     "epoch": 147,
-    "population": 395,
-    "avg_resilience": 0.13429763910454087,
-    "avg_metabolism_rate": 1.4101472299090294,
-    "avg_reproduction_chance": 1.6149280546177844,
-    "avg_health": 64.94413417452402,
-    "avg_energy": 88.85717824710156
+    "population": 105,
+    "avg_resilience": 0.10151671757577725,
+    "avg_metabolism_rate": 3.018355023509551,
+    "avg_reproduction_chance": 1.857031958610125,
+    "avg_health": 25.36142497259918,
+    "avg_energy": 85.04702225486261
   },
   {
     "epoch": 148,
-    "population": 395,
-    "avg_resilience": 0.13447518061117641,
-    "avg_metabolism_rate": 1.410527967752799,
-    "avg_reproduction_chance": 1.615503806596147,
-    "avg_health": 64.64345223431468,
-    "avg_energy": 88.82412752401162
+    "population": 102,
+    "avg_resilience": 0.10162006832926057,
+    "avg_metabolism_rate": 2.9593626662183774,
+    "avg_reproduction_chance": 1.8423856926729802,
+    "avg_health": 25.42462322929543,
+    "avg_energy": 84.98300418775396
   },
   {
     "epoch": 149,
-    "population": 395,
-    "avg_resilience": 0.1348551122301002,
-    "avg_metabolism_rate": 1.4109127677330553,
-    "avg_reproduction_chance": 1.617618321970903,
-    "avg_health": 64.30853227756187,
-    "avg_energy": 88.85341762224895
+    "population": 102,
+    "avg_resilience": 0.10168213360053747,
+    "avg_metabolism_rate": 2.9145250459018555,
+    "avg_reproduction_chance": 1.840966315536773,
+    "avg_health": 24.76969742015838,
+    "avg_energy": 84.89277065895647
   },
   {
     "epoch": 150,
-    "population": 395,
-    "avg_resilience": 0.13530447719796038,
-    "avg_metabolism_rate": 1.4153558997728228,
-    "avg_reproduction_chance": 1.6187532380566565,
-    "avg_health": 63.96268759945164,
-    "avg_energy": 88.82745303356933
+    "population": 101,
+    "avg_resilience": 0.10057360975120404,
+    "avg_metabolism_rate": 2.8935781616295864,
+    "avg_reproduction_chance": 1.856354881752456,
+    "avg_health": 23.60591374334725,
+    "avg_energy": 84.60388252071834
   }
 ]

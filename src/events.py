@@ -21,6 +21,10 @@ def trigger_random_events(sim):  # noqa: C901
     `sim` is the Simulation instance, so you can access:
        sim.environment_factors, sim.entities, sim.current_time, etc.
     """
+
+    if random.random() > sim.environment_factors["event_chance"]:
+        return  # No event this epoch
+
     logger.info("\n 🃏 Wild Card!")
     event_type = random.choice(
         [

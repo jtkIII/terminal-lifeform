@@ -39,8 +39,8 @@ default_environment_factors = {
 
 entity_params = {
     "max_age": 99,
-    "initial_health": 100.0,
-    "initial_energy": 100.0,
+    "initial_health": random.uniform(50.0, 100.0),
+    "initial_energy": random.uniform(50.0, 100.0),
     "metabolism_rate": 0.3,
     "health_recovery_rate": 1.15,
     "health_decay_rate": 1.35,

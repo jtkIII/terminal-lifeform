@@ -14,7 +14,7 @@
     "max_entities": 6352
   },
   {
-    "world_name": "red_queen_world",
+    "world_name": "Red Queen World",
     "run_id": "2025-09-28T21:21:55",
     "epochs": 200,
     "total_entities": 5644,
@@ -168,7 +168,7 @@
     "max_entities": 6031
   },
   {
-    "world_name": "red_queen_world",
+    "world_name": "Red Queen World",
     "run_id": "2025-09-29T16:54:31",
     "epochs": 200,
     "total_entities": 1796,
@@ -252,7 +252,7 @@
     "max_entities": 2164
   },
   {
-    "world_name": "golden_world",
+    "world_name": "Golden World",
     "run_id": "2025-09-29T19:18:28",
     "epochs": 200,
     "total_entities": 15523,
@@ -280,7 +280,7 @@
     "max_entities": 858
   },
   {
-    "world_name": "island_world",
+    "world_name": "Island World",
     "run_id": "2025-09-29T19:29:19",
     "epochs": 200,
     "total_entities": 7093,
@@ -812,7 +812,7 @@
     "max_entities": 505
   },
   {
-    "world_name": "red_queen_world",
+    "world_name": "Red Queen World",
     "run_id": "2025-10-01T18:03:45",
     "epochs": 150,
     "total_entities": 706,
@@ -952,7 +952,7 @@
     "max_entities": 268
   },
   {
-    "world_name": "island_world",
+    "world_name": "Island World",
     "run_id": "2025-10-01T20:58:59",
     "epochs": 150,
     "total_entities": 282,
@@ -964,5 +964,145 @@
     "total_disasters": 1,
     "total_mutations": 392,
     "max_entities": 155
+  },
+  {
+    "world_name": "Red Queen World",
+    "run_id": "2025-10-01T21:12:32",
+    "epochs": 150,
+    "total_entities": 688,
+    "total_alive_at_conclusion": 323,
+    "total_struggling": 12,
+    "total_thriving": 174,
+    "total_deaths": 365,
+    "total_births": 228,
+    "total_disasters": 13,
+    "total_mutations": 563,
+    "max_entities": 339
+  },
+  {
+    "world_name": "tidal_locked_world",
+    "run_id": "2025-10-01T21:14:48",
+    "epochs": 150,
+    "total_entities": 495,
+    "total_alive_at_conclusion": 62,
+    "total_struggling": 34,
+    "total_thriving": 20,
+    "total_deaths": 798,
+    "total_births": 519,
+    "total_disasters": 22,
+    "total_mutations": 1206,
+    "max_entities": 225
+  },
+  {
+    "world_name": "bioengineered_world",
+    "run_id": "2025-10-01T21:17:53",
+    "epochs": 150,
+    "total_entities": 237,
+    "total_alive_at_conclusion": 23,
+    "total_struggling": 3,
+    "total_thriving": 10,
+    "total_deaths": 214,
+    "total_births": 107,
+    "total_disasters": 0,
+    "total_mutations": 426,
+    "max_entities": 120
+  },
+  {
+    "world_name": "Red Queen World",
+    "run_id": "2025-10-01T21:30:29",
+    "epochs": 150,
+    "total_entities": 241,
+    "total_alive_at_conclusion": 7,
+    "total_struggling": 2,
+    "total_thriving": 0,
+    "total_deaths": 234,
+    "total_births": 37,
+    "total_disasters": 0,
+    "total_mutations": 357,
+    "max_entities": 169
+  },
+  {
+    "world_name": "Golden World",
+    "run_id": "2025-10-01T21:35:22",
+    "epochs": 150,
+    "total_entities": 275,
+    "total_alive_at_conclusion": 120,
+    "total_struggling": 9,
+    "total_thriving": 3,
+    "total_deaths": 155,
+    "total_births": 117,
+    "total_disasters": 0,
+    "total_mutations": 439,
+    "max_entities": 159
+  },
+  {
+    "world_name": "Island World",
+    "run_id": "2025-10-01T21:38:59",
+    "epochs": 150,
+    "total_entities": 213,
+    "total_alive_at_conclusion": 0,
+    "total_struggling": 0,
+    "total_thriving": 0,
+    "total_deaths": 213,
+    "total_births": 93,
+    "total_disasters": 0,
+    "total_mutations": 271,
+    "max_entities": 120
+  },
+  {
+    "world_name": "Island World",
+    "run_id": "2025-10-01T21:42:14",
+    "epochs": 150,
+    "total_entities": 309,
+    "total_alive_at_conclusion": 51,
+    "total_struggling": 7,
+    "total_thriving": 1,
+    "total_deaths": 258,
+    "total_births": 115,
+    "total_disasters": 0,
+    "total_mutations": 473,
+    "max_entities": 175
+  },
+  {
+    "world_name": "Default Adaptive",
+    "run_id": "2025-10-01T21:46:59",
+    "epochs": 150,
+    "total_entities": 310,
+    "total_alive_at_conclusion": 67,
+    "total_struggling": 11,
+    "total_thriving": 32,
+    "total_deaths": 243,
+    "total_births": 116,
+    "total_disasters": 0,
+    "total_mutations": 449,
+    "max_entities": 140
+  },
+  {
+    "world_name": "default",
+    "run_id": "2025-10-01T21:51:13",
+    "epochs": 150,
+    "total_entities": 532,
+    "total_alive_at_conclusion": 261,
+    "total_struggling": 47,
+    "total_thriving": 58,
+    "total_deaths": 271,
+    "total_births": 125,
+    "total_disasters": 0,
+    "total_mutations": 349,
+    "max_entities": 330
+  },
+  {
+    "world_name": "Default Adaptive",
+    "run_id": "2025-10-01T21:53:03",
+    "epochs": 150,
+    "total_entities": 456,
+    "total_alive_at_conclusion": 202,
+    "total_struggling": 10,
+    "total_thriving": 96,
+    "total_deaths": 525,
+    "total_births": 335,
+    "total_disasters": 1,
+    "total_mutations": 984,
+    "max_entities": 222
   }
 ]

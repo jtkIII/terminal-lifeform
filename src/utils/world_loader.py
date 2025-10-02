@@ -103,7 +103,7 @@ def choose_world() -> str:
 WORLD_PRESETS = {
     "default": {
         "name": "default",
-        "description": "Balanced simulation with moderate conditions and average dynamics.",
+        "description": "Balanced simulation with moderate conditions and average dynamics. Not adaptive.",
         "icon": "🌍",
         "resource_availability": 1.0,
         "temperature": 25.0,
@@ -130,6 +130,38 @@ WORLD_PRESETS = {
         "optimal_density": 1000,
         "density_efficiency": 0.2,
         "adaptive_environment": False,  # New flag for adaptive behavior notice it's off by default
+    },
+    "default_adaptive": {
+        "name": "Default Adaptive",
+        "description": "Balanced simulation with moderate conditions, average dynamics, and adaptive.",
+        "icon": "🌍",
+        "resource_availability": 1.0,
+        "temperature": 25.0,
+        "pollution": 0.1,
+        "event_chance": 0.03,
+        "interaction_strength": 0.5,
+        "mutation_rate": 0.1,
+        "mutation_strength": 0.01,
+        "predator_chance": 0.1,
+        "predator_threshold": 350,
+        "predator_impact_percentage": 0.13,
+        "resource_regeneration_rate": 0.5,
+        "seasonal_variation": 0.2,
+        "catastrophe_threshold": 0.0,
+        "radiation_background": 0.1,
+        "disaster_chance": 0.1,
+        "disaster_impact": 0.1,
+        "growth_rate": 1.0,
+        "death_rate": 1.15,
+        "competition_intensity": 0.5,
+        "carrying_capacity": 2500,
+        "prosperity_threshold": 200,
+        "prosperity_boost": 1,
+        "optimal_density": 1000,
+        "density_efficiency": 0.2,
+        "adaptive_environment": True,  # Adaptive behavior enabled
+        "memory_window": 50,
+        "memory_sensitivity": 1.0,  # neutral reaction to trends
     },
     "harsh_world": {
         "name": "Harsh World",
@@ -220,6 +252,9 @@ WORLD_PRESETS = {
         "prosperity_boost": 1.3,
         "optimal_density": 600,
         "density_efficiency": 0.2,
+        "adaptive_environment": True,
+        "memory_window": 30,
+        "memory_sensitivity": 1.2,  # overreacts to trends
     },
     "dunbars_world": {
         "name": "dunbars_world",
@@ -278,6 +313,9 @@ WORLD_PRESETS = {
         "prosperity_boost": 1.6,
         "optimal_density": 200,
         "density_efficiency": 0.25,
+        "adaptive_environment": True,
+        "memory_window": 50,
+        "memory_sensitivity": 1.3,  # overreacts to trends
     },
     "runaway_evolution_world": {
         "name": "runaway_evo_world",
@@ -313,7 +351,7 @@ WORLD_PRESETS = {
     },
     "red_queen_world": {
         # It takes all the running you can do, to keep in the same place.
-        "name": "red_queen_world",
+        "name": "Red Queen World",
         "description": "Intense competition and constant adaptation — evolve or die in an endless arms race.",
         "icon": "👑",
         "resource_availability": 0.7,
@@ -340,10 +378,13 @@ WORLD_PRESETS = {
         "prosperity_boost": 1.25,
         "optimal_density": 400,
         "density_efficiency": 0.25,
+        "adaptive_environment": True,
+        "memory_window": 40,
+        "memory_sensitivity": 1.1,  # mild overreaction
     },
     "golden_world": {
         # https://www.youtube.com/watch?v=hl6JDv4ZG7U
-        "name": "golden_world",
+        "name": "Golden World",
         "description": "In this world, everything is governed by the golden ratio, leading to harmonious growth and balance.",
         "icon": "🌟",
         "resource_availability": 1.618,
@@ -370,16 +411,19 @@ WORLD_PRESETS = {
         "prosperity_boost": 1.618,
         "optimal_density": 1597,
         "density_efficiency": 0.4236067977,
+        "adaptive_environment": True,
+        "memory_window": 89,
+        "memory_sensitivity": 0.8,  # stable, underreacts to trends
     },
     "island_world": {
         # Tell me what you wantin'
-        "name": "island_world",
+        "name": "Island World",
         "description": "Isolated ecosystems with limited resources, leading to unique evolutionary paths and species.",
         "icon": "🏝️",
-        "resource_availability": 0.8,
-        "resource_regeneration_rate": 0.4,
+        "resource_availability": 0.75,
+        "resource_regeneration_rate": 0.33,
         "temperature": 24.0,
-        "pollution": 0.1,
+        "pollution": 0.05,
         "seasonal_variation": 0.3,
         "mutation_rate": 0.15,
         "mutation_strength": 0.04,
@@ -392,18 +436,21 @@ WORLD_PRESETS = {
         "predator_chance": 0.15,
         "predator_threshold": 180,
         "predator_impact_percentage": 0.18,
-        "growth_rate": 1.1,
-        "death_rate": 1.1,
+        "growth_rate": 1.3,
+        "death_rate": 1.05,
         "competition_intensity": 0.6,
-        "carrying_capacity": 600,
-        "prosperity_threshold": 120,
+        "carrying_capacity": 1000,
+        "prosperity_threshold": 500,
         "prosperity_boost": 1.3,
-        "optimal_density": 300,
-        "density_efficiency": 0.3,
+        "optimal_density": 700,
+        "density_efficiency": 0.33,
+        "adaptive_environment": True,
+        "memory_window": 70,
+        "memory_sensitivity": 0.9,  # slightly stable
     },
     "tidal_locked_world": {
         "name": "tidal_locked_world",
-        "description": "One face scorched by endless day, the other frozen in eternal night. Survival thrives on the razor-thin twilight band.",
+        "description": "One face scorched by day, the other frozen in eternal night. Survival thrives on the razor-thin twilight",
         "icon": "🌞",
         "resource_availability": 0.7,
         "resource_regeneration_rate": 0.35,
@@ -429,6 +476,9 @@ WORLD_PRESETS = {
         "prosperity_boost": 1.2,
         "optimal_density": 250,
         "density_efficiency": 0.15,
+        "adaptive_environment": True,
+        "memory_window": 60,
+        "memory_sensitivity": 1.0,  # neutral reaction to trends
     },
     "bioengineered_world": {
         "name": "bioengineered_world",
@@ -458,10 +508,13 @@ WORLD_PRESETS = {
         "prosperity_boost": 1.5,
         "optimal_density": 700,
         "density_efficiency": 0.4,
+        "adaptive_environment": True,
+        "memory_window": 100,
+        "memory_sensitivity": 0.7,  # very stable
     },
     "sentinel_world": {
         "name": "sentinel_world",
-        "description": "Life endures under the shadow of apocalypse — rare but devastating events reset evolution again and again.",
+        "description": "Life endures under the shadow of apocalypse — rare devastating events reset evolution again and again.",
         "icon": "☄️",
         "resource_availability": 1.0,
         "resource_regeneration_rate": 0.6,

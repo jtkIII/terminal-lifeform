@@ -1,2 +1,0 @@
-Date: /home/jtk/Projects/TerminalLifeform/logs/simulation.log
-Total Entities: 3119, Total Deaths: 2745, Total Births: 2986, Total Mutations: 1977, Alive at Conclusion: 374, Thriving: 271, Struggling: 4

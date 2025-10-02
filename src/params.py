@@ -54,4 +54,5 @@ entity_params = {
     "min_reproduction_age": 13,
     "aggression": 0.3,
     "cooperation": 0.1,
+    "mutation_rate": 0.01,
 }

@@ -9,6 +9,7 @@ import random
 
 from entity import Entity
 from utils.logging_config import setup_logger
+from utils.utils import passive_aggressive_threshold, pause_simulation
 
 # from utils.utils import pause_simulation, time_passes
 
@@ -112,15 +113,36 @@ def process_entity(sim, entity: Entity):
     Applies all updates to a single entity for the current Epoch.
     """
 
-    if not entity.is_alive():
+    if not entity.is_alive() or entity.status == "dead":
         return  # Skip dead entities
 
-    for entity in sim.entities:  # Update entity's environmental memory
+    for entity in sim.entities:
         condition = sim.environment_factors["resource_availability"] - 0.5
-        # Positive if abundant, negative if scarce
         entity.environment_memory.append(condition)
         if len(entity.environment_memory) > entity.memory_span:
             entity.environment_memory.pop(0)
+
+    if passive_aggressive_threshold(entity.aggression) > random.random():
+        if sim.environment_factors["resource_availability"] < 0.6:
+            # if random.random() < 0.2:  # don't log every time
+            logger.info("\n🎃 Trick or Treat!")
+            pause_simulation(20, desc="agressive beahiour?", delay=0.025)
+            # ents attacking each other?
+            if len(sim.entities) > 1:
+                target = random.choice(
+                    [e for e in sim.entities if e.id != entity.id and e.is_alive()]
+                )
+                if target:
+                    damage = random.uniform(5.0, 15.0) * (1.0 - target.resilience)
+                    target.health -= damage
+                    logger.info(
+                        f"{entity.name} (ID:{entity.id}) attacked! {target.name} (ID:{target.id}) for {damage:.1f} damage."
+                    )
+                    if target.health <= 0:
+                        target.update_status()
+                        logger.info(
+                            f"{target.name} (ID:{target.id}) has died from the attack!"
+                        )
 
     entity.age += 1
     energy_change = calc_energy_change(entity, sim.environment_factors)

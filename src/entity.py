@@ -7,14 +7,28 @@ Description: Defines the Entity class representing individuals in the simulation
 
 import random
 import uuid
+from dataclasses import dataclass, field
+from enum import Enum
 
 from faker import Faker
 
 from params import entity_params
 
 fake = Faker(["it_IT", "en_US", "en_GB", "en_NZ"])
+WORLD_WIDTH = 1920
+WORLD_HEIGHT = 1080
 
 
+class Status(Enum):
+    THRIVING = "thriving"
+    STRUGGLING = "struggling"
+    ALIVE = "alive"
+    DORMANT = "dormant"
+    EXPLORING = "exploring"
+    DEAD = "dead"
+
+
+@dataclass
 class Entity:
     """
     Represents an individual entity in the simulation.
@@ -38,8 +52,13 @@ class Entity:
         """
         self.id = str(uuid.uuid4())[:8]
         self.age = 0
-        self.status = "alive"
+        # self.status = "alive"
         self.parameters = entity_params.copy()
+        self.status = Status.ALIVE.value
+
+        # Spatial fields
+        self.x: int = field(default_factory=lambda: random.randint(0, WORLD_WIDTH))
+        self.y: int = field(default_factory=lambda: random.randint(0, WORLD_HEIGHT))
 
         self.environment_memory = []  # rolling record of past conditions
         self.memory_span = 20  # how far back they “remember”
@@ -54,6 +73,18 @@ class Entity:
         if initial_parameters:
             self.parameters.update(initial_parameters)
 
+        # "max_age": 99,
+
+        # "health_recovery_rate": 1.15,
+        # "health_decay_rate": 1.35,
+        # "thriving_threshold_health": 65.0,
+        # "thriving_threshold_energy": 60.0,
+        # "struggling_threshold_health": 33.0,
+        # "struggling_threshold_energy": 22.0,
+        # "min_reproduction_age": 13,
+        # "aggression": 0.3,
+        # "cooperation": 0.1,
+
         self.health = self.parameters["initial_health"]
         self.energy = self.parameters["initial_energy"]
         self.resilience = self.parameters.get("resilience", 0.1)
@@ -61,30 +92,32 @@ class Entity:
         self.metabolism_rate = self.parameters.get("metabolism_rate", 0.1)
         self.reproduction_chance = self.parameters.get("reproduction_chance", 0.05)
         self.mutation_rate = self.parameters.get("mutation_rate", 0.01)
+        self.aggression = self.parameters.get("aggression", 0.1)
 
     def is_alive(self) -> bool:
-        return self.status != "dead"
+        # return self.status != "dead"
+        return self.status != Status.DEAD.value
 
     def update_status(self) -> None:
         """
         Updates the entity's status based on its current health and energy.
         """
         if self.health <= 0 or self.age >= self.parameters["max_age"]:
-            self.status = "dead"
+            self.status = Status.DEAD.value
             self.health = 0.0
             self.energy = 0.0
         elif (
             self.health >= self.parameters["thriving_threshold_health"]
             and self.energy >= self.parameters["thriving_threshold_energy"]
         ):
-            self.status = "thriving"
+            self.status = Status.THRIVING.value
         elif (
             self.health <= self.parameters["struggling_threshold_health"]
             or self.energy <= self.parameters["struggling_threshold_energy"]
         ):
-            self.status = "struggling"
+            self.status = Status.STRUGGLING.value
         else:
-            self.status = "alive"
+            self.status = Status.ALIVE.value
 
     def __repr__(self) -> str:
         return (

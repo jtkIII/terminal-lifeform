@@ -1146,5 +1146,19 @@
     "total_disasters": 0,
     "total_mutations": 745,
     "max_entities": 151
+  },
+  {
+    "world_name": "Default Adaptive",
+    "run_id": "2025-10-02T10:28:39",
+    "epochs": 150,
+    "total_entities": 362,
+    "total_alive_at_conclusion": 211,
+    "total_struggling": 110,
+    "total_thriving": 46,
+    "total_deaths": 151,
+    "total_births": 115,
+    "total_disasters": 0,
+    "total_mutations": 456,
+    "max_entities": 220
   }
 ]

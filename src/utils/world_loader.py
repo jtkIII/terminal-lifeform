@@ -15,6 +15,14 @@ def list_worlds() -> list[str]:
     return list(WORLD_PRESETS.keys())
 
 
+def load_world(name: str = "default") -> dict:
+    print(f"\n🚀 Launching Terminal Lifeform using {name}\n")
+    if name not in WORLD_PRESETS:
+        print(f"[WARN] Unknown world '{name}', falling back to 'default'.")
+        name = "default"
+    return deepcopy(WORLD_PRESETS[name])
+
+
 def evolve_world(base: str, changes: dict) -> dict:
     world = deepcopy(WORLD_PRESETS[base])
     world.update(changes)
@@ -28,14 +36,6 @@ def describe_world(name: str) -> str:
     except KeyError:
         raise ValueError(f"Unknown world preset: {name}")  # noqa: B904
     return f"{preset['name']}: {preset['description']}"
-
-
-def load_world(name: str = "default") -> dict:
-    print(f"\n🚀 Launching Terminal Lifeform using {name}\n")
-    if name not in WORLD_PRESETS:
-        print(f"[WARN] Unknown world '{name}', falling back to 'default'.")
-        name = "default"
-    return deepcopy(WORLD_PRESETS[name])
 
 
 def add_mutant_worlds():
@@ -87,7 +87,7 @@ def choose_world() -> str:
         desc = preset.get("description", "No description provided.")
         print(f"{idx:<2} {icon:<5} {name:<5} — {desc}")
 
-    print("\n0. 🎲 Random World         — Choose a random preset from the list above")
+    print("\n0. 🎲 Random World — Choose a random preset from the list above")
 
     while True:
         choice = input("\nEnter the number of the world you want to run: ").strip()
@@ -102,7 +102,7 @@ def choose_world() -> str:
 
 WORLD_PRESETS = {
     "default": {
-        "name": "default",
+        "name": "Default World",
         "description": "Balanced simulation with moderate conditions and average dynamics. Not adaptive.",
         "icon": "🌍",
         "resource_availability": 1.0,
@@ -193,39 +193,39 @@ WORLD_PRESETS = {
         "density_efficiency": 0.2,
     },
     "garden_world": {
-        "name": "garden_world",
+        "name": "Garden World",
         "description": "A utopian paradise with abundant resources and minimal dangers.",
         "icon": "🌳",
-        "resource_availability": 1.33,
+        "resource_availability": 1.5,
         "temperature": 22.0,
         "pollution": 0.01,
         "event_chance": 0.01,
         "interaction_strength": 0.3,
         "mutation_rate": 0.05,
         "mutation_strength": 0.02,
-        "predator_chance": 0.03,
-        "predator_threshold": 600,
-        "predator_impact_percentage": 0.03,
-        "resource_regeneration_rate": 0.9,
+        "predator_chance": 0.02,
+        "predator_threshold": 800,
+        "predator_impact_percentage": 0.02,
+        "resource_regeneration_rate": 1,
         "seasonal_variation": 0.1,
-        "catastrophe_threshold": 0.3,
+        "catastrophe_threshold": 0.5,
         "radiation_background": 0.01,
         "disaster_chance": 0.1,
         "disaster_impact": 0.1,
-        "growth_rate": 1.33,
-        "death_rate": 0.93,
-        "competition_intensity": 0.2,
+        "growth_rate": 1.5,
+        "death_rate": 0.92,
+        "competition_intensity": 0.1,
         "carrying_capacity": 3000,
-        "prosperity_threshold": 200,
-        "prosperity_boost": 1.35,
+        "prosperity_threshold": 500,
+        "prosperity_boost": 1.5,
         "optimal_density": 1000,
         "density_efficiency": 0.35,
         "adaptive_environment": True,
         "memory_window": 80,
-        "memory_sensitivity": 0.8,  # slow to overreact
+        "memory_sensitivity": 0.9,  # slow-ish to overreact
     },
     "chaotic_world": {
-        "name": "chaotic_world",
+        "name": "Chaotic World",
         "description": "Volatile and unpredictable environment with frequent disasters and mutations.",
         "icon": "🌪️",
         "resource_availability": 0.9,
@@ -257,7 +257,7 @@ WORLD_PRESETS = {
         "memory_sensitivity": 1.2,  # overreacts to trends
     },
     "dunbars_world": {
-        "name": "dunbars_world",
+        "name": "Dunbars World",
         "description": "Cooperation thrives in small groups, but growth beyond ~200 causes rapid collapse.",
         "icon": "👥",
         "resource_availability": 0.9,
@@ -286,7 +286,7 @@ WORLD_PRESETS = {
         "density_efficiency": 0.35,
     },
     "post_cataclysmic_world": {
-        "name": "post_cataclysmic_world",
+        "name": "Post Cataclysmic",
         "description": "Life clings on after mass extinction — low resources, slow recovery, but huge evolutionary leaps.",
         "icon": "🪨",
         "interaction_strength": 0.66,
@@ -318,7 +318,7 @@ WORLD_PRESETS = {
         "memory_sensitivity": 1.3,  # overreacts to trends
     },
     "runaway_evolution_world": {
-        "name": "runaway_evo_world",
+        "name": "Runaway Evolution",
         "description": "Extreme radiation and mutation pressure drive rapid, chaotic evolutionary leaps.",
         "icon": "🧬",
         "resource_availability": 1.0,
@@ -449,8 +449,8 @@ WORLD_PRESETS = {
         "memory_sensitivity": 0.9,  # slightly stable
     },
     "tidal_locked_world": {
-        "name": "tidal_locked_world",
-        "description": "One face scorched by day, the other frozen in eternal night. Survival thrives on the razor-thin twilight",
+        "name": "Tidal Locked",
+        "description": "Scorched by day, Frozen in eternal night. Survival thrives on the razor-thin twilight",
         "icon": "🌞",
         "resource_availability": 0.7,
         "resource_regeneration_rate": 0.35,
@@ -481,8 +481,8 @@ WORLD_PRESETS = {
         "memory_sensitivity": 1.0,  # neutral reaction to trends
     },
     "bioengineered_world": {
-        "name": "bioengineered_world",
-        "description": "Finely tuned biosphere where cooperation is rewarded but growth beyond a limit triggers automatic collapse protocols.",
+        "name": "Bioengineered World",
+        "description": "Cooperation is rewarded but growth beyond a limit triggers automatic collapse protocols.",
         "icon": "🧪",
         "resource_availability": 1.2,
         "resource_regeneration_rate": 0.8,
@@ -513,8 +513,8 @@ WORLD_PRESETS = {
         "memory_sensitivity": 0.7,  # very stable
     },
     "sentinel_world": {
-        "name": "sentinel_world",
-        "description": "Life endures under the shadow of apocalypse — rare devastating events reset evolution again and again.",
+        "name": "Sentinel World",
+        "description": "Life endures under shadow of apocalypse — rare devastating events reset evolution again and again.",
         "icon": "☄️",
         "resource_availability": 1.0,
         "resource_regeneration_rate": 0.6,
@@ -542,7 +542,7 @@ WORLD_PRESETS = {
         "density_efficiency": 0.2,
     },
     "entropy_world": {
-        "name": "entropy_world",
+        "name": "Entropy World",
         "description": "A self-correcting biosphere — abundance sows the seeds of destruction, while collapse nurtures new life.",
         "icon": "🌀",
         "resource_availability": 0.9,
@@ -571,8 +571,8 @@ WORLD_PRESETS = {
         "density_efficiency": 0.3,
     },
     "inverted_world": {
-        "name": "inverted_world",
-        "description": "Where strength is a liability, scarcity breeds abundance, and disasters spark evolution. The Meak shall inherit the Earth.",
+        "name": "Inverted World",
+        "description": "Strength is a liability, scarcity breeds abundance, disasters spark evolution. The Meak shall inherit the Earth.",
         "icon": "🔁",
         "resource_availability": 0.6,
         "resource_regeneration_rate": 0.8,
@@ -603,8 +603,8 @@ WORLD_PRESETS = {
         "memory_sensitivity": 0.6,  # very stable
     },
     "sentient_world": {
-        "name": "sentient_world",
-        "description": "The biosphere is no longer passive — it reacts to life. Existence becomes a negotiation with the planet itself.",
+        "name": "Sentient World",
+        "description": "Biosphere is no longer passive — existence becomes a negotiation with the planet itself.",
         "icon": "🧠",
         "resource_availability": 0.9,
         "resource_regeneration_rate": 0.6,

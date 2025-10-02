@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 plot_summary.py - Generate simulation summary plots from sim_totals.json and trait_tracker.json
 """
@@ -10,19 +9,21 @@ from collections import defaultdict
 import matplotlib.pyplot as plt
 import numpy as np
 
-# --- File paths ---
 SIM_TOTALS_FILE = "logs/sim_totals.json"
 TRAIT_TRACKER_FILE = "logs/trait_tracker.json"
 OUTPUT_FILE = "plots/summary.png"
 
+aggregated = {}
+world_stats = defaultdict(lambda: defaultdict(list))
+
 os.makedirs("plots", exist_ok=True)
 
-# --- Load sim_totals ---
 with open(SIM_TOTALS_FILE) as f:
     sim_totals = json.load(f)
 
-# Aggregate by world
-world_stats = defaultdict(lambda: defaultdict(list))
+with open(TRAIT_TRACKER_FILE) as f:
+    traits = json.load(f)
+
 for run in sim_totals:
     w = run["world_name"]
     world_stats[w]["alive"].append(run.get("total_alive_at_conclusion", 0))
@@ -33,16 +34,9 @@ for run in sim_totals:
     world_stats[w]["mutations"].append(run.get("total_mutations", 0))
     world_stats[w]["max_entities"].append(run.get("max_entities", 0))
 
-# Compute means per world
-aggregated = {}
 for world, stats in world_stats.items():
     aggregated[world] = {k: np.mean(v) for k, v in stats.items()}
 
-# --- Load trait_tracker ---
-with open(TRAIT_TRACKER_FILE) as f:
-    traits = json.load(f)
-
-# --- Plotting ---
 fig, axs = plt.subplots(2, 1, figsize=(14, 10))
 fig.suptitle("Terminal Lifeform Simulation Summary", fontsize=18, weight="bold")
 
@@ -58,7 +52,6 @@ width = 0.25
 axs[0].bar(x - width, alive_means, width, label="Alive (end)")
 axs[0].bar(x, thriving_means, width, label="Thriving")
 axs[0].bar(x + width, struggling_means, width, label="Struggling")
-
 axs[0].set_ylabel("Entities (avg per run)")
 axs[0].set_title("Population Outcomes by World")
 axs[0].set_xticks(x)
@@ -67,6 +60,7 @@ axs[0].legend()
 axs[0].grid(axis="y", linestyle="--", alpha=0.6)
 
 # === Panel 2: Trait averages (global) ===
+# The scale here is wrong, need to "zoom in" on the traits
 trait_labels = [
     "avg_resilience",
     "avg_metabolism_rate",
@@ -86,3 +80,5 @@ axs[1].grid(axis="y", linestyle="--", alpha=0.6)
 plt.tight_layout(rect=[0, 0, 1, 0.96])  # type: ignore
 plt.savefig(OUTPUT_FILE, dpi=150)
 print(f"✅ Summary plot saved to: {OUTPUT_FILE}")
+
+# Filepath: /home/jtk/Dev/TerminalLifeform/src/utils/plot_summary.py

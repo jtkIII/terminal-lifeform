@@ -234,5 +234,9 @@ def move_entity(entity):
     entity.x = max(0, min(WORLD_WIDTH, entity.x + dx))
     entity.y = max(0, min(WORLD_HEIGHT, entity.y + dy))
 
+    if random.random() < 0.033:  # log occasionally
+        logger.info(f"👉 {entity.name} (ID:{entity.id}) moved ({entity.x}, {entity.y})")
+        pause_simulation(5, desc="entity moving...", delay=0.01)
+
 
 # filepath: /home/jtk/Dev/TerminalLifeform/src/utils/entity_utils.py

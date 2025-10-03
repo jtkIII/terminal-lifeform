@@ -1314,5 +1314,19 @@
     "total_disasters": 0,
     "total_mutations": 419,
     "max_entities": 221
+  },
+  {
+    "world_name": "Garden World",
+    "run_id": "2025-10-02T19:07:54",
+    "epochs": 150,
+    "total_entities": 275,
+    "total_alive_at_conclusion": 115,
+    "total_struggling": 94,
+    "total_thriving": 9,
+    "total_deaths": 160,
+    "total_births": 122,
+    "total_disasters": 0,
+    "total_mutations": 456,
+    "max_entities": 138
   }
 ]

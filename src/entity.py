@@ -57,8 +57,8 @@ class Entity:
         self.status = Status.ALIVE.value
 
         # Spatial fields
-        self.x: int = field(default_factory=lambda: random.randint(0, WORLD_WIDTH))
-        self.y: int = field(default_factory=lambda: random.randint(0, WORLD_HEIGHT))
+        self.x: int = random.randint(0, WORLD_WIDTH)
+        self.y: int = random.randint(0, WORLD_HEIGHT)
 
         self.environment_memory = []  # rolling record of past conditions
         self.memory_span = 20  # how far back they “remember”

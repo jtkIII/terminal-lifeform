@@ -1,9 +1,9 @@
 {
-  "total_runs": 49,
-  "avg_resilience": 0.15437895515897831,
-  "avg_metabolism_rate": 2.6513591148528115,
-  "avg_reproduction_chance": 1.648418977313685,
-  "avg_health": 43.96179010944298,
-  "avg_energy": 81.47145253809705,
-  "avg_population": 181.30612244897958
+  "total_runs": 50,
+  "avg_resilience": 0.1537255431171086,
+  "avg_metabolism_rate": 2.696816670172639,
+  "avg_reproduction_chance": 1.6537729649438313,
+  "avg_health": 43.543896249599,
+  "avg_energy": 81.2725916788136,
+  "avg_population": 179.98
 }
